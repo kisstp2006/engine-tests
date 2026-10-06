@@ -1,0 +1,10 @@
+# Exports, made again by the editor's Export or `--export`.
+builds/
+# Made by an Android export to sign a debug build: each machine's own.
+.fluxion/android_debug.keystore
+# Captures kept while checking a phase.
+.fluxion/verification/
+# The engine's caches.
+.fluxion-cache/
+.zig-cache/
+zig-out/

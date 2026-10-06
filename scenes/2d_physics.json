@@ -1,0 +1,313 @@
+{
+  "fluxion_scene": 3,
+  "entities": [
+    {
+      "uuid": "2a4e1233-7803-4adf-81ae-6ea415771290",
+      "name": "Camera",
+      "Transform2D": {},
+      "Camera2D": {}
+    },
+    {
+      "uuid": "c990825c-f761-465c-90c4-6a92b2286aef",
+      "name": "Hud",
+      "Control": {
+        "width": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "CanvasLayer": {}
+    },
+    {
+      "uuid": "0aecc3cf-4027-4e4b-b199-27a83a85a354",
+      "parent": "c990825c-f761-465c-90c4-6a92b2286aef",
+      "name": "Panel",
+      "Control": {
+        "position": "anchored",
+        "offset_left": 12.0,
+        "offset_top": 12.0
+      },
+      "BoxContainer": { "separation": 4 },
+      "PanelContainer": {}
+    },
+    {
+      "uuid": "ddfbfe53-899b-40a1-a3f1-118b21b52b5b",
+      "parent": "0aecc3cf-4027-4e4b-b199-27a83a85a354",
+      "name": "Title",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 400.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ThemeOverride": { "override_font_size": true, "font_size": 18 },
+      "Label": { "text": "Physics: bodies, a character, an area" }
+    },
+    {
+      "uuid": "34b04a3f-31ff-4348-ba2f-e7026f0d3dc3",
+      "parent": "0aecc3cf-4027-4e4b-b199-27a83a85a354",
+      "name": "About",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 400.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ThemeOverride": { "override_font_size": true, "font_size": 13 },
+      "Label": {
+        "text": "A/D or the arrows walk the green character, Space jumps. The left button drops a crate where the pointer is, the right one a ball. The blue zone is an Area2D counting what is in it."
+      }
+    },
+    {
+      "uuid": "bca66ef2-06e7-46a0-8346-53dc8e8b12f8",
+      "name": "Ground",
+      "Transform2D": { "y": 320.0 },
+      "Sprite": {
+        "tint": { "r": 0.22745098, "g": 0.2627451, "b": 0.32156864, "a": 1.0 },
+        "width": 1280.0,
+        "height": 40.0
+      },
+      "Collider2D": {}
+    },
+    {
+      "uuid": "824ad693-5ff1-4fd2-9157-87fd205b6427",
+      "name": "Left wall",
+      "Transform2D": { "x": -620.0 },
+      "Sprite": {
+        "tint": { "r": 0.22745098, "g": 0.2627451, "b": 0.32156864, "a": 1.0 },
+        "width": 40.0,
+        "height": 700.0
+      },
+      "Collider2D": {}
+    },
+    {
+      "uuid": "a35e87e2-3608-42bd-95bb-a03d73798617",
+      "name": "Right wall",
+      "Transform2D": { "x": 620.0 },
+      "Sprite": {
+        "tint": { "r": 0.22745098, "g": 0.2627451, "b": 0.32156864, "a": 1.0 },
+        "width": 40.0,
+        "height": 700.0
+      },
+      "Collider2D": {}
+    },
+    {
+      "uuid": "90877df5-81f3-42e9-939d-65b3cbe23925",
+      "name": "Ramp",
+      "Transform2D": { "x": -280.0, "y": 170.0, "rotation": 0.32 },
+      "Sprite": {
+        "tint": { "r": 0.22745098, "g": 0.2627451, "b": 0.32156864, "a": 1.0 },
+        "width": 360.0,
+        "height": 22.0
+      },
+      "Collider2D": {}
+    },
+    {
+      "uuid": "478bc8ad-8ff2-4172-b219-d614fac18eae",
+      "name": "One-way platform",
+      "Transform2D": { "x": 120.0, "y": 120.0 },
+      "Sprite": {
+        "tint": { "r": 0.22745098, "g": 0.2627451, "b": 0.32156864, "a": 1.0 },
+        "width": 200.0,
+        "height": 18.0
+      },
+      "Collider2D": { "one_way_collision": true }
+    },
+    {
+      "uuid": "1a9de64c-2fb6-4414-bdb5-12b076579653",
+      "name": "Crate 1",
+      "Transform2D": { "x": 260.0, "y": 280.0 },
+      "Sprite": {
+        "texture": "res://art/crate.png",
+        "width": 36.0,
+        "height": 36.0
+      },
+      "RigidBody2D": {},
+      "Collider2D": { "bounce": 0.1 }
+    },
+    {
+      "uuid": "5915f75b-c05a-4f72-b5fa-00659a342dc5",
+      "name": "Crate 2",
+      "Transform2D": { "x": 260.0, "y": 242.0 },
+      "Sprite": {
+        "texture": "res://art/crate.png",
+        "width": 36.0,
+        "height": 36.0
+      },
+      "RigidBody2D": {},
+      "Collider2D": { "bounce": 0.1 }
+    },
+    {
+      "uuid": "01e92e6f-53f5-459c-a81b-76fd2ebee570",
+      "name": "Crate 3",
+      "Transform2D": { "x": 260.0, "y": 204.0 },
+      "Sprite": {
+        "texture": "res://art/crate.png",
+        "width": 36.0,
+        "height": 36.0
+      },
+      "RigidBody2D": {},
+      "Collider2D": { "bounce": 0.1 }
+    },
+    {
+      "uuid": "e7430032-e99a-472e-8e73-505ee057014f",
+      "name": "Crate 4",
+      "Transform2D": { "x": 260.0, "y": 166.0 },
+      "Sprite": {
+        "texture": "res://art/crate.png",
+        "width": 36.0,
+        "height": 36.0
+      },
+      "RigidBody2D": {},
+      "Collider2D": { "bounce": 0.1 }
+    },
+    {
+      "uuid": "7fc7b397-9349-4ed1-ae29-4bce3e7b71d6",
+      "name": "Crate 5",
+      "Transform2D": { "x": 260.0, "y": 128.0 },
+      "Sprite": {
+        "texture": "res://art/crate.png",
+        "width": 36.0,
+        "height": 36.0
+      },
+      "RigidBody2D": {},
+      "Collider2D": { "bounce": 0.1 }
+    },
+    {
+      "uuid": "7372d770-8ff6-4fdc-ad6e-f3b9569066c7",
+      "name": "Ball 1",
+      "Transform2D": { "x": -120.0, "y": -200.0 },
+      "Sprite": {
+        "texture": "res://art/disc.png",
+        "tint": { "r": 0.49803922, "g": 0.78431374, "b": 0.972549, "a": 1.0 },
+        "width": 34.0,
+        "height": 34.0
+      },
+      "RigidBody2D": {},
+      "Collider2D": { "shape": "circle", "bounce": 0.6 }
+    },
+    {
+      "uuid": "16004f89-a5d9-4c2b-a242-dfdb3fe37092",
+      "name": "Ball 2",
+      "Transform2D": { "x": -70.0, "y": -200.0 },
+      "Sprite": {
+        "texture": "res://art/disc.png",
+        "tint": { "r": 0.49803922, "g": 0.78431374, "b": 0.972549, "a": 1.0 },
+        "width": 34.0,
+        "height": 34.0
+      },
+      "RigidBody2D": {},
+      "Collider2D": { "shape": "circle", "bounce": 0.6 }
+    },
+    {
+      "uuid": "1c2dda4b-77a9-481e-9b96-e1704c430bd8",
+      "name": "Ball 3",
+      "Transform2D": { "x": -20.0, "y": -200.0 },
+      "Sprite": {
+        "texture": "res://art/disc.png",
+        "tint": { "r": 0.49803922, "g": 0.78431374, "b": 0.972549, "a": 1.0 },
+        "width": 34.0,
+        "height": 34.0
+      },
+      "RigidBody2D": {},
+      "Collider2D": { "shape": "circle", "bounce": 0.6 }
+    },
+    {
+      "uuid": "90fc4f7d-3710-469a-b685-e7dffa797dc8",
+      "name": "Player",
+      "Transform2D": { "x": -500.0, "y": 240.0 },
+      "Sprite": {
+        "tint": {
+          "r": 0.54901963,
+          "g": 0.77254903,
+          "b": 0.41960785,
+          "a": 1.0
+        },
+        "width": 32.0,
+        "height": 48.0
+      },
+      "CharacterBody2D": {},
+      "Collider2D": { "shape": "capsule" },
+      "Script": { "source": "res://scripts/player.flux" }
+    },
+    {
+      "uuid": "d45350ab-7517-479d-b00b-af71f508b81d",
+      "name": "Zone",
+      "Transform2D": { "x": 470.0, "y": 190.0 },
+      "Sprite": {
+        "tint": {
+          "r": 0.35686275,
+          "g": 0.60784316,
+          "b": 0.9411765,
+          "a": 0.2509804
+        },
+        "width": 200.0,
+        "height": 120.0,
+        "layer": -1
+      },
+      "Collider2D": { "extents": { "x": 100.0, "y": 60.0 } },
+      "Area2D": {},
+      "Script": { "source": "res://scripts/coin_zone.flux" }
+    },
+    {
+      "uuid": "bc5108e4-3072-4146-bf6e-b2904ffa96de",
+      "parent": "d45350ab-7517-479d-b00b-af71f508b81d",
+      "name": "Count",
+      "Transform2D": { "x": -70.0, "y": -90.0 },
+      "Text2D": { "font": "res://fonts/NotoSans-Regular.ttf", "size": 18.0 }
+    },
+    {
+      "uuid": "774b2f42-da9a-45d2-a91a-bdd211458141",
+      "name": "Spawner",
+      "Transform2D": {},
+      "Script": { "source": "res://scripts/spawner.flux" }
+    },
+    {
+      "uuid": "9830ebd5-8c9d-4e33-a4bd-5abbbd51ce5a",
+      "name": "Made",
+      "Transform2D": { "x": 380.0, "y": -320.0 },
+      "Text2D": {
+        "text": "Nothing made yet",
+        "font": "res://fonts/NotoSans-Regular.ttf",
+        "size": 18.0,
+        "color": { "r": 0.7882353, "g": 0.827451, "b": 0.8745098, "a": 1.0 }
+      }
+    }
+  ],
+  "assets": {
+    "res://art/crate.png": {
+      "uid": "uid://87f7df0e-a50a-45e4-8a66-668890f607f3"
+    },
+    "res://art/disc.png": {
+      "uid": "uid://e594538a-b1c3-4b13-a86e-c7c92518d775"
+    },
+    "res://scripts/player.flux": {
+      "uid": "uid://f87cef1d-0392-4d73-afdf-9a5ae1fbfbcd"
+    },
+    "res://scripts/coin_zone.flux": {
+      "uid": "uid://be3c5dc4-99c9-4efe-9301-073b928dfa1c"
+    },
+    "res://fonts/NotoSans-Regular.ttf": {
+      "uid": "uid://6d999020-787a-428d-8b2b-0d30229ac7a8"
+    },
+    "res://scripts/spawner.flux": {
+      "uid": "uid://bde505cd-f097-468a-9ea6-314aaac21bf4"
+    }
+  }
+}

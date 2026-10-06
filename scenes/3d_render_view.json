@@ -1,0 +1,335 @@
+{
+  "fluxion_scene": 3,
+  "entities": [
+    {
+      "uuid": "2e836388-13e7-407b-b0bd-e41a0a8a4858",
+      "name": "Hud",
+      "Control": {
+        "width": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "CanvasLayer": {}
+    },
+    {
+      "uuid": "63e32554-86fe-47ab-9eeb-8ddaedf85bed",
+      "parent": "2e836388-13e7-407b-b0bd-e41a0a8a4858",
+      "name": "Panel",
+      "Control": {
+        "position": "anchored",
+        "offset_left": 12.0,
+        "offset_top": 12.0
+      },
+      "BoxContainer": {
+        "separation": 4
+      },
+      "PanelContainer": {}
+    },
+    {
+      "uuid": "0b0227cf-9de7-4757-a615-419afb3c553c",
+      "parent": "63e32554-86fe-47ab-9eeb-8ddaedf85bed",
+      "name": "Title",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 400.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ThemeOverride": {
+        "override_font_size": true,
+        "font_size": 18
+      },
+      "Label": {
+        "text": "A render view of the 3D world"
+      }
+    },
+    {
+      "uuid": "9ad7ab29-fee4-4863-ba87-412f98166a5a",
+      "parent": "63e32554-86fe-47ab-9eeb-8ddaedf85bed",
+      "name": "About",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 400.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ThemeOverride": {
+        "override_font_size": true,
+        "font_size": 13
+      },
+      "Label": {
+        "text": "A Camera3D beside a RenderView draws into a picture of its own - the security camera on the wall, looking from side to side - which a Sprite with a ViewTexture shows in the corner."
+      }
+    },
+    {
+      "uuid": "95d43b60-7163-429d-9a75-4120d11b7dd8",
+      "name": "Floor",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": -0.5,
+          "z": 0.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "shape": "plane",
+        "size": {
+          "x": 12.0,
+          "y": 1.0,
+          "z": 12.0
+        }
+      },
+      "Material3D": {
+        "material": "res://materials/3d_render_view/floor.mat3d"
+      }
+    },
+    {
+      "uuid": "943b4d80-2243-45f0-8622-d69bd98b7e85",
+      "name": "Sun",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 6.0,
+          "z": 0.0
+        },
+        "rotation": {
+          "x": -0.63612986,
+          "y": 0.24448542,
+          "z": 0.2231423,
+          "w": 0.6969744
+        }
+      },
+      "DirectionalLight3D": {
+        "energy": 0.95
+      }
+    },
+    {
+      "uuid": "72fb5b42-b8ae-4984-a063-1ffdaed4feaf",
+      "name": "Camera",
+      "exports": {
+        "speed": 0.15
+      },
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 4.0,
+          "z": 9.0
+        },
+        "rotation": {
+          "x": -0.20759152,
+          "y": -0.0,
+          "z": -0.0,
+          "w": 0.9782157
+        }
+      },
+      "Camera3D": {
+        "fov": 1.0471976,
+        "current": true
+      },
+      "Script": {
+        "source": "res://scripts/orbit_camera.flux"
+      }
+    },
+    {
+      "uuid": "62614e39-551d-4b8e-8db0-367aedb2228c",
+      "name": "Red box",
+      "Transform3D": {
+        "position": {
+          "x": -2.5,
+          "y": 0.25,
+          "z": -1.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "height": 1.2
+      },
+      "Material3D": {
+        "material": "res://materials/3d_render_view/red_box.mat3d"
+      },
+      "Script": {
+        "source": "res://scripts/spinner.flux"
+      }
+    },
+    {
+      "uuid": "a739680a-c76e-40c4-905d-d277cb552a74",
+      "name": "Yellow ball",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 0.25,
+          "z": 1.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "shape": "sphere",
+        "height": 1.2
+      },
+      "Material3D": {
+        "material": "res://materials/3d_render_view/yellow_ball.mat3d"
+      },
+      "Script": {
+        "source": "res://scripts/spinner.flux"
+      }
+    },
+    {
+      "uuid": "0c19f809-e6ef-4d6e-9694-325ce60bb719",
+      "name": "Green tube",
+      "Transform3D": {
+        "position": {
+          "x": 2.5,
+          "y": 0.25,
+          "z": -0.5
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "shape": "cylinder",
+        "height": 1.2
+      },
+      "Material3D": {
+        "material": "res://materials/3d_render_view/green_tube.mat3d"
+      },
+      "Script": {
+        "source": "res://scripts/spinner.flux"
+      }
+    },
+    {
+      "uuid": "1248b125-f3b0-4f37-b7db-84bdba8114e7",
+      "name": "Security camera",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 3.0,
+          "z": -5.5
+        },
+        "rotation": {
+          "x": 5.7054814e-09,
+          "y": 0.9914449,
+          "z": 0.1305262,
+          "w": -4.3337433e-08
+        }
+      },
+      "RenderView": {
+        "clear_color": {
+          "r": 0.0627451,
+          "g": 0.07450981,
+          "b": 0.101960786,
+          "a": 1.0
+        },
+        "filter": "linear"
+      },
+      "Camera3D": {
+        "fov": 1.2217305
+      },
+      "Script": {
+        "source": "res://scripts/security_cam.flux"
+      }
+    },
+    {
+      "uuid": "5d826f50-da14-434e-93d6-4aa0388ab0df",
+      "name": "Camera housing",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 3.0,
+          "z": -5.8
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "size": {
+          "x": 0.5,
+          "y": 0.35,
+          "z": 0.6
+        }
+      },
+      "Material3D": {
+        "material": "res://materials/3d_render_view/camera_housing.mat3d"
+      }
+    },
+    {
+      "uuid": "34b74de4-c93b-4433-b5d0-3ad00f74d03a",
+      "name": "Monitor frame",
+      "Transform2D": {
+        "x": 1090.0,
+        "y": 590.0
+      },
+      "Sprite": {
+        "tint": {
+          "r": 0.22745098,
+          "g": 0.2627451,
+          "b": 0.32156864,
+          "a": 1.0
+        },
+        "width": 340.0,
+        "height": 200.0
+      }
+    },
+    {
+      "uuid": "730bb854-b426-407c-887e-d81ac2e5d07e",
+      "name": "Monitor",
+      "Transform2D": {
+        "x": 1090.0,
+        "y": 590.0
+      },
+      "Sprite": {
+        "width": 320.0,
+        "height": 180.0,
+        "layer": 1
+      },
+      "ViewTexture": {
+        "view": "1248b125-f3b0-4f37-b7db-84bdba8114e7"
+      }
+    },
+    {
+      "uuid": "da5e819e-a5fa-46aa-a4e3-c5b34f9b2494",
+      "name": "Monitor label",
+      "Transform2D": {
+        "x": 925.0,
+        "y": 452.0
+      },
+      "Text2D": {
+        "text": "Security camera",
+        "font": "res://fonts/NotoSans-Regular.ttf",
+        "size": 18.0
+      }
+    }
+  ],
+  "assets": {
+    "res://art/checker.png": {
+      "uid": "uid://56e2d7e0-6378-4371-95ad-bda3089bbbb6"
+    },
+    "res://scripts/orbit_camera.flux": {
+      "uid": "uid://f30485d1-0805-473c-aa3e-b59f37c00093"
+    },
+    "res://scripts/spinner.flux": {
+      "uid": "uid://2c9127c5-e7ca-4af4-83fa-73fc08ccacaf"
+    },
+    "res://scripts/security_cam.flux": {
+      "uid": "uid://0f4b1675-9d1e-4eb2-ab52-8429da4f55c5"
+    },
+    "res://fonts/NotoSans-Regular.ttf": {
+      "uid": "uid://6d999020-787a-428d-8b2b-0d30229ac7a8"
+    }
+  }
+}

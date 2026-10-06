@@ -1,0 +1,14 @@
+{
+  "albedo_color": {
+    "r": 0.55,
+    "g": 0.57,
+    "b": 0.6,
+    "a": 1.0
+  },
+  "albedo_texture": "res://art/checker.png",
+  "uv_scale": {
+    "x": 6.0,
+    "y": 6.0
+  },
+  "roughness": 0.85
+}

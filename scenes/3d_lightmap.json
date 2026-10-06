@@ -1,0 +1,274 @@
+{
+  "fluxion_scene": 3,
+  "entities": [
+    {
+      "uuid": "992e0a14-40c3-45ef-bb4d-aba62187cfaa",
+      "name": "Hud",
+      "Control": {
+        "width": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "CanvasLayer": {}
+    },
+    {
+      "uuid": "968f30fd-ee3b-4115-a6c8-2ab29939cdf3",
+      "parent": "992e0a14-40c3-45ef-bb4d-aba62187cfaa",
+      "name": "Panel",
+      "Control": {
+        "position": "anchored",
+        "offset_left": 12.0,
+        "offset_top": 12.0
+      },
+      "BoxContainer": { "separation": 4 },
+      "PanelContainer": {}
+    },
+    {
+      "uuid": "aab0ece0-ef16-4646-8452-287c05b2d986",
+      "parent": "968f30fd-ee3b-4115-a6c8-2ab29939cdf3",
+      "name": "Title",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 420.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ThemeOverride": { "override_font_size": true, "font_size": 18 },
+      "Label": { "text": "Lightmap" }
+    },
+    {
+      "uuid": "c114cb3a-ea23-4031-adfc-9aadf3bd18b4",
+      "parent": "968f30fd-ee3b-4115-a6c8-2ab29939cdf3",
+      "name": "About",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 420.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ThemeOverride": { "override_font_size": true, "font_size": 13 },
+      "Label": {
+        "text": "A room lit by a lamp baked whole and a sun through its window, its light bounced: the red and green walls colour what is near them. The walls and boxes read the lightmap; the gold ball moves, and is lit by the probes round it."
+      }
+    },
+    {
+      "uuid": "fd76a720-c692-42cb-9c74-7d01e5c817e3",
+      "name": "Floor",
+      "Transform3D": { "position": { "x": 0.0, "y": -0.1, "z": 0.0 } },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": { "size": { "x": 10.4, "y": 0.2, "z": 10.0 } },
+      "Material3D": { "material": "res://materials/3d_lightmap/floor.mat3d" }
+    },
+    {
+      "uuid": "b084238a-ebea-4471-bd5d-ddb07bd669ce",
+      "name": "Ceiling",
+      "Transform3D": { "position": { "x": 0.0, "y": 4.1, "z": 0.0 } },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": { "size": { "x": 10.4, "y": 0.2, "z": 10.0 } },
+      "Material3D": { "material": "res://materials/3d_lightmap/white.mat3d" }
+    },
+    {
+      "uuid": "a9cd9564-3818-4aa7-b0d2-dea53b9dd5ea",
+      "name": "Red wall",
+      "Transform3D": { "position": { "x": -5.1, "y": 2.0, "z": 0.0 } },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": { "size": { "x": 0.2, "y": 4.0, "z": 10.0 } },
+      "Material3D": { "material": "res://materials/3d_lightmap/red.mat3d" }
+    },
+    {
+      "uuid": "aeb9d790-b360-440c-baed-d0e534960c14",
+      "name": "Green wall",
+      "Transform3D": { "position": { "x": 5.1, "y": 2.0, "z": 0.0 } },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": { "size": { "x": 0.2, "y": 4.0, "z": 10.0 } },
+      "Material3D": { "material": "res://materials/3d_lightmap/green.mat3d" }
+    },
+    {
+      "uuid": "7419d43e-3be5-44c2-88f4-787a4def6bfd",
+      "name": "Back wall left",
+      "Transform3D": { "position": { "x": -3.0, "y": 2.0, "z": -5.1 } },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": { "size": { "x": 4.0, "y": 4.0, "z": 0.2 } },
+      "Material3D": { "material": "res://materials/3d_lightmap/white.mat3d" }
+    },
+    {
+      "uuid": "9eb5d2d5-9674-4166-a0a7-88860ed70aa2",
+      "name": "Back wall right",
+      "Transform3D": { "position": { "x": 3.0, "y": 2.0, "z": -5.1 } },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": { "size": { "x": 4.0, "y": 4.0, "z": 0.2 } },
+      "Material3D": { "material": "res://materials/3d_lightmap/white.mat3d" }
+    },
+    {
+      "uuid": "679bf95b-0e75-4572-a318-e7b3c44e04ce",
+      "name": "Under the window",
+      "Transform3D": { "position": { "x": 0.0, "y": 0.75, "z": -5.1 } },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": { "size": { "x": 2.0, "y": 1.5, "z": 0.2 } },
+      "Material3D": { "material": "res://materials/3d_lightmap/white.mat3d" }
+    },
+    {
+      "uuid": "f1fd7c8e-e7fa-47f5-8b63-4a69c0d523d6",
+      "name": "Over the window",
+      "Transform3D": { "position": { "x": 0.0, "y": 3.5, "z": -5.1 } },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": { "size": { "x": 2.0, "y": 1.0, "z": 0.2 } },
+      "Material3D": { "material": "res://materials/3d_lightmap/white.mat3d" }
+    },
+    {
+      "uuid": "c8e02397-1f8e-4467-8603-2fcf7bdc4ac9",
+      "name": "Tall box",
+      "Transform3D": {
+        "position": { "x": -2.0, "y": 1.4, "z": -1.5 },
+        "rotation": { "x": 0.0, "y": 0.17364818, "z": 0.0, "w": 0.9848077 }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": { "size": { "x": 1.2, "y": 2.8, "z": 1.2 } },
+      "Material3D": { "material": "res://materials/3d_lightmap/white.mat3d" }
+    },
+    {
+      "uuid": "b67c787f-6172-41f5-85ce-6e7b4ac4c79e",
+      "name": "Short box",
+      "Transform3D": {
+        "position": { "x": 2.0, "y": 0.6, "z": -0.5 },
+        "rotation": { "x": 0.0, "y": -0.13052619, "z": 0.0, "w": 0.9914449 }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": { "size": { "x": 1.2, "y": 1.2, "z": 1.2 } },
+      "Material3D": { "material": "res://materials/3d_lightmap/white.mat3d" }
+    },
+    {
+      "uuid": "b5f454b0-81d6-4e3e-ba36-46b315774daf",
+      "name": "Lamp",
+      "Transform3D": { "position": { "x": 0.0, "y": 3.85, "z": 0.0 } },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "shape": "sphere",
+        "radius": 0.15,
+        "rings": 12,
+        "segments": 24
+      },
+      "Material3D": { "material": "res://materials/3d_lightmap/lamp.mat3d" }
+    },
+    {
+      "uuid": "e34b057a-5be0-4c98-ae0b-f40d49b12321",
+      "name": "Gold ball",
+      "exports": { "height": 0.5, "seconds": 3.0 },
+      "Transform3D": { "position": { "x": 0.2, "y": 0.8, "z": 1.2 } },
+      "MeshInstance3D": { "gi_mode": "dynamic" },
+      "PrimitiveMesh3D": { "shape": "sphere", "rings": 24, "segments": 48 },
+      "Material3D": { "material": "res://materials/3d_lightmap/gold.mat3d" },
+      "Script": { "source": "res://scripts/bob.flux" }
+    },
+    {
+      "uuid": "ef9623b5-7ebe-41cd-a18f-de6d7d9dcd92",
+      "name": "Ceiling light",
+      "Transform3D": { "position": { "x": 0.0, "y": 3.6, "z": 0.0 } },
+      "PointLight3D": {
+        "color": { "r": 1.0, "g": 0.9, "b": 0.75, "a": 1.0 },
+        "energy": 2.5,
+        "bake": "all",
+        "range": 9.0,
+        "size": 0.3
+      }
+    },
+    {
+      "uuid": "65a4ea67-8e04-4425-8226-ae79d6882666",
+      "name": "Sun",
+      "Transform3D": {
+        "position": { "x": 0.0, "y": 8.0, "z": -8.0 },
+        "rotation": {
+          "x": -0.015457394,
+          "y": -0.9754563,
+          "z": -0.20725143,
+          "w": 0.07275227
+        }
+      },
+      "DirectionalLight3D": {
+        "color": { "r": 1.0, "g": 0.92, "b": 0.8, "a": 1.0 },
+        "energy": 3.0,
+        "shadow": true,
+        "shadow_max_distance": 30.0
+      }
+    },
+    {
+      "uuid": "1fa26086-161b-45a4-8863-9ad4f6db4930",
+      "name": "Environment",
+      "Environment": {
+        "background": "color",
+        "background_color": { "r": 0.42, "g": 0.55, "b": 0.75, "a": 1.0 },
+        "ambient_color": { "r": 0.6, "g": 0.7, "b": 1.0, "a": 1.0 },
+        "ambient_energy": 0.6,
+        "tonemap": "aces",
+        "exposure": 1.1
+      }
+    },
+    {
+      "uuid": "5bc335b4-e067-4ec2-be9e-90d7ac757c2c",
+      "name": "Lightmap",
+      "LightmapGI": {
+        "data": "res://scenes/3d_lightmap.lightmap",
+        "texels_per_unit": 10.0,
+        "quality": "high",
+        "probe_spacing": 1.0
+      }
+    },
+    {
+      "uuid": "d67bd49f-46b7-4919-b25d-07f6539a3c81",
+      "name": "Camera",
+      "Transform3D": {
+        "position": { "x": 0.0, "y": 2.0, "z": 7.5 },
+        "rotation": {
+          "x": -0.05967898,
+          "y": -0.0,
+          "z": -0.0,
+          "w": 0.99821764
+        }
+      },
+      "Camera3D": { "fov": 1.1, "current": true }
+    }
+  ],
+  "assets": {
+    "res://materials/3d_lightmap/floor.mat3d": {
+      "uid": "uid://a9c28de5-882a-476b-a3f2-a0a6531a7f6e"
+    },
+    "res://materials/3d_lightmap/white.mat3d": {
+      "uid": "uid://99061686-1b2c-4520-a5e5-9f8f02e15efc"
+    },
+    "res://materials/3d_lightmap/red.mat3d": {
+      "uid": "uid://0af81115-3cff-4c4b-a838-f6e4d0f9ee4c"
+    },
+    "res://materials/3d_lightmap/green.mat3d": {
+      "uid": "uid://2140477f-8923-466b-9d8a-c47680e39c7f"
+    },
+    "res://materials/3d_lightmap/lamp.mat3d": {
+      "uid": "uid://1c31b399-67e3-4407-b7bc-c371d4a74248"
+    },
+    "res://materials/3d_lightmap/gold.mat3d": {
+      "uid": "uid://4d0fe427-e415-4654-952a-afdfca95d519"
+    },
+    "res://scripts/bob.flux": {
+      "uid": "uid://7f7174d4-2ab9-4230-a5eb-a1955d7ee475"
+    },
+    "res://scenes/3d_lightmap.lightmap": {
+      "uid": "uid://bbf31b57-baf3-4ed0-af57-4220066cbd15"
+    }
+  }
+}

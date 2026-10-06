@@ -1,0 +1,10 @@
+{
+  "albedo_color": {
+    "r": 0.62352943,
+    "g": 0.827451,
+    "b": 1.0,
+    "a": 0.33333334
+  },
+  "transparency": "alpha",
+  "cull": "disabled"
+}

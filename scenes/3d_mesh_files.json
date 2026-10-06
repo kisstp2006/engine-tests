@@ -1,0 +1,224 @@
+{
+  "fluxion_scene": 3,
+  "entities": [
+    {
+      "uuid": "90905f55-c227-448d-b9e4-a299fac559ae",
+      "name": "Hud",
+      "Control": {
+        "width": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "CanvasLayer": {}
+    },
+    {
+      "uuid": "4369225c-b296-4c4a-a130-98bb5facc33c",
+      "parent": "90905f55-c227-448d-b9e4-a299fac559ae",
+      "name": "Panel",
+      "Control": {
+        "position": "anchored",
+        "offset_left": 12.0,
+        "offset_top": 12.0
+      },
+      "BoxContainer": {
+        "separation": 4
+      },
+      "PanelContainer": {}
+    },
+    {
+      "uuid": "e4a98eea-85c6-44b8-a86e-ec2da8f41eb5",
+      "parent": "4369225c-b296-4c4a-a130-98bb5facc33c",
+      "name": "Title",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 400.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ThemeOverride": {
+        "override_font_size": true,
+        "font_size": 18
+      },
+      "Label": {
+        "text": "Meshes from .mesh files"
+      }
+    },
+    {
+      "uuid": "0f231158-3fbb-446e-8e39-43132f859c6f",
+      "parent": "4369225c-b296-4c4a-a130-98bb5facc33c",
+      "name": "About",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 400.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ThemeOverride": {
+        "override_font_size": true,
+        "font_size": 13
+      },
+      "Label": {
+        "text": "A MeshInstance3D draws the mesh its handle names: a torus and a pyramid read from the engine's own .mesh files, the pyramid with a picture laid on."
+      }
+    },
+    {
+      "uuid": "01788fbb-5884-4e1d-b77b-95ea1d06b259",
+      "name": "Floor",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": -0.5,
+          "z": 0.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "shape": "plane",
+        "size": {
+          "x": 10.0,
+          "y": 1.0,
+          "z": 10.0
+        }
+      },
+      "Material3D": {
+        "material": "res://materials/3d_mesh_files/floor.mat3d"
+      }
+    },
+    {
+      "uuid": "8e2681f3-19dd-4df2-998f-cb413e3049c8",
+      "name": "Sun",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 6.0,
+          "z": 0.0
+        },
+        "rotation": {
+          "x": -0.58923143,
+          "y": 0.3625627,
+          "z": 0.33361718,
+          "w": 0.64035475
+        }
+      },
+      "DirectionalLight3D": {
+        "energy": 0.95
+      }
+    },
+    {
+      "uuid": "807b328d-174f-415f-8ae3-71a558f58a04",
+      "name": "Camera",
+      "exports": {
+        "radius": 6,
+        "height": 2.5,
+        "speed": 0.3
+      },
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 3.0,
+          "z": 6.0
+        },
+        "rotation": {
+          "x": -0.22975296,
+          "y": -0.0,
+          "z": -0.0,
+          "w": 0.9732491
+        }
+      },
+      "Camera3D": {
+        "fov": 1.0471976,
+        "current": true
+      },
+      "Script": {
+        "source": "res://scripts/orbit_camera.flux"
+      }
+    },
+    {
+      "uuid": "28ee8086-0ef9-4fc5-ac23-81b4bb46e5d7",
+      "name": "Torus",
+      "exports": {
+        "speed": 60,
+        "axis": [
+          1,
+          1,
+          0
+        ]
+      },
+      "Transform3D": {
+        "position": {
+          "x": -1.4,
+          "y": 0.6,
+          "z": 0.0
+        }
+      },
+      "MeshInstance3D": {
+        "mesh": "res://models/torus.mesh"
+      },
+      "Material3D": {
+        "material": "res://materials/3d_mesh_files/torus.mat3d"
+      },
+      "Script": {
+        "source": "res://scripts/spinner.flux"
+      }
+    },
+    {
+      "uuid": "d130f3b3-5147-45f9-b20f-32356731e7b9",
+      "name": "Pyramid",
+      "exports": {
+        "speed": 40
+      },
+      "Transform3D": {
+        "position": {
+          "x": 1.4,
+          "y": -0.5,
+          "z": 0.0
+        },
+        "scale": {
+          "x": 1.3,
+          "y": 1.3,
+          "z": 1.3
+        }
+      },
+      "MeshInstance3D": {
+        "mesh": "res://models/pyramid.mesh"
+      },
+      "Material3D": {
+        "material": "res://materials/3d_mesh_files/pyramid.mat3d"
+      },
+      "Script": {
+        "source": "res://scripts/spinner.flux"
+      }
+    }
+  ],
+  "assets": {
+    "res://art/checker.png": {
+      "uid": "uid://56e2d7e0-6378-4371-95ad-bda3089bbbb6"
+    },
+    "res://scripts/orbit_camera.flux": {
+      "uid": "uid://f30485d1-0805-473c-aa3e-b59f37c00093"
+    },
+    "res://scripts/spinner.flux": {
+      "uid": "uid://2c9127c5-e7ca-4af4-83fa-73fc08ccacaf"
+    },
+    "res://art/crate.png": {
+      "uid": "uid://87f7df0e-a50a-45e4-8a66-668890f607f3"
+    }
+  }
+}

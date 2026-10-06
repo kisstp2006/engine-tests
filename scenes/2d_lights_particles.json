@@ -1,0 +1,273 @@
+{
+  "fluxion_scene": 3,
+  "entities": [
+    {
+      "uuid": "3d42be09-c8b9-4b29-a97c-cafcbe5962bb",
+      "name": "Camera",
+      "Transform2D": {},
+      "Camera2D": {}
+    },
+    {
+      "uuid": "b9c6abe4-59b7-465e-8aef-7359a6573c3e",
+      "name": "Hud",
+      "Control": {
+        "width": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "CanvasLayer": {}
+    },
+    {
+      "uuid": "b6047114-5049-491f-933a-1e0721c2a000",
+      "parent": "b9c6abe4-59b7-465e-8aef-7359a6573c3e",
+      "name": "Panel",
+      "Control": {
+        "position": "anchored",
+        "offset_left": 12.0,
+        "offset_top": 12.0
+      },
+      "BoxContainer": { "separation": 4 },
+      "PanelContainer": {}
+    },
+    {
+      "uuid": "bddbc277-8f42-4954-9bb4-32f29de6f008",
+      "parent": "b6047114-5049-491f-933a-1e0721c2a000",
+      "name": "Title",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 400.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ThemeOverride": { "override_font_size": true, "font_size": 18 },
+      "Label": { "text": "Lights, shadows and particles" }
+    },
+    {
+      "uuid": "e8b4b29f-9c24-4a2c-bc7d-e798a22adfcc",
+      "parent": "b6047114-5049-491f-933a-1e0721c2a000",
+      "name": "About",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 400.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ThemeOverride": { "override_font_size": true, "font_size": 13 },
+      "Label": {
+        "text": "A dark ambient light, a lamp following the pointer and a breathing one going round the colours, both with shadows from the blocks. A fountain and smoke; the left button lets off a burst of stars. The sign is unshaded."
+      }
+    },
+    {
+      "uuid": "6bf62fab-e4e2-481f-a76f-107187b9c89f",
+      "name": "Floor",
+      "Transform2D": {},
+      "Sprite": {
+        "tint": { "r": 0.6039216, "g": 0.6431373, "b": 0.69803923, "a": 1.0 },
+        "width": 1400.0,
+        "height": 800.0,
+        "layer": -10
+      }
+    },
+    {
+      "uuid": "a13ec018-077b-4674-b8ba-a9520d10b4e6",
+      "name": "Night",
+      "AmbientLight2D": {
+        "color": { "r": 0.22, "g": 0.23, "b": 0.32, "a": 1.0 }
+      }
+    },
+    {
+      "uuid": "c57a40f1-b674-4c94-976e-7950db9d0e58",
+      "name": "Pointer lamp",
+      "Transform2D": {},
+      "PointLight2D": {
+        "color": { "r": 1.0, "g": 0.8862745, "b": 0.6901961, "a": 1.0 },
+        "energy": 1.6,
+        "radius": 380.0,
+        "shadows": true,
+        "shadow_softness": 4.0
+      },
+      "Script": { "source": "res://scripts/follow_pointer.flux" }
+    },
+    {
+      "uuid": "eb6b6195-6812-45b5-9c2f-93bcbbbda697",
+      "name": "Breathing lamp",
+      "Transform2D": { "x": 330.0, "y": -60.0 },
+      "PointLight2D": { "radius": 360.0, "shadows": true },
+      "Script": { "source": "res://scripts/light_pulse.flux" }
+    },
+    {
+      "uuid": "c7e90d49-8d8a-4a13-890e-74b9f78f2a58",
+      "name": "Block 1",
+      "Transform2D": { "x": -260.0, "y": -60.0 },
+      "Sprite": {
+        "tint": {
+          "r": 0.16862746,
+          "g": 0.20392157,
+          "b": 0.25882354,
+          "a": 1.0
+        },
+        "width": 70.0,
+        "height": 70.0
+      },
+      "LightOccluder2D": {}
+    },
+    {
+      "uuid": "ea102aaf-9973-4eea-984b-05caeee5e4d5",
+      "name": "Block 2",
+      "Transform2D": { "x": 120.0, "y": 60.0 },
+      "Sprite": {
+        "tint": {
+          "r": 0.16862746,
+          "g": 0.20392157,
+          "b": 0.25882354,
+          "a": 1.0
+        },
+        "width": 70.0,
+        "height": 70.0
+      },
+      "LightOccluder2D": {}
+    },
+    {
+      "uuid": "dc1e0043-d1da-4d54-9eac-0297c4693d7d",
+      "name": "Block 3",
+      "Transform2D": { "x": 380.0, "y": 120.0 },
+      "Sprite": {
+        "tint": {
+          "r": 0.16862746,
+          "g": 0.20392157,
+          "b": 0.25882354,
+          "a": 1.0
+        },
+        "width": 70.0,
+        "height": 70.0
+      },
+      "LightOccluder2D": {}
+    },
+    {
+      "uuid": "3fa2b2be-10f3-4791-ab9e-8357665c3450",
+      "name": "Fountain",
+      "Transform2D": { "x": -420.0, "y": 300.0 },
+      "Particles2D": {
+        "amount": 90,
+        "lifetime": 1.8,
+        "spread": 0.35,
+        "speed_min": 260.0,
+        "speed_max": 360.0,
+        "gravity": { "x": 0.0, "y": 320.0 },
+        "texture": "res://art/disc.png",
+        "scale_min": 0.25,
+        "scale_max": 0.35,
+        "scale_end": 0.05,
+        "color": { "r": 0.49803922, "g": 0.81960785, "b": 0.972549, "a": 1.0 },
+        "color_end": { "r": 0.1882353, "g": 0.3764706, "b": 1.0, "a": 0.0 },
+        "blend": "additive"
+      },
+      "Appearance": { "lighting": "unshaded" }
+    },
+    {
+      "uuid": "b5c7b448-0e21-45ad-8c62-dea2c2c7ecc9",
+      "name": "Smoke",
+      "Transform2D": { "x": -120.0, "y": 300.0 },
+      "Particles2D": {
+        "amount": 30,
+        "lifetime": 3.0,
+        "spread": 0.25,
+        "speed_min": 30.0,
+        "speed_max": 60.0,
+        "gravity": { "x": 10.0, "y": -10.0 },
+        "texture": "res://art/glow.png",
+        "scale_min": 0.4,
+        "scale_max": 0.6,
+        "scale_end": 1.6,
+        "color": {
+          "r": 0.7529412,
+          "g": 0.7764706,
+          "b": 0.8156863,
+          "a": 0.627451
+        },
+        "color_end": {
+          "r": 0.7529412,
+          "g": 0.7764706,
+          "b": 0.8156863,
+          "a": 0.0
+        }
+      }
+    },
+    {
+      "uuid": "5b864310-802c-407f-82ca-ddc6c03eab41",
+      "name": "Burst",
+      "Transform2D": {},
+      "Particles2D": {
+        "emitting": false,
+        "amount": 48,
+        "lifetime": 1.2,
+        "one_shot": true,
+        "explosiveness": 1.0,
+        "spread": 3.14159,
+        "speed_min": 150.0,
+        "speed_max": 360.0,
+        "gravity": { "x": 0.0, "y": 200.0 },
+        "spin_min": -6.0,
+        "spin_max": 6.0,
+        "texture": "res://art/star.png",
+        "scale_min": 0.25,
+        "scale_max": 0.45,
+        "scale_end": 0.0
+      },
+      "Appearance": { "lighting": "unshaded" },
+      "Script": { "source": "res://scripts/burst.flux" }
+    },
+    {
+      "uuid": "8abf118a-0c9b-48f6-9540-43bb81bf7c72",
+      "name": "Unshaded sign",
+      "Transform2D": { "x": 240.0, "y": 250.0 },
+      "Text2D": {
+        "text": "Unshaded: drawn over the light as it is",
+        "font": "res://fonts/NotoSans-Regular.ttf",
+        "size": 22.0,
+        "color": { "r": 1.0, "g": 0.70980394, "b": 0.2784314, "a": 1.0 }
+      },
+      "Appearance": { "lighting": "unshaded" }
+    }
+  ],
+  "assets": {
+    "res://scripts/follow_pointer.flux": {
+      "uid": "uid://53aabdf9-f6f9-4c42-9800-4d9f5d831dbb"
+    },
+    "res://scripts/light_pulse.flux": {
+      "uid": "uid://95ca032e-fafb-4f53-bc84-7f2b389a691f"
+    },
+    "res://art/disc.png": {
+      "uid": "uid://e594538a-b1c3-4b13-a86e-c7c92518d775"
+    },
+    "res://art/glow.png": {
+      "uid": "uid://7ca77831-f150-4ee8-914e-481b2f1512ac"
+    },
+    "res://art/star.png": {
+      "uid": "uid://f9a3bfb6-a03f-4387-9697-11908e43619e"
+    },
+    "res://scripts/burst.flux": {
+      "uid": "uid://32a231de-6c60-48d2-861d-81cf20299ecb"
+    },
+    "res://fonts/NotoSans-Regular.ttf": {
+      "uid": "uid://6d999020-787a-428d-8b2b-0d30229ac7a8"
+    }
+  }
+}

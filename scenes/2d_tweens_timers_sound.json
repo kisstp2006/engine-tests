@@ -1,0 +1,146 @@
+{
+  "fluxion_scene": 3,
+  "entities": [
+    {
+      "uuid": "4879c245-2986-4ced-9259-28c4933d8401",
+      "name": "Camera",
+      "Transform2D": {},
+      "Camera2D": {}
+    },
+    {
+      "uuid": "3132b1e1-f6fd-4a3f-ada9-48837b29fdda",
+      "name": "Hud",
+      "Control": {
+        "width": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "CanvasLayer": {}
+    },
+    {
+      "uuid": "66f80619-a897-43c1-ba30-c6f8c8966d16",
+      "parent": "3132b1e1-f6fd-4a3f-ada9-48837b29fdda",
+      "name": "Panel",
+      "Control": {
+        "position": "anchored",
+        "offset_left": 12.0,
+        "offset_top": 12.0
+      },
+      "BoxContainer": { "separation": 4 },
+      "PanelContainer": {}
+    },
+    {
+      "uuid": "f5b6183d-dba0-43f4-b21e-bf2fe0de51bc",
+      "parent": "66f80619-a897-43c1-ba30-c6f8c8966d16",
+      "name": "Title",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 400.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ThemeOverride": { "override_font_size": true, "font_size": 18 },
+      "Label": { "text": "Tweens, timers and sound" }
+    },
+    {
+      "uuid": "f15f33f6-2d18-4cea-ad19-f7711f3e7fc2",
+      "parent": "66f80619-a897-43c1-ba30-c6f8c8966d16",
+      "name": "About",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 400.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ThemeOverride": { "override_font_size": true, "font_size": 13 },
+      "Label": {
+        "text": "A Timer goes off every 0.7 seconds: a star is made, falls, turns and shrinks by a tween, and goes; each one beeps. The crate and the ball go there and back for ever, eased in and out."
+      }
+    },
+    {
+      "uuid": "cdf9760f-1013-4c3f-a48a-eacc3b17d040",
+      "name": "Rain",
+      "Transform2D": {},
+      "Script": { "source": "res://scripts/star_rain.flux" }
+    },
+    {
+      "uuid": "5e90ef17-72a9-4ab5-9772-e0e63ff59569",
+      "name": "Clock",
+      "Timer": { "wait_time": 0.7, "autostart": true }
+    },
+    {
+      "uuid": "df0a519b-c8b0-4dd7-94e7-b5970735607a",
+      "name": "Beep",
+      "AudioPlayer": { "clip": "res://sfx/beep.wav", "volume_db": -10.0 }
+    },
+    {
+      "uuid": "bcfa2bd6-3f63-48e3-82ba-9e6500f1012b",
+      "name": "Fallen",
+      "Transform2D": { "x": 400.0, "y": -320.0 },
+      "Text2D": {
+        "text": "No stars yet",
+        "font": "res://fonts/NotoSans-Regular.ttf",
+        "size": 18.0,
+        "color": { "r": 0.7882353, "g": 0.827451, "b": 0.8745098, "a": 1.0 }
+      }
+    },
+    {
+      "uuid": "3ae121a8-822d-42b2-bbcb-65a2059fc8d8",
+      "name": "Crate going there and back",
+      "Transform2D": { "y": 40.0 },
+      "Sprite": {
+        "texture": "res://art/crate.png",
+        "width": 64.0,
+        "height": 64.0
+      },
+      "Script": { "source": "res://scripts/ping_pong.flux" }
+    },
+    {
+      "uuid": "e2ec0cf6-ffbe-41df-b266-b4dba50e4ef1",
+      "name": "Ball going there and back",
+      "exports": { "reach": 180, "seconds": 0.5 },
+      "Transform2D": { "y": 160.0 },
+      "Sprite": {
+        "texture": "res://art/disc.png",
+        "tint": { "r": 0.49803922, "g": 0.78431374, "b": 0.972549, "a": 1.0 },
+        "width": 40.0,
+        "height": 40.0
+      },
+      "Script": { "source": "res://scripts/ping_pong.flux" }
+    }
+  ],
+  "assets": {
+    "res://scripts/star_rain.flux": {
+      "uid": "uid://2c0a12d3-abc8-497d-bc4a-302d5842d1cb"
+    },
+    "res://fonts/NotoSans-Regular.ttf": {
+      "uid": "uid://6d999020-787a-428d-8b2b-0d30229ac7a8"
+    },
+    "res://art/crate.png": {
+      "uid": "uid://87f7df0e-a50a-45e4-8a66-668890f607f3"
+    },
+    "res://scripts/ping_pong.flux": {
+      "uid": "uid://eea71522-cad9-4c5c-ac0c-7161a9d343de"
+    },
+    "res://art/disc.png": {
+      "uid": "uid://e594538a-b1c3-4b13-a86e-c7c92518d775"
+    }
+  }
+}

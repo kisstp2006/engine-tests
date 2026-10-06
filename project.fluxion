@@ -1,0 +1,22 @@
+{
+  "fluxion_project": 2,
+  "application": {
+    "name": "Engine Tests",
+    "description": "The engine's 2D and 3D parts and their APIs, each tried out in a scene of its own. Escape goes back to the menu.",
+    "version": "0.1.0",
+    "main_scene": "res://scenes/menu.json",
+    "tags": ["test", "2d", "3d"],
+    "autoload": ["res://scripts/back_to_menu.flux"],
+    "user_folder": "fluxion-engine-tests"
+  },
+  "display": { "width": 1280, "height": 720 },
+  "physics_2d": { "default_gravity": 981 },
+  "rendering": { "clear_color": { "r": 0.08, "g": 0.09, "b": 0.12 }, "msaa_3d": "x4" },
+  "input": {
+    "actions": [
+      { "name": "left", "bindings": [{ "type": "key", "key": "a" }, { "type": "key", "key": "left" }] },
+      { "name": "right", "bindings": [{ "type": "key", "key": "d" }, { "type": "key", "key": "right" }] },
+      { "name": "jump", "bindings": [{ "type": "key", "key": "space" }, { "type": "key", "key": "w" }, { "type": "key", "key": "up" }] }
+    ]
+  }
+}

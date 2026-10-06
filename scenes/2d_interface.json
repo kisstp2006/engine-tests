@@ -1,0 +1,314 @@
+{
+  "fluxion_scene": 3,
+  "entities": [
+    {
+      "uuid": "fb738afc-1a57-406b-98f9-d91dbbeda48d",
+      "name": "UiDemo",
+      "Script": { "source": "res://scripts/ui_demo.flux" }
+    },
+    {
+      "uuid": "464ea70e-ba9e-4379-984e-4e9aa1189b6a",
+      "name": "Screen",
+      "Control": {
+        "width": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "CanvasLayer": {},
+      "CenterContainer": {}
+    },
+    {
+      "uuid": "2d3e8371-2e86-4b7d-b5ac-2f38295e832d",
+      "parent": "464ea70e-ba9e-4379-984e-4e9aa1189b6a",
+      "name": "Panel",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 640.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "BoxContainer": { "separation": 8 },
+      "PanelContainer": {}
+    },
+    {
+      "uuid": "0f9a7a37-3317-427d-8f80-ef7de233df97",
+      "parent": "2d3e8371-2e86-4b7d-b5ac-2f38295e832d",
+      "name": "Title",
+      "Control": {
+        "width": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ThemeOverride": { "override_font_size": true, "font_size": 24 },
+      "Label": { "text": "Interface: controls and signals" }
+    },
+    {
+      "uuid": "b6370525-2b9b-44d8-b2ca-9174da13d40f",
+      "parent": "2d3e8371-2e86-4b7d-b5ac-2f38295e832d",
+      "name": "About",
+      "Control": {
+        "width": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "Label": {
+        "text": "Each control's signal is heard by a method of ui_demo.flux. Escape goes back to the menu."
+      }
+    },
+    {
+      "uuid": "7c048c95-2e04-484c-bf66-2ddbc66eb87c",
+      "parent": "2d3e8371-2e86-4b7d-b5ac-2f38295e832d",
+      "name": "Columns",
+      "Control": {
+        "width": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "BoxContainer": { "direction": "horizontal", "separation": 16 }
+    },
+    {
+      "uuid": "9d86a851-9794-4574-a41e-cd4ccd48e8bb",
+      "parent": "7c048c95-2e04-484c-bf66-2ddbc66eb87c",
+      "name": "Left",
+      "Control": {
+        "width": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "BoxContainer": { "separation": 8 }
+    },
+    {
+      "uuid": "2c104e6f-f3f6-4d57-a51d-ad30c25ba2a3",
+      "parent": "7c048c95-2e04-484c-bf66-2ddbc66eb87c",
+      "name": "Right",
+      "Control": {
+        "width": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "BoxContainer": { "separation": 8 }
+    },
+    {
+      "uuid": "eeab37f6-b1bf-4586-bd47-3046519d502e",
+      "parent": "9d86a851-9794-4574-a41e-cd4ccd48e8bb",
+      "name": "ClickButton",
+      "Control": {
+        "width": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "fixed",
+          "value": 40.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "CenterContainer": {},
+      "Button": { "text": "Click me" }
+    },
+    {
+      "uuid": "daea96c5-500b-4594-bd54-3f3735399ae4",
+      "parent": "9d86a851-9794-4574-a41e-cd4ccd48e8bb",
+      "name": "ClickLabel",
+      "Control": {
+        "width": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "Label": { "text": "Not clicked yet" }
+    },
+    {
+      "uuid": "facab55c-2372-4e9a-8ef2-44202721dfee",
+      "parent": "9d86a851-9794-4574-a41e-cd4ccd48e8bb",
+      "name": "Enabled",
+      "Control": {
+        "height": {
+          "mode": "fixed",
+          "value": 32.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "BoxContainer": {
+        "direction": "horizontal",
+        "separation": 8,
+        "alignment_y": "center"
+      },
+      "Label": { "text": "The button can be clicked" },
+      "CheckBox": { "checked": true }
+    },
+    {
+      "uuid": "8156f62e-4267-44f5-9f61-4f0f5043384d",
+      "parent": "9d86a851-9794-4574-a41e-cd4ccd48e8bb",
+      "name": "VolumeLabel",
+      "Control": {
+        "width": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "Label": { "text": "Volume: 30" }
+    },
+    {
+      "uuid": "bbce6076-f055-4727-817e-ef55bc0868ab",
+      "parent": "9d86a851-9794-4574-a41e-cd4ccd48e8bb",
+      "name": "Volume",
+      "Control": {
+        "width": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "fixed",
+          "value": 22.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "Slider": { "value": 30.0 }
+    },
+    {
+      "uuid": "f80526ff-c03e-4b4b-be2a-6b0fe87c41b4",
+      "parent": "2c104e6f-f3f6-4d57-a51d-ad30c25ba2a3",
+      "name": "Meter",
+      "Control": {
+        "width": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "fixed",
+          "value": 24.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "CenterContainer": {},
+      "ProgressBar": { "value": 30.0 }
+    },
+    {
+      "uuid": "4b6a870d-0f16-4da0-a21e-e4574ea5ddd6",
+      "parent": "2c104e6f-f3f6-4d57-a51d-ad30c25ba2a3",
+      "name": "NameField",
+      "Control": {
+        "width": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "fixed",
+          "value": 36.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "MarginContainer": {
+        "margin": { "left": 8, "right": 8, "top": 6, "bottom": 6 }
+      },
+      "LineEdit": { "placeholder_text": "Your name" }
+    },
+    {
+      "uuid": "619d5748-2f51-4e41-b087-b5727560aa5d",
+      "parent": "2c104e6f-f3f6-4d57-a51d-ad30c25ba2a3",
+      "name": "Greeting",
+      "Control": {
+        "width": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "Label": { "text": "Type your name above" }
+    },
+    {
+      "uuid": "4e227b08-dc72-4ed8-803a-3b5d27a8a23d",
+      "parent": "2c104e6f-f3f6-4d57-a51d-ad30c25ba2a3",
+      "name": "Rich text",
+      "Control": {
+        "width": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "fixed",
+          "value": 52.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "RichText": {
+        "text": "Rich text: {b|bold}, {i|slanted} and {color=#72A7E8|coloured}, in one control."
+      }
+    }
+  ],
+  "assets": {
+    "res://scripts/ui_demo.flux": {
+      "uid": "uid://dc9a0901-411e-498c-b3b5-4d93292d2ed8"
+    }
+  }
+}

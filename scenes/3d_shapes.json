@@ -1,0 +1,362 @@
+{
+  "fluxion_scene": 3,
+  "entities": [
+    {
+      "uuid": "d8c844b1-611c-4bd8-a054-323fabdb8b94",
+      "name": "Hud",
+      "Control": {
+        "width": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "CanvasLayer": {}
+    },
+    {
+      "uuid": "fe3f5ea9-7f6c-434b-9463-41901a0a4ad3",
+      "parent": "d8c844b1-611c-4bd8-a054-323fabdb8b94",
+      "name": "Panel",
+      "Control": {
+        "position": "anchored",
+        "offset_left": 12.0,
+        "offset_top": 12.0
+      },
+      "BoxContainer": {
+        "separation": 4
+      },
+      "PanelContainer": {}
+    },
+    {
+      "uuid": "b3a4acec-e611-43af-be99-84a41c0ee294",
+      "parent": "fe3f5ea9-7f6c-434b-9463-41901a0a4ad3",
+      "name": "Title",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 400.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ThemeOverride": {
+        "override_font_size": true,
+        "font_size": 18
+      },
+      "Label": {
+        "text": "Shapes and materials"
+      }
+    },
+    {
+      "uuid": "21a6a158-2b18-4afc-9eab-4654cd2e87e7",
+      "parent": "fe3f5ea9-7f6c-434b-9463-41901a0a4ad3",
+      "name": "About",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 400.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ThemeOverride": {
+        "override_font_size": true,
+        "font_size": 13
+      },
+      "Label": {
+        "text": "The five shapes made from numbers, each drawn with a .mat3d of its own, named by its Material3D: lit, unshaded, see-through with both sides drawn, and a picture laid on. The camera goes round; the left and right arrows turn it."
+      }
+    },
+    {
+      "uuid": "2ab7be84-91bd-4392-ad56-5de1a54b2618",
+      "name": "Floor",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": -0.5,
+          "z": 0.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "shape": "plane",
+        "size": {
+          "x": 14.0,
+          "y": 1.0,
+          "z": 14.0
+        }
+      },
+      "Material3D": {
+        "material": "res://materials/3d_shapes/floor.mat3d"
+      }
+    },
+    {
+      "uuid": "9795ab61-84d9-48b4-a73e-33d0d4f7351d",
+      "name": "Sun",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 6.0,
+          "z": 0.0
+        },
+        "rotation": {
+          "x": -0.641154,
+          "y": 0.21515116,
+          "z": 0.19412582,
+          "w": 0.7105961
+        }
+      },
+      "DirectionalLight3D": {
+        "energy": 0.95
+      }
+    },
+    {
+      "uuid": "101a3130-dcfa-4d6d-b0f1-1bd1a33e2b5e",
+      "name": "Camera",
+      "exports": {
+        "radius": 7.5,
+        "height": 3
+      },
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 3.0,
+          "z": 7.0
+        },
+        "rotation": {
+          "x": -0.20106587,
+          "y": -0.0,
+          "z": -0.0,
+          "w": 0.9795777
+        }
+      },
+      "Camera3D": {
+        "fov": 1.0471976,
+        "current": true
+      },
+      "Script": {
+        "source": "res://scripts/orbit_camera.flux"
+      }
+    },
+    {
+      "uuid": "e79811da-9ca3-4a16-bbff-50bcd6001b97",
+      "name": "Box",
+      "exports": {
+        "speed": 30,
+        "axis": [
+          0.3,
+          1,
+          0.2
+        ]
+      },
+      "Transform3D": {
+        "position": {
+          "x": -4.0,
+          "y": 0.25,
+          "z": 0.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {},
+      "Material3D": {
+        "material": "res://materials/3d_shapes/box.mat3d"
+      },
+      "Script": {
+        "source": "res://scripts/spinner.flux"
+      }
+    },
+    {
+      "uuid": "68f4bd46-b0b6-4af2-803f-f6b7653ab1ed",
+      "name": "Sphere",
+      "exports": {
+        "speed": 45,
+        "axis": [
+          0.3,
+          1,
+          0.2
+        ]
+      },
+      "Transform3D": {
+        "position": {
+          "x": -2.0,
+          "y": 0.25,
+          "z": 0.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "shape": "sphere"
+      },
+      "Material3D": {
+        "material": "res://materials/3d_shapes/sphere.mat3d"
+      },
+      "Script": {
+        "source": "res://scripts/spinner.flux"
+      }
+    },
+    {
+      "uuid": "c4367d2c-3a4b-4e45-bfa9-083cfb4db391",
+      "name": "Cylinder",
+      "exports": {
+        "speed": 60,
+        "axis": [
+          0.3,
+          1,
+          0.2
+        ]
+      },
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 0.25,
+          "z": 0.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "shape": "cylinder",
+        "height": 1.4
+      },
+      "Material3D": {
+        "material": "res://materials/3d_shapes/cylinder.mat3d"
+      },
+      "Script": {
+        "source": "res://scripts/spinner.flux"
+      }
+    },
+    {
+      "uuid": "ce7909fe-6477-4799-9a92-3bed90859b2b",
+      "name": "Capsule",
+      "exports": {
+        "speed": 75,
+        "axis": [
+          0.3,
+          1,
+          0.2
+        ]
+      },
+      "Transform3D": {
+        "position": {
+          "x": 2.0,
+          "y": 0.35,
+          "z": 0.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "shape": "capsule",
+        "radius": 0.45,
+        "height": 1.6
+      },
+      "Material3D": {
+        "material": "res://materials/3d_shapes/capsule.mat3d"
+      },
+      "Script": {
+        "source": "res://scripts/spinner.flux"
+      }
+    },
+    {
+      "uuid": "df5b2a38-0c56-45ad-9a64-139bc7df67d6",
+      "name": "Unshaded box",
+      "exports": {
+        "speed": 90,
+        "axis": [
+          0.3,
+          1,
+          0.2
+        ]
+      },
+      "Transform3D": {
+        "position": {
+          "x": 4.0,
+          "y": 0.25,
+          "z": 0.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {},
+      "Material3D": {
+        "material": "res://materials/3d_shapes/unshaded_box.mat3d"
+      },
+      "Script": {
+        "source": "res://scripts/spinner.flux"
+      }
+    },
+    {
+      "uuid": "4abc26b4-dae6-4e31-8140-6eada49f2b31",
+      "name": "Glass pane",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 0.6,
+          "z": 2.4
+        },
+        "rotation": {
+          "x": 0.7071068,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 0.7071068
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "shape": "plane",
+        "size": {
+          "x": 3.4,
+          "y": 1.0,
+          "z": 1.8
+        }
+      },
+      "Material3D": {
+        "material": "res://materials/3d_shapes/glass_pane.mat3d"
+      }
+    },
+    {
+      "uuid": "2e9cbeb8-bdb7-458d-ada5-aac7cfd22ef7",
+      "name": "Crate",
+      "exports": {
+        "speed": 20
+      },
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 0.25,
+          "z": -2.5
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {},
+      "Material3D": {
+        "material": "res://materials/3d_shapes/crate.mat3d"
+      },
+      "Script": {
+        "source": "res://scripts/spinner.flux"
+      }
+    }
+  ],
+  "assets": {
+    "res://art/checker.png": {
+      "uid": "uid://56e2d7e0-6378-4371-95ad-bda3089bbbb6"
+    },
+    "res://scripts/orbit_camera.flux": {
+      "uid": "uid://f30485d1-0805-473c-aa3e-b59f37c00093"
+    },
+    "res://scripts/spinner.flux": {
+      "uid": "uid://2c9127c5-e7ca-4af4-83fa-73fc08ccacaf"
+    },
+    "res://art/crate.png": {
+      "uid": "uid://87f7df0e-a50a-45e4-8a66-668890f607f3"
+    }
+  }
+}

@@ -1,0 +1,208 @@
+{
+  "fluxion_scene": 3,
+  "entities": [
+    {
+      "uuid": "d4173273-df42-4d67-8b77-00110ec12102",
+      "name": "Hud",
+      "Control": {
+        "width": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "CanvasLayer": {}
+    },
+    {
+      "uuid": "755949e2-5f6e-4f69-b247-86f88984e2c7",
+      "parent": "d4173273-df42-4d67-8b77-00110ec12102",
+      "name": "Panel",
+      "Control": {
+        "position": "anchored",
+        "offset_left": 12.0,
+        "offset_top": 12.0
+      },
+      "BoxContainer": {
+        "separation": 4
+      },
+      "PanelContainer": {}
+    },
+    {
+      "uuid": "0bc70d5c-646d-4def-b7b5-15ff94fb9687",
+      "parent": "755949e2-5f6e-4f69-b247-86f88984e2c7",
+      "name": "Title",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 420.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ThemeOverride": {
+        "override_font_size": true,
+        "font_size": 18
+      },
+      "Label": {
+        "text": "A shader of its own"
+      }
+    },
+    {
+      "uuid": "c0af1b93-ad7d-4283-a0d8-1ac0aa1bcd8f",
+      "parent": "755949e2-5f6e-4f69-b247-86f88984e2c7",
+      "name": "About",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 420.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ThemeOverride": {
+        "override_font_size": true,
+        "font_size": 13
+      },
+      "Label": {
+        "text": "waves.shader3d says what the surface is - its colour, roughness and the light it gives off - and the engine lights it. Both meshes are drawn with waves.mat3d, which gives the shader its speed and bands; the capsule's entity gives numbers of its own over the material's: slower, more bands, orange."
+      }
+    },
+    {
+      "uuid": "f1e20e0b-3a4f-4225-a2d9-54952e5d039b",
+      "name": "Floor",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "shape": "plane",
+        "size": {
+          "x": 12.0,
+          "y": 1.0,
+          "z": 12.0
+        }
+      },
+      "Material3D": {
+        "material": "res://materials/3d_shader/floor.mat3d"
+      }
+    },
+    {
+      "uuid": "6948bfda-ece0-466c-8e03-ebe9d67d04a7",
+      "name": "Waves",
+      "Transform3D": {
+        "position": {
+          "x": -1.6,
+          "y": 1.2,
+          "z": 0.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "shape": "sphere",
+        "radius": 1.1,
+        "rings": 32,
+        "segments": 64
+      },
+      "Material3D": {
+        "material": "res://materials/3d_shader/waves.mat3d"
+      }
+    },
+    {
+      "uuid": "9e3810c4-60fa-478a-bac5-089e7b23324d",
+      "name": "Waves, own numbers",
+      "Transform3D": {
+        "position": {
+          "x": 1.6,
+          "y": 1.2,
+          "z": 0.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "shape": "capsule",
+        "radius": 0.8,
+        "height": 2.4
+      },
+      "Material3D": {
+        "material": "res://materials/3d_shader/waves.mat3d",
+        "params": {
+          "speed": 0.6,
+          "bands": 5.0,
+          "glow": [
+            1.0,
+            0.45,
+            0.1,
+            1.0
+          ]
+        }
+      }
+    },
+    {
+      "uuid": "a154cb13-c5a0-43f1-b8bb-f61e1fefefb3",
+      "name": "Sun",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 6.0,
+          "z": 0.0
+        },
+        "rotation": {
+          "w": 0.8567866719650288,
+          "x": -0.44601491077688155,
+          "y": -0.22957529683877867,
+          "z": -0.11950933515490465
+        }
+      },
+      "DirectionalLight3D": {
+        "energy": 0.9
+      }
+    },
+    {
+      "uuid": "66953dc8-ccdd-4f09-a385-cdb75f0d0d57",
+      "name": "Environment",
+      "Environment": {
+        "ambient_energy": 0.2,
+        "tonemap": "filmic",
+        "glow": true,
+        "glow_intensity": 0.6
+      }
+    },
+    {
+      "uuid": "05deb4d2-67c2-4979-926f-a5e871ad6e3d",
+      "name": "Camera",
+      "exports": {
+        "radius": 7.0,
+        "height": 2.8
+      },
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 2.8,
+          "z": 7.0
+        }
+      },
+      "Camera3D": {
+        "fov": 1.0471976,
+        "current": true
+      },
+      "Script": {
+        "source": "res://scripts/orbit_camera.flux"
+      }
+    }
+  ]
+}

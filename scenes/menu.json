@@ -1,0 +1,491 @@
+{
+  "fluxion_scene": 3,
+  "entities": [
+    {
+      "uuid": "c2d64a86-81fa-4598-ac86-426bf056ea4f",
+      "name": "Menu",
+      "Script": {
+        "source": "res://scripts/menu.flux"
+      }
+    },
+    {
+      "uuid": "e0f5b3df-5037-4771-add6-6a2808dc5fd1",
+      "name": "Screen",
+      "Control": {
+        "width": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "CanvasLayer": {},
+      "CenterContainer": {}
+    },
+    {
+      "uuid": "e9caaf72-5b1b-4e25-bc01-56993fa61fe5",
+      "parent": "e0f5b3df-5037-4771-add6-6a2808dc5fd1",
+      "name": "Column",
+      "Control": {},
+      "BoxContainer": {
+        "separation": 14,
+        "alignment_x": "center"
+      }
+    },
+    {
+      "uuid": "77a3af2f-a4f7-4a15-a3ef-2ea07e6fd63b",
+      "parent": "e9caaf72-5b1b-4e25-bc01-56993fa61fe5",
+      "name": "Title",
+      "Control": {},
+      "ThemeOverride": {
+        "override_font_size": true,
+        "font_size": 34
+      },
+      "Label": {
+        "text": "Engine tests",
+        "horizontal_alignment": "center"
+      }
+    },
+    {
+      "uuid": "5d706bd9-e853-4db6-b138-9f91e826d530",
+      "parent": "e9caaf72-5b1b-4e25-bc01-56993fa61fe5",
+      "name": "Subtitle",
+      "Control": {},
+      "Label": {
+        "text": "Each button opens a scene that tries one part of the engine. Escape comes back here.",
+        "horizontal_alignment": "center"
+      }
+    },
+    {
+      "uuid": "409cbd5b-2def-4ecb-931b-ba3f16d2477b",
+      "parent": "e9caaf72-5b1b-4e25-bc01-56993fa61fe5",
+      "name": "Columns",
+      "Control": {},
+      "BoxContainer": {
+        "direction": "horizontal",
+        "separation": 28
+      }
+    },
+    {
+      "uuid": "359879f3-4866-4552-a2c8-335442f34008",
+      "parent": "409cbd5b-2def-4ecb-931b-ba3f16d2477b",
+      "name": "2D",
+      "Control": {},
+      "BoxContainer": {
+        "separation": 8
+      }
+    },
+    {
+      "uuid": "abe1e072-5552-4469-a4f5-4b434ef375eb",
+      "parent": "359879f3-4866-4552-a2c8-335442f34008",
+      "name": "Heading 2D",
+      "Control": {},
+      "ThemeOverride": {
+        "override_font_size": true,
+        "font_size": 24
+      },
+      "Label": {
+        "text": "2D"
+      }
+    },
+    {
+      "uuid": "81278854-6219-4cbe-859b-993cd3464001",
+      "parent": "359879f3-4866-4552-a2c8-335442f34008",
+      "name": "2d_sprites",
+      "groups": [
+        "scene_buttons"
+      ],
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 340.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "fixed",
+          "value": 42.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "CenterContainer": {},
+      "Button": {
+        "text": "Sprites, text and drawing"
+      }
+    },
+    {
+      "uuid": "5cc86549-8542-487d-980b-40184649fb67",
+      "parent": "359879f3-4866-4552-a2c8-335442f34008",
+      "name": "2d_physics",
+      "groups": [
+        "scene_buttons"
+      ],
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 340.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "fixed",
+          "value": 42.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "CenterContainer": {},
+      "Button": {
+        "text": "Physics: bodies, a character, an area"
+      }
+    },
+    {
+      "uuid": "eb555e99-cb95-4d9d-b1d9-b1020a6c705b",
+      "parent": "359879f3-4866-4552-a2c8-335442f34008",
+      "name": "2d_interface",
+      "groups": [
+        "scene_buttons"
+      ],
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 340.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "fixed",
+          "value": 42.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "CenterContainer": {},
+      "Button": {
+        "text": "Interface: controls and signals"
+      }
+    },
+    {
+      "uuid": "ec96330e-0a85-4dd1-b04a-5110106bbbbd",
+      "parent": "359879f3-4866-4552-a2c8-335442f34008",
+      "name": "2d_lights_particles",
+      "groups": [
+        "scene_buttons"
+      ],
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 340.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "fixed",
+          "value": 42.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "CenterContainer": {},
+      "Button": {
+        "text": "Lights, shadows and particles"
+      }
+    },
+    {
+      "uuid": "4ccb239f-7c6b-47ef-9057-8413c4500ece",
+      "parent": "359879f3-4866-4552-a2c8-335442f34008",
+      "name": "2d_tweens_timers_sound",
+      "groups": [
+        "scene_buttons"
+      ],
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 340.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "fixed",
+          "value": 42.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "CenterContainer": {},
+      "Button": {
+        "text": "Tweens, timers and sound"
+      }
+    },
+    {
+      "uuid": "eb97bece-1ced-4e93-9ad9-6142a4bd370f",
+      "parent": "409cbd5b-2def-4ecb-931b-ba3f16d2477b",
+      "name": "3D",
+      "Control": {},
+      "BoxContainer": {
+        "separation": 8
+      }
+    },
+    {
+      "uuid": "52b41087-0eda-47f6-9ab7-91dd20e84896",
+      "parent": "eb97bece-1ced-4e93-9ad9-6142a4bd370f",
+      "name": "Heading 3D",
+      "Control": {},
+      "ThemeOverride": {
+        "override_font_size": true,
+        "font_size": 24
+      },
+      "Label": {
+        "text": "3D"
+      }
+    },
+    {
+      "uuid": "4724d4be-3c2c-4bd1-9047-d2b26067f8ea",
+      "parent": "eb97bece-1ced-4e93-9ad9-6142a4bd370f",
+      "name": "3d_shapes",
+      "groups": [
+        "scene_buttons"
+      ],
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 340.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "fixed",
+          "value": 42.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "CenterContainer": {},
+      "Button": {
+        "text": "Shapes and materials"
+      }
+    },
+    {
+      "uuid": "9bdb3775-0ea0-4fde-9fad-4321f2dbf5ee",
+      "parent": "eb97bece-1ced-4e93-9ad9-6142a4bd370f",
+      "name": "3d_mesh_files",
+      "groups": [
+        "scene_buttons"
+      ],
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 340.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "fixed",
+          "value": 42.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "CenterContainer": {},
+      "Button": {
+        "text": "Meshes from .mesh files"
+      }
+    },
+    {
+      "uuid": "224a22b8-99e1-4436-8017-caca209246aa",
+      "parent": "eb97bece-1ced-4e93-9ad9-6142a4bd370f",
+      "name": "3d_cameras",
+      "groups": [
+        "scene_buttons"
+      ],
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 340.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "fixed",
+          "value": 42.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "CenterContainer": {},
+      "Button": {
+        "text": "Cameras, rays and picking"
+      }
+    },
+    {
+      "uuid": "3937a6cc-6f2d-4433-a72c-dc7943005091",
+      "parent": "eb97bece-1ced-4e93-9ad9-6142a4bd370f",
+      "name": "3d_hierarchy",
+      "groups": [
+        "scene_buttons"
+      ],
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 340.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "fixed",
+          "value": 42.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "CenterContainer": {},
+      "Button": {
+        "text": "Trees, turns and tweens"
+      }
+    },
+    {
+      "uuid": "65b36ab5-fe58-497a-aa77-e2b2c232ebe8",
+      "parent": "eb97bece-1ced-4e93-9ad9-6142a4bd370f",
+      "name": "3d_render_view",
+      "groups": [
+        "scene_buttons"
+      ],
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 340.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "fixed",
+          "value": 42.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "CenterContainer": {},
+      "Button": {
+        "text": "A render view of the 3D world"
+      }
+    },
+    {
+      "uuid": "a24a5be2-2277-4f0d-bee2-94cbfaa0aaeb",
+      "parent": "eb97bece-1ced-4e93-9ad9-6142a4bd370f",
+      "name": "3d_models",
+      "groups": [
+        "scene_buttons"
+      ],
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 340.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "fixed",
+          "value": 42.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "CenterContainer": {},
+      "Button": {
+        "text": "Models: glTF, FBX, Blender"
+      }
+    },
+    {
+      "uuid": "89047209-5468-4842-aee3-060d75e795fd",
+      "parent": "eb97bece-1ced-4e93-9ad9-6142a4bd370f",
+      "name": "3d_lights",
+      "groups": [
+        "scene_buttons"
+      ],
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 340.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "fixed",
+          "value": 42.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "CenterContainer": {},
+      "Button": {
+        "text": "Lights, materials, environment"
+      }
+    },
+    {
+      "uuid": "274df640-9dfc-47b3-907e-7100edd0f429",
+      "parent": "eb97bece-1ced-4e93-9ad9-6142a4bd370f",
+      "name": "3d_shader",
+      "groups": [
+        "scene_buttons"
+      ],
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 340.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "fixed",
+          "value": 42.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "CenterContainer": {},
+      "Button": {
+        "text": "A 3D shader of its own"
+      }
+    }
+  ],
+  "assets": {
+    "res://scripts/menu.flux": {
+      "uid": "uid://914d2015-01c6-48d9-8c29-f55767d3536b"
+    }
+  }
+}

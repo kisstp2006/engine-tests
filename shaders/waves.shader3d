@@ -1,0 +1,19 @@
+// waves.shader3d: bands of light running up a mesh, and a rougher dark
+// between them. The engine lights what this says.
+
+uniform Look : 3 {
+    // How fast the bands run, a second.
+    float speed = 1.5;
+    // How many bands a unit.
+    float bands = 3.0;
+    // The colour of their light.
+    vec4 glow = vec4(0.2, 0.8, 1.0, 1.0);
+}
+
+fragment {
+    float wave = sin((WORLD_POSITION.y * bands - TIME * speed) * 6.2831853) * 0.5 + 0.5;
+    float band = smoothstep(0.75, 0.95, wave);
+    ALBEDO = mix(ALBEDO * 0.3, ALBEDO, wave);
+    ROUGHNESS = mix(0.9, 0.2, wave);
+    EMISSION = glow.rgb * band * 2.0;
+}

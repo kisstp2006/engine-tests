@@ -1,0 +1,16 @@
+* text=auto eol=lf
+
+# Read by the engine byte for byte.
+*.png binary
+*.jpg binary
+*.wav binary
+*.ogg binary
+*.mp3 binary
+*.ttf binary
+*.otf binary
+*.glb binary
+*.fbx binary
+*.blend binary
+*.mesh binary
+*.lightmap binary
+*.fxpack binary

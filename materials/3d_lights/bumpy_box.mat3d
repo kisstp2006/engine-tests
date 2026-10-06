@@ -1,0 +1,12 @@
+{
+  "albedo_color": {
+    "r": 0.75,
+    "g": 0.75,
+    "b": 0.78,
+    "a": 1.0
+  },
+  "roughness": 0.35,
+  "metallic": 0.0,
+  "normal_texture": "res://art/bumps_normal.png",
+  "normal_scale": 1.0
+}

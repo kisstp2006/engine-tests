@@ -1,0 +1,190 @@
+{
+  "fluxion_scene": 3,
+  "entities": [
+    {
+      "uuid": "fcde92e6-1eee-4f27-941a-d53979d20dd2",
+      "name": "Hud",
+      "Control": {
+        "width": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "CanvasLayer": {}
+    },
+    {
+      "uuid": "b53c0df3-88ea-4c09-af06-59644728d8fb",
+      "parent": "fcde92e6-1eee-4f27-941a-d53979d20dd2",
+      "name": "Panel",
+      "Control": {
+        "position": "anchored",
+        "offset_left": 12.0,
+        "offset_top": 12.0
+      },
+      "BoxContainer": {
+        "separation": 4
+      },
+      "PanelContainer": {}
+    },
+    {
+      "uuid": "25477b7b-6120-4fb1-a598-0728f44bc668",
+      "parent": "b53c0df3-88ea-4c09-af06-59644728d8fb",
+      "name": "Title",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 400.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ThemeOverride": {
+        "override_font_size": true,
+        "font_size": 18
+      },
+      "Label": {
+        "text": "Models: glTF, FBX and Blender files"
+      }
+    },
+    {
+      "uuid": "0da9daeb-3a51-4c33-863e-cf04b80052b0",
+      "parent": "b53c0df3-88ea-4c09-af06-59644728d8fb",
+      "name": "About",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 400.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ThemeOverride": {
+        "override_font_size": true,
+        "font_size": 13
+      },
+      "Label": {
+        "text": "lantern.glb is read as it is. props.fbx and suzanne.blend are turned into glTF by Blender when the editor brings them in, into .fluxion/imported. Each is a scene: an instance of it here."
+      }
+    },
+    {
+      "uuid": "dd563669-2384-4f2a-9b62-e17f8eebc248",
+      "name": "Floor",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "shape": "plane",
+        "size": {
+          "x": 10.0,
+          "y": 1.0,
+          "z": 10.0
+        }
+      },
+      "Material3D": {
+        "material": "res://materials/3d_models/floor.mat3d"
+      }
+    },
+    {
+      "uuid": "734a0dd2-6979-4bd3-bd08-ea598eb4c850",
+      "name": "Sun",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 6.0,
+          "z": 0.0
+        },
+        "rotation": {
+          "x": -0.58923143,
+          "y": 0.3625627,
+          "z": 0.33361718,
+          "w": 0.64035475
+        }
+      },
+      "DirectionalLight3D": {
+        "energy": 0.95
+      }
+    },
+    {
+      "uuid": "4ad17abb-d53e-4674-8fd5-25ae89c56a4c",
+      "name": "Camera",
+      "exports": {
+        "radius": 6,
+        "height": 2.5,
+        "speed": 0.3
+      },
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 3.0,
+          "z": 6.0
+        },
+        "rotation": {
+          "x": -0.22975296,
+          "y": -0.0,
+          "z": -0.0,
+          "w": 0.9732491
+        }
+      },
+      "Camera3D": {
+        "fov": 1.0471976,
+        "current": true
+      },
+      "Script": {
+        "source": "res://scripts/orbit_camera.flux"
+      }
+    },
+    {
+      "uuid": "3c0c27b0-d6ca-46f8-a973-a6f4dae0f5de",
+      "name": "Suzanne",
+      "instance": "res://models/suzanne.blend",
+      "Transform3D": {
+        "position": {
+          "x": -2.4,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "uuid": "8246a14e-1512-4dc2-bbcc-493f76868519",
+      "name": "Props",
+      "instance": "res://models/props.fbx",
+      "Transform3D": {
+        "position": {
+          "x": -0.4,
+          "y": 0,
+          "z": -1.2
+        }
+      }
+    },
+    {
+      "uuid": "43d6a1a6-6fdb-4ee4-bca8-bd29884553f7",
+      "name": "Lantern",
+      "instance": "res://models/lantern.glb",
+      "Transform3D": {
+        "position": {
+          "x": 2.2,
+          "y": 0,
+          "z": 0.6
+        }
+      }
+    }
+  ]
+}

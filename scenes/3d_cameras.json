@@ -1,0 +1,330 @@
+{
+  "fluxion_scene": 3,
+  "entities": [
+    {
+      "uuid": "95991e03-8fe7-4795-86b3-b5e5ba310bde",
+      "name": "Hud",
+      "Control": {
+        "width": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "CanvasLayer": {}
+    },
+    {
+      "uuid": "e2ecfae4-643d-4584-9490-bdcea445d6d1",
+      "parent": "95991e03-8fe7-4795-86b3-b5e5ba310bde",
+      "name": "Panel",
+      "Control": {
+        "position": "anchored",
+        "offset_left": 12.0,
+        "offset_top": 12.0
+      },
+      "BoxContainer": {
+        "separation": 4
+      },
+      "PanelContainer": {}
+    },
+    {
+      "uuid": "eb0a43a8-e8f4-4b42-9cf0-8e9d181ee0a5",
+      "parent": "e2ecfae4-643d-4584-9490-bdcea445d6d1",
+      "name": "Title",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 400.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ThemeOverride": {
+        "override_font_size": true,
+        "font_size": 18
+      },
+      "Label": {
+        "text": "Cameras, rays and picking"
+      }
+    },
+    {
+      "uuid": "d8332f9d-7bb5-4f15-88aa-a538b844ab30",
+      "parent": "e2ecfae4-643d-4584-9490-bdcea445d6d1",
+      "name": "About",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 400.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ThemeOverride": {
+        "override_font_size": true,
+        "font_size": 13
+      },
+      "Label": {
+        "text": "Click a shape: the ray from the camera through the pointer picks it, and its name follows it on the screen. C goes to the next camera, O switches it between perspective and orthogonal."
+      }
+    },
+    {
+      "uuid": "c493c1bd-ad44-4922-9cc1-4cf4d24489a3",
+      "name": "Floor",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": -0.5,
+          "z": 0.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "shape": "plane",
+        "size": {
+          "x": 12.0,
+          "y": 1.0,
+          "z": 12.0
+        }
+      },
+      "Material3D": {
+        "material": "res://materials/3d_cameras/floor.mat3d"
+      }
+    },
+    {
+      "uuid": "16da448a-103f-4ef6-a09a-80697ac38439",
+      "name": "Sun",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 6.0,
+          "z": 0.0
+        },
+        "rotation": {
+          "x": -0.6525525,
+          "y": 0.19642866,
+          "z": 0.18074659,
+          "w": 0.70916975
+        }
+      },
+      "DirectionalLight3D": {
+        "energy": 0.95
+      }
+    },
+    {
+      "uuid": "837de0ab-a6af-4e5f-82c4-d51b8b8a3c37",
+      "name": "Front camera",
+      "groups": [
+        "cameras"
+      ],
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 3.0,
+          "z": 8.0
+        },
+        "rotation": {
+          "x": -0.17842482,
+          "y": -0.0,
+          "z": -0.0,
+          "w": 0.98395354
+        }
+      },
+      "Camera3D": {
+        "fov": 1.0471976,
+        "current": true
+      }
+    },
+    {
+      "uuid": "4247a7d0-1b40-46bc-8ae4-36e79e68250a",
+      "name": "Top camera",
+      "groups": [
+        "cameras"
+      ],
+      "Transform3D": {
+        "position": {
+          "x": 0.01,
+          "y": 11.0,
+          "z": 0.5
+        },
+        "rotation": {
+          "x": -0.69082844,
+          "y": 0.007228774,
+          "z": 0.0069075944,
+          "w": 0.72294956
+        }
+      },
+      "Camera3D": {
+        "fov": 1.0471976
+      }
+    },
+    {
+      "uuid": "b4fef7f0-39f5-4857-b171-6933ab5bd4ac",
+      "name": "Side camera",
+      "groups": [
+        "cameras"
+      ],
+      "Transform3D": {
+        "position": {
+          "x": 9.0,
+          "y": 2.0,
+          "z": 0.0
+        },
+        "rotation": {
+          "x": -0.07715721,
+          "y": 0.7028846,
+          "z": 0.07715721,
+          "w": 0.7028846
+        }
+      },
+      "Camera3D": {
+        "fov": 1.0471976
+      }
+    },
+    {
+      "uuid": "5cd285ef-6451-4711-a82d-cd6e81201fb5",
+      "name": "Red box",
+      "groups": [
+        "pickable"
+      ],
+      "Transform3D": {
+        "position": {
+          "x": -3.0,
+          "y": 0.25,
+          "z": -1.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {},
+      "Material3D": {
+        "material": "res://materials/3d_cameras/red_box.mat3d"
+      }
+    },
+    {
+      "uuid": "027431a4-f5c2-4402-bfa9-b7f65d0e3a54",
+      "name": "Yellow ball",
+      "groups": [
+        "pickable"
+      ],
+      "Transform3D": {
+        "position": {
+          "x": -1.0,
+          "y": 0.25,
+          "z": 1.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "shape": "sphere"
+      },
+      "Material3D": {
+        "material": "res://materials/3d_cameras/yellow_ball.mat3d"
+      }
+    },
+    {
+      "uuid": "057535f9-d1cf-4ecd-8961-6d8ad9e97fb8",
+      "name": "Green box",
+      "groups": [
+        "pickable"
+      ],
+      "Transform3D": {
+        "position": {
+          "x": 1.0,
+          "y": 0.25,
+          "z": -1.5
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {},
+      "Material3D": {
+        "material": "res://materials/3d_cameras/green_box.mat3d"
+      }
+    },
+    {
+      "uuid": "d3fa3a12-6adc-4522-8821-5cf375a1f04f",
+      "name": "Blue ball",
+      "groups": [
+        "pickable"
+      ],
+      "Transform3D": {
+        "position": {
+          "x": 3.0,
+          "y": 0.25,
+          "z": 1.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "shape": "sphere"
+      },
+      "Material3D": {
+        "material": "res://materials/3d_cameras/blue_ball.mat3d"
+      }
+    },
+    {
+      "uuid": "15e17763-5f55-4872-9932-0365c12e62a8",
+      "name": "Purple box",
+      "groups": [
+        "pickable"
+      ],
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 0.25,
+          "z": 3.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {},
+      "Material3D": {
+        "material": "res://materials/3d_cameras/purple_box.mat3d"
+      }
+    },
+    {
+      "uuid": "de982cb7-466b-447b-bcac-3e32c0a98a04",
+      "name": "Picker",
+      "Script": {
+        "source": "res://scripts/picker.flux"
+      }
+    },
+    {
+      "uuid": "dbbc8eb2-f2e7-4652-be7b-d057d628dc62",
+      "name": "Tag",
+      "Transform2D": {
+        "x": -100.0,
+        "y": -100.0
+      },
+      "Text2D": {
+        "font": "res://fonts/NotoSans-Regular.ttf",
+        "size": 22.0,
+        "color": {
+          "r": 1.0,
+          "g": 0.70980394,
+          "b": 0.2784314,
+          "a": 1.0
+        }
+      }
+    }
+  ],
+  "assets": {
+    "res://art/checker.png": {
+      "uid": "uid://56e2d7e0-6378-4371-95ad-bda3089bbbb6"
+    },
+    "res://scripts/picker.flux": {
+      "uid": "uid://828b104a-ed87-4d10-9169-cc16b98e79f1"
+    },
+    "res://fonts/NotoSans-Regular.ttf": {
+      "uid": "uid://6d999020-787a-428d-8b2b-0d30229ac7a8"
+    }
+  }
+}

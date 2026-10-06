@@ -1,0 +1,9 @@
+{
+  "fluxion_export_presets": 1,
+  "presets": [
+    { "general": { "name": "Windows", "system": "windows", "path": "builds/windows/Engine_Tests.exe", "build": "release" } },
+    { "general": { "name": "Linux", "system": "linux", "path": "builds/linux/Engine_Tests", "build": "release" }, "linux": { "architecture": "x86_64", "save_as": "tar_gz" } },
+    { "general": { "name": "Android", "system": "android", "path": "builds/android/Engine_Tests.apk", "build": "debug" }, "android": { "package": "com.tigames.fluxionenginetests", "arm64": true, "x86_64": true } },
+    { "general": { "name": "Web", "system": "web", "path": "builds/web/Engine_Tests", "build": "release" }, "web": { "save_as": "folder", "click_to_start": false } }
+  ]
+}

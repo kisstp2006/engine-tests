@@ -1,0 +1,547 @@
+{
+  "fluxion_scene": 3,
+  "entities": [
+    {
+      "uuid": "0a6a971d-0dc6-47d7-b25b-af4eae1e879a",
+      "name": "Hud",
+      "Control": {
+        "width": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "CanvasLayer": {}
+    },
+    {
+      "uuid": "c14bf743-7386-4051-8a1c-6b51db5c0bb3",
+      "parent": "0a6a971d-0dc6-47d7-b25b-af4eae1e879a",
+      "name": "Panel",
+      "Control": {
+        "position": "anchored",
+        "offset_left": 12.0,
+        "offset_top": 12.0
+      },
+      "BoxContainer": {
+        "separation": 4
+      },
+      "PanelContainer": {}
+    },
+    {
+      "uuid": "698ebbcf-b91d-4ef1-9301-755722fd1411",
+      "parent": "c14bf743-7386-4051-8a1c-6b51db5c0bb3",
+      "name": "Title",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 420.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ThemeOverride": {
+        "override_font_size": true,
+        "font_size": 18
+      },
+      "Label": {
+        "text": "Lights, materials and the environment"
+      }
+    },
+    {
+      "uuid": "40143cf6-5403-4e9b-a850-efdb16586879",
+      "parent": "c14bf743-7386-4051-8a1c-6b51db5c0bb3",
+      "name": "About",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 420.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ThemeOverride": {
+        "override_font_size": true,
+        "font_size": 13
+      },
+      "Label": {
+        "text": "Spheres from smooth to rough, plastic in front and metal behind, lit by a dim sun, two point lights - the warm one bobbing and the cold one fading smoothly with camera distance - and a spot light from above. A box with a normal map, one that glows brighter than white. The Environment: ACES tone, glow, fog. The project draws with four samples a pixel."
+      }
+    },
+    {
+      "uuid": "ad3e20c9-a245-42dc-8388-6600f965ea0e",
+      "name": "Floor",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "shape": "plane",
+        "size": {
+          "x": 18.0,
+          "y": 1.0,
+          "z": 18.0
+        }
+      },
+      "Material3D": {
+        "material": "res://materials/3d_lights/floor.mat3d"
+      }
+    },
+    {
+      "uuid": "b73ce655-2553-48c7-ab3e-452a9dc3b913",
+      "name": "Plastic 0",
+      "Transform3D": {
+        "position": {
+          "x": -4.0,
+          "y": 0.6,
+          "z": 1.2
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "shape": "sphere",
+        "radius": 0.55,
+        "rings": 24,
+        "segments": 48
+      },
+      "Material3D": {
+        "material": "res://materials/3d_lights/plastic_0.mat3d"
+      }
+    },
+    {
+      "uuid": "57f428bf-3523-45a9-a1d1-acbe9094410f",
+      "name": "Metal 0",
+      "Transform3D": {
+        "position": {
+          "x": -4.0,
+          "y": 0.6,
+          "z": -1.2
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "shape": "sphere",
+        "radius": 0.55,
+        "rings": 24,
+        "segments": 48
+      },
+      "Material3D": {
+        "material": "res://materials/3d_lights/metal_0.mat3d"
+      }
+    },
+    {
+      "uuid": "1286a2fe-3fe7-43f6-be93-a32e88fce012",
+      "name": "Plastic 1",
+      "Transform3D": {
+        "position": {
+          "x": -2.0,
+          "y": 0.6,
+          "z": 1.2
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "shape": "sphere",
+        "radius": 0.55,
+        "rings": 24,
+        "segments": 48
+      },
+      "Material3D": {
+        "material": "res://materials/3d_lights/plastic_1.mat3d"
+      }
+    },
+    {
+      "uuid": "a36425b2-bdf8-4285-8dcd-b0fb19a73897",
+      "name": "Metal 1",
+      "Transform3D": {
+        "position": {
+          "x": -2.0,
+          "y": 0.6,
+          "z": -1.2
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "shape": "sphere",
+        "radius": 0.55,
+        "rings": 24,
+        "segments": 48
+      },
+      "Material3D": {
+        "material": "res://materials/3d_lights/metal_1.mat3d"
+      }
+    },
+    {
+      "uuid": "ca1ed240-3737-4075-9dc2-b08470e717f5",
+      "name": "Plastic 2",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 0.6,
+          "z": 1.2
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "shape": "sphere",
+        "radius": 0.55,
+        "rings": 24,
+        "segments": 48
+      },
+      "Material3D": {
+        "material": "res://materials/3d_lights/plastic_2.mat3d"
+      }
+    },
+    {
+      "uuid": "2cffb438-85cf-40b3-a7b5-cf0ff1dcab90",
+      "name": "Metal 2",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 0.6,
+          "z": -1.2
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "shape": "sphere",
+        "radius": 0.55,
+        "rings": 24,
+        "segments": 48
+      },
+      "Material3D": {
+        "material": "res://materials/3d_lights/metal_2.mat3d"
+      }
+    },
+    {
+      "uuid": "1ebaffbe-34c1-4f96-b471-953a0ff7e7b9",
+      "name": "Plastic 3",
+      "Transform3D": {
+        "position": {
+          "x": 2.0,
+          "y": 0.6,
+          "z": 1.2
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "shape": "sphere",
+        "radius": 0.55,
+        "rings": 24,
+        "segments": 48
+      },
+      "Material3D": {
+        "material": "res://materials/3d_lights/plastic_3.mat3d"
+      }
+    },
+    {
+      "uuid": "f09525b1-ac90-4d9c-af0c-ba869eed13df",
+      "name": "Metal 3",
+      "Transform3D": {
+        "position": {
+          "x": 2.0,
+          "y": 0.6,
+          "z": -1.2
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "shape": "sphere",
+        "radius": 0.55,
+        "rings": 24,
+        "segments": 48
+      },
+      "Material3D": {
+        "material": "res://materials/3d_lights/metal_3.mat3d"
+      }
+    },
+    {
+      "uuid": "9ee6b91c-11bb-4f1d-8d49-f2db4985bfb9",
+      "name": "Plastic 4",
+      "Transform3D": {
+        "position": {
+          "x": 4.0,
+          "y": 0.6,
+          "z": 1.2
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "shape": "sphere",
+        "radius": 0.55,
+        "rings": 24,
+        "segments": 48
+      },
+      "Material3D": {
+        "material": "res://materials/3d_lights/plastic_4.mat3d"
+      }
+    },
+    {
+      "uuid": "4e03b82b-9dda-46c2-9a19-af93b7480952",
+      "name": "Metal 4",
+      "Transform3D": {
+        "position": {
+          "x": 4.0,
+          "y": 0.6,
+          "z": -1.2
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "shape": "sphere",
+        "radius": 0.55,
+        "rings": 24,
+        "segments": 48
+      },
+      "Material3D": {
+        "material": "res://materials/3d_lights/metal_4.mat3d"
+      }
+    },
+    {
+      "uuid": "f4078a9d-49b3-4398-9dfc-7d7fed283c9c",
+      "name": "Sun",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 6.0,
+          "z": 0.0
+        },
+        "rotation": {
+          "w": 0.8643610990919672,
+          "x": -0.4030581999178559,
+          "y": 0.27253200769780433,
+          "z": 0.12708376228184318
+        }
+      },
+      "DirectionalLight3D": {
+        "color": {
+          "r": 0.85,
+          "g": 0.9,
+          "b": 1.0,
+          "a": 1.0
+        },
+        "energy": 0.35
+      }
+    },
+    {
+      "uuid": "3e8fd51c-34b4-42fe-bd60-7e809578f205",
+      "name": "Warm lamp",
+      "exports": {
+        "height": 1.2,
+        "seconds": 1.6
+      },
+      "Transform3D": {
+        "position": {
+          "x": -3.0,
+          "y": 1.0,
+          "z": 3.0
+        }
+      },
+      "PointLight3D": {
+        "color": {
+          "r": 1.0,
+          "g": 0.6,
+          "b": 0.25,
+          "a": 1.0
+        },
+        "energy": 4.0,
+        "range": 7.0,
+        "attenuation": 1.5
+      },
+      "Script": {
+        "source": "res://scripts/bob.flux"
+      }
+    },
+    {
+      "uuid": "c59cc439-dfb6-4ec4-82cb-e9c7c9b078dc",
+      "name": "Cold lamp",
+      "Transform3D": {
+        "position": {
+          "x": 3.5,
+          "y": 1.4,
+          "z": 2.5
+        }
+      },
+      "PointLight3D": {
+        "color": {
+          "r": 0.3,
+          "g": 0.55,
+          "b": 1.0,
+          "a": 1.0
+        },
+        "energy": 3.0,
+        "range": 6.0,
+        "distance_fade": true,
+        "distance_fade_begin": 7.0,
+        "distance_fade_length": 4.0
+      }
+    },
+    {
+      "uuid": "99087d63-4bdc-4714-8f83-b143115d08cf",
+      "name": "Spot",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 5.0,
+          "z": 0.0
+        },
+        "rotation": {
+          "x": -0.7071067811865476,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 0.7071067811865476
+        }
+      },
+      "SpotLight3D": {
+        "color": {
+          "r": 1.0,
+          "g": 0.97,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "energy": 5.0,
+        "range": 9.0,
+        "angle": 0.3839724354387525,
+        "angle_attenuation": 0.8
+      }
+    },
+    {
+      "uuid": "fa7db423-1054-4aaf-8d04-4db547ac2b52",
+      "name": "Bumpy box",
+      "exports": {
+        "speed": 20,
+        "axis": [
+          0,
+          1,
+          0
+        ]
+      },
+      "Transform3D": {
+        "position": {
+          "x": -6.5,
+          "y": 0.75,
+          "z": 0.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "shape": "box",
+        "size": {
+          "x": 1.5,
+          "y": 1.5,
+          "z": 1.5
+        }
+      },
+      "Material3D": {
+        "material": "res://materials/3d_lights/bumpy_box.mat3d"
+      },
+      "Script": {
+        "source": "res://scripts/spinner.flux"
+      }
+    },
+    {
+      "uuid": "41e6cdf2-b60d-42ee-9b3e-f041898fc7a9",
+      "name": "Glowing box",
+      "exports": {
+        "speed": 35,
+        "axis": [
+          0.3,
+          1,
+          0.2
+        ]
+      },
+      "Transform3D": {
+        "position": {
+          "x": 6.5,
+          "y": 0.75,
+          "z": 0.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "shape": "box",
+        "size": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        }
+      },
+      "Material3D": {
+        "material": "res://materials/3d_lights/glowing_box.mat3d"
+      },
+      "Script": {
+        "source": "res://scripts/spinner.flux"
+      }
+    },
+    {
+      "uuid": "cbe5ef17-f699-425a-848d-1b873815c50d",
+      "name": "Environment",
+      "Environment": {
+        "background": "color",
+        "background_color": {
+          "r": 0.05,
+          "g": 0.06,
+          "b": 0.1,
+          "a": 1.0
+        },
+        "ambient_color": {
+          "r": 0.6,
+          "g": 0.7,
+          "b": 1.0,
+          "a": 1.0
+        },
+        "ambient_energy": 0.12,
+        "tonemap": "aces",
+        "exposure": 1.1,
+        "fog": true,
+        "fog_color": {
+          "r": 0.12,
+          "g": 0.14,
+          "b": 0.2,
+          "a": 1.0
+        },
+        "fog_density": 0.035,
+        "glow": true,
+        "glow_threshold": 1.0,
+        "glow_intensity": 0.9,
+        "glow_spread": 1.0
+      }
+    },
+    {
+      "uuid": "32b01166-e143-48f3-82ef-9bd230909e6b",
+      "name": "Camera",
+      "exports": {
+        "radius": 10.0,
+        "height": 4.5
+      },
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 4.5,
+          "z": 10.0
+        }
+      },
+      "Camera3D": {
+        "fov": 1.0471976,
+        "current": true
+      },
+      "Script": {
+        "source": "res://scripts/orbit_camera.flux"
+      }
+    }
+  ]
+}
