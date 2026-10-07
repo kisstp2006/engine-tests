@@ -36,8 +36,9 @@ reads them on a machine with no Blender.
 | `3d_lightmap` | Baked light: a room lit by a ceiling lamp baked whole and a sun through its window, its light bounced - the red and green walls colour the boxes and the floor near them; a gold ball that moves, lit by the probes. Baked with `--bake-lightmaps res://scenes/3d_lightmap.json` | None |
 | `3d_shader` | `waves.shader3d`, a surface of its own the engine lights, in `waves.mat3d`, which gives it its numbers; a sphere drawn with the material as it is, and a capsule whose entity gives numbers of its own over the material's | - |
 | `3d_models` | Models as scenes: `lantern.glb` read as it is; `props.fbx` and `suzanne.blend` turned into glTF by the editor's Blender into `.fluxion/imported`; an instance of each, its meshes, materials and pictures named after it | - |
+| `3d_skinning` | `skinned.glb`: a column bent on the GPU by a `Skeleton3D` of three bones, a cube hanging from the top bone by a `BoneAttachment3D`, and the model's two animations played by its root's `AnimationPlayer`, each change fading over its `default_blend`; its `.import` loops them | B and W play Bend and Wave, S shows the bones; the buttons do the same |
 
-The pictures, the sound, the two meshes, the three models, the shader and the
+The pictures, the sound, the two meshes, the four models, the shader and the
 materials in `art/`, `sfx/`, `models/`, `shaders/` and `materials/` were made
 for these tests. `fonts/NotoSans-Regular.ttf` is Noto Sans, under
 the SIL Open Font License.

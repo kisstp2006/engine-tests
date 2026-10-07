@@ -503,6 +503,34 @@
       "Button": {
         "text": "A 3D shader of its own"
       }
+    },
+    {
+      "uuid": "9f4e96d8-fc49-4508-9fd0-a5d384df260e",
+      "parent": "eb97bece-1ced-4e93-9ad9-6142a4bd370f",
+      "name": "3d_skinning",
+      "groups": [
+        "scene_buttons"
+      ],
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 340.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "fixed",
+          "value": 42.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "CenterContainer": {},
+      "Button": {
+        "text": "Skinning and bone animation"
+      }
     }
   ],
   "assets": {

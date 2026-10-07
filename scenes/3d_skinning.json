@@ -1,0 +1,265 @@
+{
+  "fluxion_scene": 3,
+  "entities": [
+    {
+      "uuid": "cbdf0830-1742-4c63-8d85-2d56dce5f6a1",
+      "name": "Skinning",
+      "Script": {
+        "source": "res://scripts/skinning.flux"
+      }
+    },
+    {
+      "uuid": "c8b6df0f-e75a-42ad-ba1e-8de232b85d97",
+      "name": "Hud",
+      "Control": {
+        "width": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "CanvasLayer": {}
+    },
+    {
+      "uuid": "cc14d877-c0d9-4fad-9931-79030c107baf",
+      "parent": "c8b6df0f-e75a-42ad-ba1e-8de232b85d97",
+      "name": "Panel",
+      "Control": {
+        "position": "anchored",
+        "offset_left": 12.0,
+        "offset_top": 12.0
+      },
+      "BoxContainer": {
+        "separation": 6
+      },
+      "PanelContainer": {}
+    },
+    {
+      "uuid": "47c723da-1f21-40a2-b7a0-36f4d8536992",
+      "parent": "cc14d877-c0d9-4fad-9931-79030c107baf",
+      "name": "Title",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 400.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ThemeOverride": {
+        "override_font_size": true,
+        "font_size": 18
+      },
+      "Label": {
+        "text": "Skinning: bones, animations and what hangs from a bone"
+      }
+    },
+    {
+      "uuid": "fecb0dbb-1b7c-495b-88d3-070a48280466",
+      "parent": "cc14d877-c0d9-4fad-9931-79030c107baf",
+      "name": "About",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 400.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ThemeOverride": {
+        "override_font_size": true,
+        "font_size": 13
+      },
+      "Label": {
+        "text": "skinned.glb: a column bent by a skeleton of three bones on the GPU, a cube that hangs from its top bone, and two animations its root's AnimationPlayer plays, each fading into the other. B and W play them, S shows the bones."
+      }
+    },
+    {
+      "uuid": "1e8dbc1a-efdd-424a-8327-e3c9e5938293",
+      "parent": "cc14d877-c0d9-4fad-9931-79030c107baf",
+      "name": "Buttons",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 400.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "BoxContainer": {
+        "direction": "horizontal",
+        "separation": 8
+      }
+    },
+    {
+      "uuid": "d655e9c6-d18e-44c6-bf60-e1fe1e57ae26",
+      "parent": "1e8dbc1a-efdd-424a-8327-e3c9e5938293",
+      "name": "BendButton",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 120.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "fixed",
+          "value": 36.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "CenterContainer": {},
+      "Button": {
+        "text": "Bend"
+      }
+    },
+    {
+      "uuid": "6eb36d94-e061-4dc4-84a6-660dfbb181b1",
+      "parent": "1e8dbc1a-efdd-424a-8327-e3c9e5938293",
+      "name": "WaveButton",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 120.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "fixed",
+          "value": 36.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "CenterContainer": {},
+      "Button": {
+        "text": "Wave"
+      }
+    },
+    {
+      "uuid": "e6b4a936-0447-47af-93a1-95fd2940850a",
+      "parent": "1e8dbc1a-efdd-424a-8327-e3c9e5938293",
+      "name": "BonesButton",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 120.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "fixed",
+          "value": 36.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "CenterContainer": {},
+      "Button": {
+        "text": "Bones"
+      }
+    },
+    {
+      "uuid": "7c89f09d-6bd5-4945-bd29-ed731f70929d",
+      "name": "Floor",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "shape": "plane",
+        "size": {
+          "x": 10.0,
+          "y": 1.0,
+          "z": 10.0
+        }
+      },
+      "Material3D": {
+        "material": "res://materials/3d_models/floor.mat3d"
+      }
+    },
+    {
+      "uuid": "c89f0b92-d9ca-470f-b457-c4d4d018279e",
+      "name": "Sun",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 6.0,
+          "z": 0.0
+        },
+        "rotation": {
+          "x": -0.58923143,
+          "y": 0.3625627,
+          "z": 0.33361718,
+          "w": 0.64035475
+        }
+      },
+      "DirectionalLight3D": {
+        "energy": 0.95,
+        "shadow": true
+      }
+    },
+    {
+      "uuid": "0bd58afb-47b7-4e23-8c27-67f6f420b3d1",
+      "name": "Camera",
+      "exports": {
+        "radius": 8.0,
+        "height": 3.2,
+        "speed": 0.25
+      },
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 3.2,
+          "z": 8.0
+        }
+      },
+      "Camera3D": {
+        "fov": 1.0471976,
+        "current": true
+      },
+      "Script": {
+        "source": "res://scripts/orbit_camera.flux"
+      }
+    },
+    {
+      "uuid": "b6212c75-0e1f-47f1-a44e-4a195758ab50",
+      "name": "Skinned",
+      "instance": "res://models/skinned.glb",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        }
+      },
+      "AnimationPlayer": {
+        "autoplay": "Wave",
+        "default_blend": 0.4
+      }
+    }
+  ]
+}
