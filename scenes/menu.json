@@ -28,11 +28,33 @@
         }
       },
       "CanvasLayer": {},
+      "ScrollContainer": {}
+    },
+    {
+      "uuid": "3796fbe1-c78b-4540-9186-ef87f983b0a7",
+      "parent": "e0f5b3df-5037-4771-add6-6a2808dc5fd1",
+      "name": "Center",
+      "Control": {
+        "width": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
       "CenterContainer": {}
     },
     {
       "uuid": "e9caaf72-5b1b-4e25-bc01-56993fa61fe5",
-      "parent": "e0f5b3df-5037-4771-add6-6a2808dc5fd1",
+      "parent": "3796fbe1-c78b-4540-9186-ef87f983b0a7",
       "name": "Column",
       "Control": {},
       "BoxContainer": {
