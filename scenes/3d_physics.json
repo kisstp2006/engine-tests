@@ -1,0 +1,851 @@
+{
+  "fluxion_scene": 3,
+  "entities": [
+    {
+      "uuid": "e51a65fa-8fa8-4378-931b-e213c3481172",
+      "name": "Hud",
+      "Control": {
+        "width": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "CanvasLayer": {}
+    },
+    {
+      "uuid": "6dad4def-068a-4847-bc12-5a5d2425b2e0",
+      "parent": "e51a65fa-8fa8-4378-931b-e213c3481172",
+      "name": "Panel",
+      "Control": {
+        "position": "anchored",
+        "offset_left": 12.0,
+        "offset_top": 12.0
+      },
+      "BoxContainer": {
+        "separation": 4
+      },
+      "PanelContainer": {}
+    },
+    {
+      "uuid": "23ef4b4b-874c-4b32-9c12-21a1f36c7dad",
+      "parent": "6dad4def-068a-4847-bc12-5a5d2425b2e0",
+      "name": "Title",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 420.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ThemeOverride": {
+        "override_font_size": true,
+        "font_size": 18
+      },
+      "Label": {
+        "text": "3D physics"
+      }
+    },
+    {
+      "uuid": "bdd74cb4-d868-4662-9a25-822d4d57ac21",
+      "parent": "6dad4def-068a-4847-bc12-5a5d2425b2e0",
+      "name": "About",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 420.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ThemeOverride": {
+        "override_font_size": true,
+        "font_size": 13
+      },
+      "Label": {
+        "text": "Crates, balls, a capsule, a cylinder and a pyramid made convex from its .mesh fall on a floor; a ramp is a mesh collider, and the near side is shut by a collider with nothing drawn. The orange capsule is a CharacterBody3D: the arrows or WASD walk it, Space jumps, and it leans on what it walks into. Click a body to push it; click the red button to drop a crate. The yellow zone is an Area3D that lights while a body is in it, and the scanner is a RayCast3D going round."
+      }
+    },
+    {
+      "uuid": "dd54d67f-9edf-493d-a182-13cf4642e035",
+      "parent": "6dad4def-068a-4847-bc12-5a5d2425b2e0",
+      "name": "ZoneCount",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 420.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ThemeOverride": {
+        "override_font_size": true,
+        "font_size": 13
+      },
+      "Label": {
+        "text": "0 in the zone"
+      }
+    },
+    {
+      "uuid": "d82db3a1-9657-492b-9a38-81d1211b4409",
+      "parent": "6dad4def-068a-4847-bc12-5a5d2425b2e0",
+      "name": "Scanned",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 420.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ThemeOverride": {
+        "override_font_size": true,
+        "font_size": 13
+      },
+      "Label": {
+        "text": "The scanner sees nothing"
+      }
+    },
+    {
+      "uuid": "a04d6af7-8be4-4c6e-8e72-634c16fc89cd",
+      "parent": "6dad4def-068a-4847-bc12-5a5d2425b2e0",
+      "name": "Pushed",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 420.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ThemeOverride": {
+        "override_font_size": true,
+        "font_size": 13
+      },
+      "Label": {
+        "text": "Pushed: nothing yet"
+      }
+    },
+    {
+      "uuid": "31ea343c-fbf0-49e7-a859-50e4d17e7c2b",
+      "parent": "6dad4def-068a-4847-bc12-5a5d2425b2e0",
+      "name": "Footing",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 420.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ThemeOverride": {
+        "override_font_size": true,
+        "font_size": 13
+      },
+      "Label": {
+        "text": "The player is in the air"
+      }
+    },
+    {
+      "uuid": "4ee63f5b-c4c4-4521-9206-30640c3bcd3d",
+      "parent": "6dad4def-068a-4847-bc12-5a5d2425b2e0",
+      "name": "Contacts",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 420.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ThemeOverride": {
+        "override_font_size": true,
+        "font_size": 13
+      },
+      "Label": {
+        "text": "0 contacts begun"
+      }
+    },
+    {
+      "uuid": "2ea8cc97-bbc0-4def-85d8-922ba32cc776",
+      "name": "Environment",
+      "Environment": {
+        "background": "color",
+        "background_color": {
+          "r": 0.42,
+          "g": 0.55,
+          "b": 0.75,
+          "a": 1.0
+        },
+        "ambient_color": {
+          "r": 0.6,
+          "g": 0.7,
+          "b": 1.0,
+          "a": 1.0
+        },
+        "ambient_energy": 0.3,
+        "tonemap": "aces",
+        "exposure": 1.0
+      }
+    },
+    {
+      "uuid": "8c244478-ba58-49b9-87f3-a1a65c9b9167",
+      "name": "Sun",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 10.0,
+          "z": 0.0
+        },
+        "rotation": {
+          "x": -0.3891,
+          "y": -0.2775,
+          "z": -0.1255,
+          "w": 0.8687
+        }
+      },
+      "DirectionalLight3D": {
+        "color": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.85,
+          "a": 1.0
+        },
+        "energy": 1.5,
+        "shadow": true,
+        "shadow_max_distance": 40.0
+      }
+    },
+    {
+      "uuid": "72907d7b-7c8c-4e6f-b7c2-6c6ce1fe2d13",
+      "name": "Camera",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 9.0,
+          "z": 14.0
+        },
+        "rotation": {
+          "x": -0.2669335818958115,
+          "y": -0.0,
+          "z": -0.0,
+          "w": 0.9637149282107609
+        }
+      },
+      "Camera3D": {
+        "fov": 1.0471976,
+        "current": true
+      },
+      "Script": {
+        "source": "res://scripts/pusher.flux"
+      }
+    },
+    {
+      "uuid": "ac63d1f7-2a80-41bd-a0cb-cafde610556e",
+      "name": "Floor",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": -0.25,
+          "z": 0.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "size": {
+          "x": 20.0,
+          "y": 0.5,
+          "z": 16.0
+        }
+      },
+      "Material3D": {
+        "material": "res://materials/3d_physics/floor.mat3d"
+      },
+      "Collider3D": {
+        "extents": {
+          "x": 10.0,
+          "y": 0.25,
+          "z": 8.0
+        }
+      }
+    },
+    {
+      "uuid": "574d023d-aea3-4a1a-924f-cabf51c1add7",
+      "name": "Back wall",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 1.25,
+          "z": -8.25
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "size": {
+          "x": 20.0,
+          "y": 2.5,
+          "z": 0.5
+        }
+      },
+      "Material3D": {
+        "material": "res://materials/3d_physics/wall.mat3d"
+      },
+      "Collider3D": {
+        "extents": {
+          "x": 10.0,
+          "y": 1.25,
+          "z": 0.25
+        }
+      }
+    },
+    {
+      "uuid": "cc001e79-9548-49f8-bfa4-3bfe2b652037",
+      "name": "Left wall",
+      "Transform3D": {
+        "position": {
+          "x": -10.25,
+          "y": 1.25,
+          "z": 0.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "size": {
+          "x": 0.5,
+          "y": 2.5,
+          "z": 16.0
+        }
+      },
+      "Material3D": {
+        "material": "res://materials/3d_physics/wall.mat3d"
+      },
+      "Collider3D": {
+        "extents": {
+          "x": 0.25,
+          "y": 1.25,
+          "z": 8.0
+        }
+      }
+    },
+    {
+      "uuid": "4a76b349-6726-429c-8e07-79c4641bb8d0",
+      "name": "Right wall",
+      "Transform3D": {
+        "position": {
+          "x": 10.25,
+          "y": 1.25,
+          "z": 0.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "size": {
+          "x": 0.5,
+          "y": 2.5,
+          "z": 16.0
+        }
+      },
+      "Material3D": {
+        "material": "res://materials/3d_physics/wall.mat3d"
+      },
+      "Collider3D": {
+        "extents": {
+          "x": 0.25,
+          "y": 1.25,
+          "z": 8.0
+        }
+      }
+    },
+    {
+      "uuid": "e6ac3bbe-5052-47d0-a60b-908e3221870e",
+      "name": "Front fence",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 1.25,
+          "z": 8.25
+        }
+      },
+      "Collider3D": {
+        "extents": {
+          "x": 10.5,
+          "y": 1.25,
+          "z": 0.25
+        }
+      }
+    },
+    {
+      "uuid": "3e15b53d-f1ce-42f0-865b-d82afef9973b",
+      "name": "Ramp",
+      "Transform3D": {
+        "position": {
+          "x": -6.0,
+          "y": 0.784,
+          "z": -2.0
+        },
+        "rotation": {
+          "x": -0.0,
+          "y": -0.0,
+          "z": -0.15643446504023087,
+          "w": 0.9876883405951378
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "size": {
+          "x": 6.0,
+          "y": 0.3,
+          "z": 3.0
+        }
+      },
+      "Material3D": {
+        "material": "res://materials/3d_physics/ramp.mat3d"
+      },
+      "Collider3D": {
+        "shape": "mesh"
+      }
+    },
+    {
+      "uuid": "04273f99-775e-408f-9ac7-4a67358601bc",
+      "name": "Ledge",
+      "Transform3D": {
+        "position": {
+          "x": -9.35,
+          "y": 0.925,
+          "z": -2.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "size": {
+          "x": 1.3,
+          "y": 1.85,
+          "z": 3.0
+        }
+      },
+      "Material3D": {
+        "material": "res://materials/3d_physics/wall.mat3d"
+      },
+      "Collider3D": {
+        "extents": {
+          "x": 0.65,
+          "y": 0.925,
+          "z": 1.5
+        }
+      }
+    },
+    {
+      "uuid": "4f8cf714-733d-41d0-9a69-a83663d46456",
+      "name": "Crate 1",
+      "Transform3D": {
+        "position": {
+          "x": 2.0,
+          "y": 0.5,
+          "z": -2.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {},
+      "Material3D": {
+        "material": "res://materials/3d_physics/crate.mat3d"
+      },
+      "RigidBody3D": {},
+      "Collider3D": {}
+    },
+    {
+      "uuid": "d38a0784-167b-4ec4-b1bb-beaaaf97d4c9",
+      "name": "Crate 2",
+      "Transform3D": {
+        "position": {
+          "x": 2.08,
+          "y": 1.5,
+          "z": -2.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {},
+      "Material3D": {
+        "material": "res://materials/3d_physics/crate.mat3d"
+      },
+      "RigidBody3D": {},
+      "Collider3D": {}
+    },
+    {
+      "uuid": "1b8b9056-7289-47d8-b30f-425023e4ca2b",
+      "name": "Crate 3",
+      "Transform3D": {
+        "position": {
+          "x": 2.0,
+          "y": 2.5,
+          "z": -2.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {},
+      "Material3D": {
+        "material": "res://materials/3d_physics/crate.mat3d"
+      },
+      "RigidBody3D": {},
+      "Collider3D": {}
+    },
+    {
+      "uuid": "cad45d70-76fa-4b13-a8f8-e623a6e7450e",
+      "name": "Crate 4",
+      "Transform3D": {
+        "position": {
+          "x": 2.08,
+          "y": 3.5,
+          "z": -2.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {},
+      "Material3D": {
+        "material": "res://materials/3d_physics/crate.mat3d"
+      },
+      "RigidBody3D": {},
+      "Collider3D": {}
+    },
+    {
+      "uuid": "ddc0869e-7747-45d2-9515-b7c04a47a876",
+      "name": "Ball",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 4.0,
+          "z": -3.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "shape": "sphere",
+        "radius": 0.4
+      },
+      "Material3D": {
+        "material": "res://materials/3d_physics/ball.mat3d"
+      },
+      "RigidBody3D": {},
+      "Collider3D": {
+        "shape": "sphere",
+        "radius": 0.4
+      }
+    },
+    {
+      "uuid": "8dadc508-a01a-4ce3-bd94-7fd567b323bd",
+      "name": "Bouncy ball",
+      "Transform3D": {
+        "position": {
+          "x": 0.4,
+          "y": 6.0,
+          "z": -3.2
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "shape": "sphere",
+        "radius": 0.35
+      },
+      "Material3D": {
+        "material": "res://materials/3d_physics/bouncy.mat3d"
+      },
+      "RigidBody3D": {},
+      "Collider3D": {
+        "shape": "sphere",
+        "radius": 0.35,
+        "bounce": 0.75
+      }
+    },
+    {
+      "uuid": "9bf2d329-cc76-4110-9259-31e6cb4459bd",
+      "name": "Rolling ball",
+      "Transform3D": {
+        "position": {
+          "x": -8.0,
+          "y": 3.2,
+          "z": -2.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "shape": "sphere",
+        "radius": 0.35
+      },
+      "Material3D": {
+        "material": "res://materials/3d_physics/ball.mat3d"
+      },
+      "RigidBody3D": {},
+      "Collider3D": {
+        "shape": "sphere",
+        "radius": 0.35
+      }
+    },
+    {
+      "uuid": "3851406a-6d67-41ad-a7cd-f23d590fd1a6",
+      "name": "Capsule",
+      "Transform3D": {
+        "position": {
+          "x": -1.5,
+          "y": 3.0,
+          "z": -4.0
+        },
+        "rotation": {
+          "x": 0.5493865873205086,
+          "y": 0.0,
+          "z": 0.16481597619615257,
+          "w": 0.8191520442889918
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "shape": "capsule",
+        "radius": 0.3,
+        "height": 1.4
+      },
+      "Material3D": {
+        "material": "res://materials/3d_physics/capsule.mat3d"
+      },
+      "RigidBody3D": {},
+      "Collider3D": {
+        "shape": "capsule",
+        "radius": 0.3,
+        "height": 1.4
+      }
+    },
+    {
+      "uuid": "eb9a43ba-5337-46f7-acd8-ca1a43e3d85f",
+      "name": "Cylinder",
+      "Transform3D": {
+        "position": {
+          "x": 3.5,
+          "y": 3.0,
+          "z": 1.0
+        },
+        "rotation": {
+          "x": 0.21643961393810288,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 0.9762960071199334
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "shape": "cylinder",
+        "radius": 0.4,
+        "height": 0.8
+      },
+      "Material3D": {
+        "material": "res://materials/3d_physics/cylinder.mat3d"
+      },
+      "RigidBody3D": {},
+      "Collider3D": {
+        "shape": "cylinder",
+        "radius": 0.4,
+        "height": 0.8
+      }
+    },
+    {
+      "uuid": "5072c199-7c8a-467c-a309-e884da625811",
+      "name": "Pyramid",
+      "Transform3D": {
+        "position": {
+          "x": 5.0,
+          "y": 2.5,
+          "z": -3.0
+        },
+        "rotation": {
+          "x": 0.05490111652037205,
+          "y": 0.27450558260186025,
+          "z": 0.1098022330407441,
+          "w": 0.9537169507482269
+        }
+      },
+      "MeshInstance3D": {
+        "mesh": "res://models/pyramid.mesh"
+      },
+      "Material3D": {
+        "material": "res://materials/3d_mesh_files/pyramid.mat3d"
+      },
+      "RigidBody3D": {},
+      "Collider3D": {
+        "shape": "convex"
+      }
+    },
+    {
+      "uuid": "4bea07df-76a7-4408-afbd-a9109a478df6",
+      "name": "Player",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 0.9,
+          "z": 3.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "shape": "capsule",
+        "radius": 0.4,
+        "height": 1.8
+      },
+      "Material3D": {
+        "material": "res://materials/3d_physics/player.mat3d"
+      },
+      "CharacterBody3D": {},
+      "Collider3D": {
+        "shape": "capsule",
+        "radius": 0.4,
+        "height": 1.8
+      },
+      "Script": {
+        "source": "res://scripts/walker.flux"
+      }
+    },
+    {
+      "uuid": "c73d3786-4dfd-4382-9101-ac27af3ccdc6",
+      "name": "Zone",
+      "Transform3D": {
+        "position": {
+          "x": 5.5,
+          "y": 1.0,
+          "z": 3.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "size": {
+          "x": 3.0,
+          "y": 2.0,
+          "z": 3.0
+        }
+      },
+      "Material3D": {
+        "material": "res://materials/3d_physics/zone.mat3d"
+      },
+      "Area3D": {},
+      "Collider3D": {
+        "extents": {
+          "x": 1.5,
+          "y": 1.0,
+          "z": 1.5
+        }
+      },
+      "Script": {
+        "source": "res://scripts/glow_zone.flux"
+      }
+    },
+    {
+      "uuid": "1dd9aae5-debd-4a0a-87a1-c6aa62d3572b",
+      "parent": "c73d3786-4dfd-4382-9101-ac27af3ccdc6",
+      "name": "Lamp",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 0.6,
+          "z": 0.0
+        }
+      },
+      "PointLight3D": {
+        "color": {
+          "r": 1.0,
+          "g": 0.85,
+          "b": 0.35,
+          "a": 1.0
+        },
+        "energy": 0.0,
+        "range": 5.0
+      }
+    },
+    {
+      "uuid": "fc47784c-3556-40ec-98e9-16abc5bc1af8",
+      "name": "Drop button",
+      "Transform3D": {
+        "position": {
+          "x": -4.0,
+          "y": 0.15,
+          "z": 4.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "shape": "cylinder",
+        "radius": 0.6,
+        "height": 0.3
+      },
+      "Material3D": {
+        "material": "res://materials/3d_physics/button.mat3d"
+      },
+      "Area3D": {},
+      "Collider3D": {
+        "shape": "cylinder",
+        "radius": 0.6,
+        "height": 0.3
+      },
+      "Script": {
+        "source": "res://scripts/drop_button.flux"
+      }
+    },
+    {
+      "uuid": "e2d7cf53-99af-457d-ade8-9c43df5be134",
+      "name": "Drops",
+      "Transform3D": {}
+    },
+    {
+      "uuid": "45f19c7b-164c-4b79-aea0-6682df5a6909",
+      "name": "Scanner",
+      "exports": {
+        "speed": 40
+      },
+      "Transform3D": {
+        "position": {
+          "x": 7.5,
+          "y": 0.6,
+          "z": -5.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "shape": "cylinder",
+        "radius": 0.12,
+        "height": 1.2
+      },
+      "Material3D": {
+        "material": "res://materials/3d_physics/post.mat3d"
+      },
+      "Script": {
+        "source": "res://scripts/spinner.flux"
+      }
+    },
+    {
+      "uuid": "a3cee80b-494a-4dc9-92e7-8d21bb3f4c5f",
+      "parent": "45f19c7b-164c-4b79-aea0-6682df5a6909",
+      "name": "Ray",
+      "Transform3D": {},
+      "RayCast3D": {
+        "target": {
+          "x": -9.0,
+          "y": 0.0,
+          "z": 0.0
+        }
+      },
+      "Script": {
+        "source": "res://scripts/scanner.flux"
+      }
+    }
+  ]
+}

@@ -531,6 +531,34 @@
       "Button": {
         "text": "Skinning and bone animation"
       }
+    },
+    {
+      "uuid": "babd21fc-df1d-4ed1-85aa-dca800cd4272",
+      "parent": "eb97bece-1ced-4e93-9ad9-6142a4bd370f",
+      "name": "3d_physics",
+      "groups": [
+        "scene_buttons"
+      ],
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 340.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "fixed",
+          "value": 42.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "CenterContainer": {},
+      "Button": {
+        "text": "3D physics"
+      }
     }
   ],
   "assets": {
