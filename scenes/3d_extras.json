@@ -1,0 +1,893 @@
+{
+  "fluxion_scene": 3,
+  "entities": [
+    {
+      "uuid": "67d9e654-4205-47d2-a48d-6d59b3aeaa7e",
+      "name": "Hud",
+      "Control": {
+        "width": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "CanvasLayer": {}
+    },
+    {
+      "uuid": "b31bba8d-f0f0-4f31-ad19-f6e9c1d54dbe",
+      "name": "Panel",
+      "parent": "67d9e654-4205-47d2-a48d-6d59b3aeaa7e",
+      "Control": {
+        "position": "anchored",
+        "offset_left": 12.0,
+        "offset_top": 12.0
+      },
+      "BoxContainer": {
+        "separation": 4
+      },
+      "PanelContainer": {}
+    },
+    {
+      "uuid": "cac5e704-780b-47ce-9424-6d7da1632842",
+      "name": "Title",
+      "parent": "b31bba8d-f0f0-4f31-ad19-f6e9c1d54dbe",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 440.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ThemeOverride": {
+        "override_font_size": true,
+        "font_size": 18
+      },
+      "Label": {
+        "text": "Rain, fog volumes, words and pictures in 3D, a world of its own"
+      }
+    },
+    {
+      "uuid": "80e28b1c-8196-493d-888a-a28018a25bad",
+      "name": "About",
+      "parent": "b31bba8d-f0f0-4f31-ad19-f6e9c1d54dbe",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 440.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ThemeOverride": {
+        "override_font_size": true,
+        "font_size": 13
+      },
+      "Label": {
+        "text": "Rain falls over the yard: streaks facing the camera. Two fog volumes - a box of drifting mist on the left, a ball of haze on the right - fog what is seen through them. Signs are Label3Ds, the star a Sprite3D that turns only about its up, the glow over the lamp an added one. The arcade screen shows a World3D of its own through its camera: its box, sun and pink sky are nowhere else. A sound goes round the yard, heard from the camera, and its script draws where it is. Arrows turn the camera."
+      }
+    },
+    {
+      "uuid": "657470dc-f01d-408c-a8cf-2bf0c8093927",
+      "name": "Environment",
+      "Environment": {
+        "background": "color",
+        "background_color": {
+          "r": 0.05,
+          "g": 0.06,
+          "b": 0.09,
+          "a": 1.0
+        },
+        "ambient_color": {
+          "r": 0.55,
+          "g": 0.6,
+          "b": 0.75,
+          "a": 1.0
+        },
+        "ambient_energy": 0.35,
+        "tonemap": "aces",
+        "exposure": 1.1,
+        "glow": true
+      }
+    },
+    {
+      "uuid": "4ae60d67-1bd4-4ed9-bf2f-808a1ed5e530",
+      "name": "Sun",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 8.0,
+          "z": 0.0
+        },
+        "rotation": {
+          "x": -0.4368642707015782,
+          "y": 0.2379316558306723,
+          "z": 0.1210043978432289,
+          "w": 0.8590087728542999
+        }
+      },
+      "DirectionalLight3D": {
+        "energy": 0.6,
+        "color": {
+          "r": 0.75,
+          "g": 0.8,
+          "b": 1.0,
+          "a": 1.0
+        },
+        "shadow": true
+      }
+    },
+    {
+      "uuid": "d474f179-c2db-4d45-8fe2-2c0af502c6ae",
+      "name": "Camera",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 4.0,
+          "z": 11.0
+        },
+        "rotation": {
+          "x": -0.17350299206578967,
+          "y": -0.0,
+          "z": -0.0,
+          "w": 0.9848333421164306
+        }
+      },
+      "Camera3D": {
+        "fov": 1.0471976,
+        "current": true
+      },
+      "Script": {
+        "source": "res://scripts/orbit_camera.flux"
+      },
+      "exports": {
+        "radius": 11.0,
+        "height": 3.5,
+        "speed": 0.08
+      }
+    },
+    {
+      "uuid": "a3a48c71-e4d0-42d1-9bf2-dbed2cd68806",
+      "name": "Floor",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": -0.25,
+          "z": 0.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "size": {
+          "x": 24.0,
+          "y": 0.5,
+          "z": 24.0
+        }
+      },
+      "Material3D": {
+        "material": "res://materials/3d_extras/floor.mat3d"
+      }
+    },
+    {
+      "uuid": "bb1d3e8d-288c-41a7-ba5f-73d84ed66933",
+      "name": "Back wall",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 2.0,
+          "z": -8.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "size": {
+          "x": 24.0,
+          "y": 4.0,
+          "z": 0.5
+        }
+      },
+      "Material3D": {
+        "material": "res://materials/3d_extras/wall.mat3d"
+      }
+    },
+    {
+      "uuid": "e4c84c77-7a13-4140-aca9-8cdd32de9fdd",
+      "name": "Left wall",
+      "Transform3D": {
+        "position": {
+          "x": -12.0,
+          "y": 2.0,
+          "z": 0.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "size": {
+          "x": 0.5,
+          "y": 4.0,
+          "z": 16.0
+        }
+      },
+      "Material3D": {
+        "material": "res://materials/3d_extras/wall.mat3d"
+      }
+    },
+    {
+      "uuid": "db4699b7-5061-4e62-8994-0b5411e6e8f1",
+      "name": "Right wall",
+      "Transform3D": {
+        "position": {
+          "x": 12.0,
+          "y": 2.0,
+          "z": 0.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "size": {
+          "x": 0.5,
+          "y": 4.0,
+          "z": 16.0
+        }
+      },
+      "Material3D": {
+        "material": "res://materials/3d_extras/wall.mat3d"
+      }
+    },
+    {
+      "uuid": "65da2ad2-6741-48b6-aca9-41d4ddc30e3e",
+      "name": "Crate 1",
+      "Transform3D": {
+        "position": {
+          "x": -6.0,
+          "y": 0.5,
+          "z": -5.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "size": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        }
+      },
+      "Material3D": {
+        "material": "res://materials/3d_extras/crate.mat3d"
+      }
+    },
+    {
+      "uuid": "e7fc817c-db48-491b-99e3-d6c79db36468",
+      "name": "Crate 2",
+      "Transform3D": {
+        "position": {
+          "x": -4.5,
+          "y": 0.5,
+          "z": -4.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "size": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        }
+      },
+      "Material3D": {
+        "material": "res://materials/3d_extras/crate.mat3d"
+      }
+    },
+    {
+      "uuid": "f2aa9696-d857-4f53-aaa4-20f30c380184",
+      "name": "Crate 3",
+      "Transform3D": {
+        "position": {
+          "x": -3.0,
+          "y": 0.5,
+          "z": -6.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "size": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        }
+      },
+      "Material3D": {
+        "material": "res://materials/3d_extras/crate.mat3d"
+      }
+    },
+    {
+      "uuid": "e9e21090-8344-4aa8-abfa-85644025807d",
+      "name": "Crate 4",
+      "Transform3D": {
+        "position": {
+          "x": 5.5,
+          "y": 0.5,
+          "z": -5.5
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "size": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        }
+      },
+      "Material3D": {
+        "material": "res://materials/3d_extras/crate.mat3d"
+      }
+    },
+    {
+      "uuid": "6dbe0f30-4847-49c1-8280-13df66fcfec2",
+      "name": "Crate 5",
+      "Transform3D": {
+        "position": {
+          "x": 3.0,
+          "y": 0.5,
+          "z": -4.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "size": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        }
+      },
+      "Material3D": {
+        "material": "res://materials/3d_extras/crate.mat3d"
+      }
+    },
+    {
+      "uuid": "d0f5be80-522d-49d6-ab68-95d75ce31c89",
+      "name": "Mist",
+      "Transform3D": {
+        "position": {
+          "x": -4.5,
+          "y": 1.25,
+          "z": -4.5
+        }
+      },
+      "FogVolume": {
+        "size": {
+          "x": 7.0,
+          "y": 2.5,
+          "z": 5.0
+        },
+        "density": 0.4,
+        "color": {
+          "r": 0.78,
+          "g": 0.82,
+          "b": 0.88,
+          "a": 1.0
+        },
+        "edge_fade": 0.35,
+        "noise_scale": 1.0,
+        "noise_strength": 0.85,
+        "wind": {
+          "x": 0.4,
+          "y": 0.05,
+          "z": 0.15
+        }
+      }
+    },
+    {
+      "uuid": "1b2920fb-b72d-4dfd-b0d6-9382c153afc1",
+      "name": "Haze",
+      "Transform3D": {
+        "position": {
+          "x": 4.5,
+          "y": 1.5,
+          "z": -4.5
+        }
+      },
+      "FogVolume": {
+        "size": {
+          "x": 5.0,
+          "y": 3.0,
+          "z": 5.0
+        },
+        "shape": "ellipsoid",
+        "density": 0.45,
+        "color": {
+          "r": 0.95,
+          "g": 0.75,
+          "b": 0.5,
+          "a": 1.0
+        },
+        "edge_fade": 0.6
+      }
+    },
+    {
+      "uuid": "13f0374b-b099-4216-82ca-4ccf478917e5",
+      "name": "Exit sign",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 3.2,
+          "z": -7.7
+        }
+      },
+      "Label3D": {
+        "size": 64,
+        "pixel_size": 0.008,
+        "color": {
+          "r": 0.4,
+          "g": 1.0,
+          "b": 0.5,
+          "a": 1.0
+        },
+        "outline_size": 3,
+        "outline_color": {
+          "r": 0.0,
+          "g": 0.15,
+          "b": 0.05,
+          "a": 1.0
+        },
+        "double_sided": false,
+        "text": "EXIT"
+      }
+    },
+    {
+      "uuid": "f91a0c81-63e4-4213-a140-e0ac1d313216",
+      "name": "Mist sign",
+      "Transform3D": {
+        "position": {
+          "x": -4.5,
+          "y": 2.6,
+          "z": -2.0
+        }
+      },
+      "Label3D": {
+        "size": 40,
+        "pixel_size": 0.008,
+        "billboard": "enabled",
+        "outline_size": 2,
+        "pivot_y": 1.0,
+        "text": "Mist\n(a fog volume)"
+      }
+    },
+    {
+      "uuid": "0a9afad7-a0a1-420f-abfd-e63d6e51d4f5",
+      "name": "Star pole",
+      "Transform3D": {
+        "position": {
+          "x": -8.0,
+          "y": 1.0,
+          "z": 2.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "shape": "cylinder",
+        "radius": 0.06,
+        "height": 2.0
+      },
+      "Material3D": {
+        "material": "res://materials/3d_extras/pole.mat3d"
+      }
+    },
+    {
+      "uuid": "66908753-abd6-40e9-a0cc-e2c8231f96b0",
+      "name": "Star",
+      "Transform3D": {
+        "position": {
+          "x": -8.0,
+          "y": 2.4,
+          "z": 2.0
+        }
+      },
+      "Sprite3D": {
+        "texture": "res://art/star.png",
+        "pixel_size": 0.012,
+        "billboard": "y_only",
+        "alpha_cut": 0.5
+      }
+    },
+    {
+      "uuid": "acd3b39b-b4d1-454d-bb38-c9d6b8c2b101",
+      "name": "Lamp post",
+      "Transform3D": {
+        "position": {
+          "x": 8.0,
+          "y": 1.25,
+          "z": 2.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "shape": "cylinder",
+        "radius": 0.08,
+        "height": 2.5
+      },
+      "Material3D": {
+        "material": "res://materials/3d_extras/pole.mat3d"
+      }
+    },
+    {
+      "uuid": "6539a013-b401-46c4-a80b-8aaf903a9d20",
+      "name": "Lamp",
+      "Transform3D": {
+        "position": {
+          "x": 8.0,
+          "y": 2.6,
+          "z": 2.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "shape": "sphere",
+        "radius": 0.18
+      },
+      "Material3D": {
+        "material": "res://materials/3d_extras/lamp.mat3d"
+      },
+      "PointLight3D": {
+        "color": {
+          "r": 1.0,
+          "g": 0.85,
+          "b": 0.6,
+          "a": 1.0
+        },
+        "energy": 3.0,
+        "range": 7.0
+      }
+    },
+    {
+      "uuid": "07a40a3c-60c8-4907-a471-b301c6ad4fb3",
+      "name": "Lamp glow",
+      "Transform3D": {
+        "position": {
+          "x": 8.0,
+          "y": 2.6,
+          "z": 2.0
+        }
+      },
+      "Sprite3D": {
+        "texture": "res://art/glow.png",
+        "pixel_size": 0.025,
+        "billboard": "enabled",
+        "blend": "additive",
+        "tint": {
+          "r": 1.0,
+          "g": 0.8,
+          "b": 0.5,
+          "a": 0.8
+        }
+      }
+    },
+    {
+      "uuid": "79ba6988-cb86-404b-aae7-62696a1cd8db",
+      "name": "Arcade cabinet",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 1.0,
+          "z": -6.6
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "size": {
+          "x": 1.6,
+          "y": 2.0,
+          "z": 0.8
+        }
+      },
+      "Material3D": {
+        "material": "res://materials/3d_extras/cabinet.mat3d"
+      }
+    },
+    {
+      "uuid": "7b1d2ee6-1d3d-4c5e-97e7-64240ce0b466",
+      "name": "Arcade world",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 60.0
+        }
+      },
+      "World3D": {}
+    },
+    {
+      "uuid": "5e8f7068-c5ae-49d6-8ae5-818c394a2ca4",
+      "name": "Arcade floor",
+      "parent": "7b1d2ee6-1d3d-4c5e-97e7-64240ce0b466",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": -0.25,
+          "z": 0.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "size": {
+          "x": 6.0,
+          "y": 0.5,
+          "z": 6.0
+        }
+      },
+      "Material3D": {
+        "material": "res://materials/3d_extras/arcade_floor.mat3d"
+      }
+    },
+    {
+      "uuid": "d5c14cee-0b54-42b5-88d3-9ba5f9522d53",
+      "name": "Arcade box",
+      "parent": "7b1d2ee6-1d3d-4c5e-97e7-64240ce0b466",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 0.6,
+          "z": 0.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "size": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        }
+      },
+      "Material3D": {
+        "material": "res://materials/3d_extras/arcade_box.mat3d"
+      },
+      "Script": {
+        "source": "res://scripts/spinner.flux"
+      },
+      "exports": {
+        "speed": 70.0,
+        "axis": [
+          0.3,
+          1.0,
+          0.2
+        ]
+      }
+    },
+    {
+      "uuid": "fb727c3d-abea-48ee-987c-e1ee799a17ec",
+      "name": "Arcade sun",
+      "parent": "7b1d2ee6-1d3d-4c5e-97e7-64240ce0b466",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 5.0,
+          "z": 0.0
+        },
+        "rotation": {
+          "x": -0.5573354386006608,
+          "y": -0.30520839440433395,
+          "z": -0.2308558974595511,
+          "w": 0.7368382451210597
+        }
+      },
+      "DirectionalLight3D": {
+        "energy": 1.4
+      }
+    },
+    {
+      "uuid": "fcd46d08-66e6-4edd-8526-9284abc1da23",
+      "name": "Arcade sky",
+      "parent": "7b1d2ee6-1d3d-4c5e-97e7-64240ce0b466",
+      "Environment": {
+        "background": "color",
+        "background_color": {
+          "r": 0.95,
+          "g": 0.55,
+          "b": 0.75,
+          "a": 1.0
+        },
+        "ambient_color": {
+          "r": 1.0,
+          "g": 0.8,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "ambient_energy": 0.4
+      }
+    },
+    {
+      "uuid": "a946625b-8b07-45d5-95e7-26fb4fc23a70",
+      "name": "Arcade camera",
+      "parent": "7b1d2ee6-1d3d-4c5e-97e7-64240ce0b466",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 2.2,
+          "z": 4.0
+        },
+        "rotation": {
+          "x": -0.2098553011301997,
+          "y": -0.0,
+          "z": -0.0,
+          "w": 0.9777324545025358
+        }
+      },
+      "Camera3D": {
+        "fov": 0.9
+      },
+      "RenderView": {
+        "width": 256,
+        "height": 192,
+        "clear_color": {
+          "r": 0.95,
+          "g": 0.55,
+          "b": 0.75,
+          "a": 1.0
+        },
+        "filter": "linear"
+      }
+    },
+    {
+      "uuid": "e99fada1-aae7-457a-b77b-ceb7ab2b89a6",
+      "name": "Arcade screen",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 1.45,
+          "z": -6.18
+        }
+      },
+      "Sprite3D": {
+        "pixel_size": 0.004
+      },
+      "ViewTexture": {
+        "view": "a946625b-8b07-45d5-95e7-26fb4fc23a70"
+      }
+    },
+    {
+      "uuid": "ab987e99-37c9-4c14-9c8e-82492390b093",
+      "name": "Rain",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 7.0,
+          "z": 0.0
+        }
+      },
+      "Particles3D": {
+        "amount": 1800,
+        "lifetime": 0.75,
+        "preprocess": 0.75,
+        "emission_shape": "box",
+        "emission_extents": {
+          "x": 11.0,
+          "y": 0.0,
+          "z": 9.0
+        },
+        "direction": {
+          "x": 0.0,
+          "y": -1.0,
+          "z": 0.0
+        },
+        "spread": 0.05,
+        "speed_min": 10.0,
+        "speed_max": 12.0,
+        "gravity": {
+          "x": 0.0,
+          "y": -4.0,
+          "z": 0.0
+        },
+        "align_to_velocity": true,
+        "stretch": 0.035,
+        "size": 0.015,
+        "color": {
+          "r": 0.75,
+          "g": 0.8,
+          "b": 0.92,
+          "a": 0.5
+        },
+        "color_random": {
+          "r": 0.75,
+          "g": 0.8,
+          "b": 0.92,
+          "a": 0.3
+        },
+        "color_end": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 1.0,
+          "a": 1.0
+        }
+      }
+    },
+    {
+      "uuid": "07755dd5-b121-4320-b065-c0f2c66048aa",
+      "name": "Sparks",
+      "Transform3D": {
+        "position": {
+          "x": 8.0,
+          "y": 2.6,
+          "z": 2.0
+        }
+      },
+      "Particles3D": {
+        "amount": 60,
+        "lifetime": 1.4,
+        "emission_shape": "sphere",
+        "emission_radius": 0.2,
+        "direction": {
+          "x": 0.0,
+          "y": 1.0,
+          "z": 0.0
+        },
+        "spread": 1.2,
+        "speed_min": 0.8,
+        "speed_max": 2.0,
+        "gravity": {
+          "x": 0.0,
+          "y": -1.5,
+          "z": 0.0
+        },
+        "size": 0.16,
+        "blend": "additive",
+        "texture": "res://art/glow.png",
+        "scale_end": 0.2,
+        "color": {
+          "r": 1.0,
+          "g": 0.75,
+          "b": 0.3,
+          "a": 1.0
+        },
+        "color_end": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 1.0,
+          "a": 0.0
+        }
+      }
+    },
+    {
+      "uuid": "0549aeb4-91c2-41b0-a34a-68084a18d15e",
+      "name": "Beeper",
+      "Transform3D": {
+        "position": {
+          "x": 5.0,
+          "y": 0.8,
+          "z": 0.0
+        }
+      },
+      "AudioPlayer": {
+        "clip": "res://sfx/beep.wav",
+        "autoplay": true,
+        "loop": true,
+        "volume_db": -8.0
+      },
+      "AudioSpatial3D": {
+        "unit_size": 1.5,
+        "max_distance": 18.0
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "shape": "sphere",
+        "radius": 0.2
+      },
+      "Material3D": {
+        "material": "res://materials/3d_extras/lamp.mat3d"
+      },
+      "Script": {
+        "source": "res://scripts/circling_sound.flux"
+      }
+    }
+  ]
+}

@@ -587,6 +587,34 @@
       "Button": {
         "text": "3D navigation"
       }
+    },
+    {
+      "uuid": "758aa97c-dbf4-4b24-8a8d-6f3cedf3b654",
+      "parent": "eb97bece-1ced-4e93-9ad9-6142a4bd370f",
+      "name": "3d_extras",
+      "groups": [
+        "scene_buttons"
+      ],
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 340.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "fixed",
+          "value": 42.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "CenterContainer": {},
+      "Button": {
+        "text": "3D rain, fog, words, worlds"
+      }
     }
   ],
   "assets": {
