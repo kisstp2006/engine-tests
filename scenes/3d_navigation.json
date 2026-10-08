@@ -31,7 +31,9 @@
         "offset_left": 12.0,
         "offset_top": 12.0
       },
-      "BoxContainer": { "separation": 4 },
+      "BoxContainer": {
+        "separation": 4
+      },
       "PanelContainer": {}
     },
     {
@@ -47,8 +49,13 @@
           "weight": 1.0
         }
       },
-      "ThemeOverride": { "override_font_size": true, "font_size": 18 },
-      "Label": { "text": "3D navigation" }
+      "ThemeOverride": {
+        "override_font_size": true,
+        "font_size": 18
+      },
+      "Label": {
+        "text": "3D navigation"
+      }
     },
     {
       "uuid": "73727fb6-bbb2-4d97-8a09-536dabd65f74",
@@ -63,9 +70,12 @@
           "weight": 1.0
         }
       },
-      "ThemeOverride": { "override_font_size": true, "font_size": 13 },
+      "ThemeOverride": {
+        "override_font_size": true,
+        "font_size": 13
+      },
       "Label": {
-        "text": "A NavigationRegion3D baked from the floor, the walls, the crates, the pillar and a ramp up to a platform hanging from it - the blue lines. Four characters with a NavigationAgent3D each walk to their targets round what is in the way, and keep out of each other's way. Click the floor to send them all there; N shows or hides the mesh and their ways."
+        "text": "Two NavigationRegion3Ds, West and East, cut where they meet at x = 0 and baked from the floor, the walls, the crates, the pillar and a ramp up to a platform - the blue lines, the green where they meet. Four characters with a NavigationAgent3D walk to their targets round what is in the way and out of each other's way; a link - pink - drops them off the platform, and a cart that goes through the narrow east doorway closes it while it is there. Click the floor to send them all there; N shows or hides the mesh and their ways."
       }
     },
     {
@@ -81,8 +91,13 @@
           "weight": 1.0
         }
       },
-      "ThemeOverride": { "override_font_size": true, "font_size": 13 },
-      "Label": { "text": "Going to the far corners" }
+      "ThemeOverride": {
+        "override_font_size": true,
+        "font_size": 13
+      },
+      "Label": {
+        "text": "Going to the far corners"
+      }
     },
     {
       "uuid": "97f76344-85da-4326-8f82-5f0d9f61170a",
@@ -97,16 +112,31 @@
           "weight": 1.0
         }
       },
-      "ThemeOverride": { "override_font_size": true, "font_size": 13 },
-      "Label": { "text": "0 of 4 agents there" }
+      "ThemeOverride": {
+        "override_font_size": true,
+        "font_size": 13
+      },
+      "Label": {
+        "text": "0 of 4 agents there"
+      }
     },
     {
       "uuid": "746d7def-647f-43c4-95c4-50a465aa1ae6",
       "name": "Environment",
       "Environment": {
         "background": "color",
-        "background_color": { "r": 0.42, "g": 0.55, "b": 0.75, "a": 1.0 },
-        "ambient_color": { "r": 0.6, "g": 0.7, "b": 1.0, "a": 1.0 },
+        "background_color": {
+          "r": 0.42,
+          "g": 0.55,
+          "b": 0.75,
+          "a": 1.0
+        },
+        "ambient_color": {
+          "r": 0.6,
+          "g": 0.7,
+          "b": 1.0,
+          "a": 1.0
+        },
         "ambient_energy": 0.35,
         "tonemap": "aces"
       }
@@ -115,11 +145,25 @@
       "uuid": "23b1b44d-ba84-4ac7-afcb-f3c75e037e41",
       "name": "Sun",
       "Transform3D": {
-        "position": { "x": 0.0, "y": 12.0, "z": 0.0 },
-        "rotation": { "x": -0.3891, "y": -0.2775, "z": -0.1255, "w": 0.8687 }
+        "position": {
+          "x": 0.0,
+          "y": 12.0,
+          "z": 0.0
+        },
+        "rotation": {
+          "x": -0.3891,
+          "y": -0.2775,
+          "z": -0.1255,
+          "w": 0.8687
+        }
       },
       "DirectionalLight3D": {
-        "color": { "r": 1.0, "g": 0.95, "b": 0.85, "a": 1.0 },
+        "color": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.85,
+          "a": 1.0
+        },
         "energy": 1.4,
         "shadow": true,
         "shadow_max_distance": 50.0
@@ -129,7 +173,11 @@
       "uuid": "8684c5c6-1c62-4fd8-bc26-7bb583ecdd5d",
       "name": "Camera",
       "Transform3D": {
-        "position": { "x": 0.0, "y": 21.0, "z": 17.0 },
+        "position": {
+          "x": 0.0,
+          "y": 21.0,
+          "z": 17.0
+        },
         "rotation": {
           "x": -0.45758158,
           "y": -0.0,
@@ -137,98 +185,286 @@
           "w": 0.88916767
         }
       },
-      "Camera3D": { "fov": 1.0471976, "current": true },
-      "Script": { "source": "res://scripts/go_here.flux" }
+      "Camera3D": {
+        "fov": 1.0471976,
+        "current": true
+      },
+      "Script": {
+        "source": "res://scripts/go_here.flux"
+      }
     },
     {
       "uuid": "b3d4ac78-7a52-4396-a5a9-4cc41aa78eb9",
       "name": "Level",
+      "Transform3D": {}
+    },
+    {
+      "uuid": "8a25bfd4-80dd-4211-a6d1-b99899290d2c",
+      "name": "West",
       "Transform3D": {},
       "NavigationRegion3D": {
-        "navigation_mesh": "res://scenes/3d_navigation_Level.navmesh",
+        "navigation_mesh": "res://scenes/3d_navigation_West.navmesh",
+        "scope": "scene",
         "cell_size": 0.2,
         "cell_height": 0.1,
         "agent_height": 1.8,
-        "agent_radius": 0.45
+        "agent_radius": 0.45,
+        "bake_bounds_center": {
+          "x": -6.25,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "bake_bounds_size": {
+          "x": 12.5,
+          "y": 0.1,
+          "z": 25.0
+        }
+      }
+    },
+    {
+      "uuid": "2af458cc-45d7-4f01-8c60-f716e8568bd8",
+      "name": "East",
+      "Transform3D": {},
+      "NavigationRegion3D": {
+        "navigation_mesh": "res://scenes/3d_navigation_East.navmesh",
+        "scope": "scene",
+        "cell_size": 0.2,
+        "cell_height": 0.1,
+        "agent_height": 1.8,
+        "agent_radius": 0.45,
+        "bake_bounds_center": {
+          "x": 6.25,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "bake_bounds_size": {
+          "x": 12.5,
+          "y": 0.1,
+          "z": 25.0
+        }
       }
     },
     {
       "uuid": "ce346153-d2d5-4103-8b89-fa636b65ed97",
       "parent": "b3d4ac78-7a52-4396-a5a9-4cc41aa78eb9",
       "name": "Floor",
-      "Transform3D": { "position": { "x": 0.0, "y": -0.25, "z": 0.0 } },
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": -0.25,
+          "z": 0.0
+        }
+      },
       "MeshInstance3D": {},
-      "PrimitiveMesh3D": { "size": { "x": 24.0, "y": 0.5, "z": 24.0 } },
+      "PrimitiveMesh3D": {
+        "size": {
+          "x": 24.0,
+          "y": 0.5,
+          "z": 24.0
+        }
+      },
       "Material3D": {
         "material": "res://materials/3d_navigation/floor.mat3d"
       },
-      "Collider3D": { "extents": { "x": 12.0, "y": 0.25, "z": 12.0 } }
+      "Collider3D": {
+        "extents": {
+          "x": 12.0,
+          "y": 0.25,
+          "z": 12.0
+        }
+      }
     },
     {
       "uuid": "86bb60e6-7024-4a05-a0c5-b04e00519f98",
       "parent": "b3d4ac78-7a52-4396-a5a9-4cc41aa78eb9",
       "name": "North wall",
-      "Transform3D": { "position": { "x": 0.0, "y": 1.0, "z": -12.25 } },
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 1.0,
+          "z": -12.25
+        }
+      },
       "MeshInstance3D": {},
-      "PrimitiveMesh3D": { "size": { "x": 24.0, "y": 2.0, "z": 0.5 } },
-      "Material3D": { "material": "res://materials/3d_navigation/wall.mat3d" },
-      "Collider3D": { "extents": { "x": 12.0, "y": 1.0, "z": 0.25 } }
+      "PrimitiveMesh3D": {
+        "size": {
+          "x": 24.0,
+          "y": 2.0,
+          "z": 0.5
+        }
+      },
+      "Material3D": {
+        "material": "res://materials/3d_navigation/wall.mat3d"
+      },
+      "Collider3D": {
+        "extents": {
+          "x": 12.0,
+          "y": 1.0,
+          "z": 0.25
+        }
+      }
     },
     {
       "uuid": "c9701d23-1f4f-4d30-b173-31c06406bff3",
       "parent": "b3d4ac78-7a52-4396-a5a9-4cc41aa78eb9",
       "name": "South wall",
-      "Transform3D": { "position": { "x": 0.0, "y": 1.0, "z": 12.25 } },
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 1.0,
+          "z": 12.25
+        }
+      },
       "MeshInstance3D": {},
-      "PrimitiveMesh3D": { "size": { "x": 24.0, "y": 2.0, "z": 0.5 } },
-      "Material3D": { "material": "res://materials/3d_navigation/wall.mat3d" },
-      "Collider3D": { "extents": { "x": 12.0, "y": 1.0, "z": 0.25 } }
+      "PrimitiveMesh3D": {
+        "size": {
+          "x": 24.0,
+          "y": 2.0,
+          "z": 0.5
+        }
+      },
+      "Material3D": {
+        "material": "res://materials/3d_navigation/wall.mat3d"
+      },
+      "Collider3D": {
+        "extents": {
+          "x": 12.0,
+          "y": 1.0,
+          "z": 0.25
+        }
+      }
     },
     {
       "uuid": "22fca46b-62c7-4dd6-b536-b6503abd9f61",
       "parent": "b3d4ac78-7a52-4396-a5a9-4cc41aa78eb9",
       "name": "West wall",
-      "Transform3D": { "position": { "x": -12.25, "y": 1.0, "z": 0.0 } },
+      "Transform3D": {
+        "position": {
+          "x": -12.25,
+          "y": 1.0,
+          "z": 0.0
+        }
+      },
       "MeshInstance3D": {},
-      "PrimitiveMesh3D": { "size": { "x": 0.5, "y": 2.0, "z": 24.0 } },
-      "Material3D": { "material": "res://materials/3d_navigation/wall.mat3d" },
-      "Collider3D": { "extents": { "x": 0.25, "y": 1.0, "z": 12.0 } }
+      "PrimitiveMesh3D": {
+        "size": {
+          "x": 0.5,
+          "y": 2.0,
+          "z": 24.0
+        }
+      },
+      "Material3D": {
+        "material": "res://materials/3d_navigation/wall.mat3d"
+      },
+      "Collider3D": {
+        "extents": {
+          "x": 0.25,
+          "y": 1.0,
+          "z": 12.0
+        }
+      }
     },
     {
       "uuid": "f762cde5-1a4f-43f0-974a-2e1618739c0b",
       "parent": "b3d4ac78-7a52-4396-a5a9-4cc41aa78eb9",
       "name": "East wall",
-      "Transform3D": { "position": { "x": 12.25, "y": 1.0, "z": 0.0 } },
+      "Transform3D": {
+        "position": {
+          "x": 12.25,
+          "y": 1.0,
+          "z": 0.0
+        }
+      },
       "MeshInstance3D": {},
-      "PrimitiveMesh3D": { "size": { "x": 0.5, "y": 2.0, "z": 24.0 } },
-      "Material3D": { "material": "res://materials/3d_navigation/wall.mat3d" },
-      "Collider3D": { "extents": { "x": 0.25, "y": 1.0, "z": 12.0 } }
+      "PrimitiveMesh3D": {
+        "size": {
+          "x": 0.5,
+          "y": 2.0,
+          "z": 24.0
+        }
+      },
+      "Material3D": {
+        "material": "res://materials/3d_navigation/wall.mat3d"
+      },
+      "Collider3D": {
+        "extents": {
+          "x": 0.25,
+          "y": 1.0,
+          "z": 12.0
+        }
+      }
     },
     {
       "uuid": "36a8ae3e-4880-4da2-a05e-6c9d8369b266",
       "parent": "b3d4ac78-7a52-4396-a5a9-4cc41aa78eb9",
       "name": "Long wall",
-      "Transform3D": { "position": { "x": 0.0, "y": 1.0, "z": -3.0 } },
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 1.0,
+          "z": -3.0
+        }
+      },
       "MeshInstance3D": {},
-      "PrimitiveMesh3D": { "size": { "x": 12.0, "y": 2.0, "z": 0.5 } },
-      "Material3D": { "material": "res://materials/3d_navigation/wall.mat3d" },
-      "Collider3D": { "extents": { "x": 6.0, "y": 1.0, "z": 0.25 } }
+      "PrimitiveMesh3D": {
+        "size": {
+          "x": 12.0,
+          "y": 2.0,
+          "z": 0.5
+        }
+      },
+      "Material3D": {
+        "material": "res://materials/3d_navigation/wall.mat3d"
+      },
+      "Collider3D": {
+        "extents": {
+          "x": 6.0,
+          "y": 1.0,
+          "z": 0.25
+        }
+      }
     },
     {
       "uuid": "0d19fccf-e00c-4ba3-8b81-1956f21e5306",
       "parent": "b3d4ac78-7a52-4396-a5a9-4cc41aa78eb9",
       "name": "Short wall",
-      "Transform3D": { "position": { "x": -6.5, "y": 1.0, "z": 3.0 } },
+      "Transform3D": {
+        "position": {
+          "x": -6.5,
+          "y": 1.0,
+          "z": 3.0
+        }
+      },
       "MeshInstance3D": {},
-      "PrimitiveMesh3D": { "size": { "x": 9.0, "y": 2.0, "z": 0.5 } },
-      "Material3D": { "material": "res://materials/3d_navigation/wall.mat3d" },
-      "Collider3D": { "extents": { "x": 4.5, "y": 1.0, "z": 0.25 } }
+      "PrimitiveMesh3D": {
+        "size": {
+          "x": 9.0,
+          "y": 2.0,
+          "z": 0.5
+        }
+      },
+      "Material3D": {
+        "material": "res://materials/3d_navigation/wall.mat3d"
+      },
+      "Collider3D": {
+        "extents": {
+          "x": 4.5,
+          "y": 1.0,
+          "z": 0.25
+        }
+      }
     },
     {
       "uuid": "57548a0f-4ee7-4563-863c-7378b34e67d8",
       "parent": "b3d4ac78-7a52-4396-a5a9-4cc41aa78eb9",
       "name": "Crate 1",
-      "Transform3D": { "position": { "x": -8.0, "y": 0.5, "z": -7.0 } },
+      "Transform3D": {
+        "position": {
+          "x": -8.0,
+          "y": 0.5,
+          "z": -7.0
+        }
+      },
       "MeshInstance3D": {},
       "PrimitiveMesh3D": {},
       "Material3D": {
@@ -241,8 +477,17 @@
       "parent": "b3d4ac78-7a52-4396-a5a9-4cc41aa78eb9",
       "name": "Crate 2",
       "Transform3D": {
-        "position": { "x": -7.0, "y": 0.5, "z": -7.4 },
-        "rotation": { "x": 0.0, "y": 0.14780942, "z": 0.0, "w": 0.9890159 }
+        "position": {
+          "x": -7.0,
+          "y": 0.5,
+          "z": -7.4
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.14780942,
+          "z": 0.0,
+          "w": 0.9890159
+        }
       },
       "MeshInstance3D": {},
       "PrimitiveMesh3D": {},
@@ -256,8 +501,17 @@
       "parent": "b3d4ac78-7a52-4396-a5a9-4cc41aa78eb9",
       "name": "Crate 3",
       "Transform3D": {
-        "position": { "x": 6.0, "y": 0.5, "z": -8.0 },
-        "rotation": { "x": 0.0, "y": 0.2923717, "z": 0.0, "w": 0.9563047 }
+        "position": {
+          "x": 6.0,
+          "y": 0.5,
+          "z": -8.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.2923717,
+          "z": 0.0,
+          "w": 0.9563047
+        }
       },
       "MeshInstance3D": {},
       "PrimitiveMesh3D": {},
@@ -271,8 +525,17 @@
       "parent": "b3d4ac78-7a52-4396-a5a9-4cc41aa78eb9",
       "name": "Crate 4",
       "Transform3D": {
-        "position": { "x": -2.0, "y": 0.5, "z": 7.0 },
-        "rotation": { "x": 0.0, "y": 0.4305111, "z": 0.0, "w": 0.90258527 }
+        "position": {
+          "x": -2.0,
+          "y": 0.5,
+          "z": 7.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.4305111,
+          "z": 0.0,
+          "w": 0.90258527
+        }
       },
       "MeshInstance3D": {},
       "PrimitiveMesh3D": {},
@@ -286,8 +549,17 @@
       "parent": "b3d4ac78-7a52-4396-a5a9-4cc41aa78eb9",
       "name": "Crate 5",
       "Transform3D": {
-        "position": { "x": 3.5, "y": 0.5, "z": 1.5 },
-        "rotation": { "x": 0.0, "y": 0.5591929, "z": 0.0, "w": 0.82903755 }
+        "position": {
+          "x": 3.5,
+          "y": 0.5,
+          "z": 1.5
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.5591929,
+          "z": 0.0,
+          "w": 0.82903755
+        }
       },
       "MeshInstance3D": {},
       "PrimitiveMesh3D": {},
@@ -301,8 +573,17 @@
       "parent": "b3d4ac78-7a52-4396-a5a9-4cc41aa78eb9",
       "name": "Crate 6",
       "Transform3D": {
-        "position": { "x": -7.5, "y": 0.5, "z": 6.5 },
-        "rotation": { "x": 0.0, "y": 0.6755902, "z": 0.0, "w": 0.7372773 }
+        "position": {
+          "x": -7.5,
+          "y": 0.5,
+          "z": 6.5
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.6755902,
+          "z": 0.0,
+          "w": 0.7372773
+        }
       },
       "MeshInstance3D": {},
       "PrimitiveMesh3D": {},
@@ -315,43 +596,102 @@
       "uuid": "868c3358-7185-4553-8468-3c425952c185",
       "parent": "b3d4ac78-7a52-4396-a5a9-4cc41aa78eb9",
       "name": "Pillar",
-      "Transform3D": { "position": { "x": 4.0, "y": 1.0, "z": 5.0 } },
+      "Transform3D": {
+        "position": {
+          "x": 4.0,
+          "y": 1.0,
+          "z": 5.0
+        }
+      },
       "MeshInstance3D": {},
-      "PrimitiveMesh3D": { "shape": "cylinder", "radius": 0.6 },
+      "PrimitiveMesh3D": {
+        "shape": "cylinder",
+        "radius": 0.6
+      },
       "Material3D": {
         "material": "res://materials/3d_navigation/pillar.mat3d"
       },
-      "Collider3D": { "shape": "cylinder", "radius": 0.6 }
+      "Collider3D": {
+        "shape": "cylinder",
+        "radius": 0.6
+      }
     },
     {
       "uuid": "90e144fe-cbc0-472f-ac72-a646a72ae3a2",
       "parent": "b3d4ac78-7a52-4396-a5a9-4cc41aa78eb9",
       "name": "Platform",
-      "Transform3D": { "position": { "x": 9.25, "y": 0.6, "z": 8.5 } },
+      "Transform3D": {
+        "position": {
+          "x": 9.25,
+          "y": 0.6,
+          "z": 8.5
+        }
+      },
       "MeshInstance3D": {},
-      "PrimitiveMesh3D": { "size": { "x": 5.0, "y": 1.2, "z": 6.0 } },
+      "PrimitiveMesh3D": {
+        "size": {
+          "x": 5.0,
+          "y": 1.2,
+          "z": 6.0
+        }
+      },
       "Material3D": {
         "material": "res://materials/3d_navigation/platform.mat3d"
       },
-      "Collider3D": { "extents": { "x": 2.5, "y": 0.6, "z": 3.0 } }
+      "Collider3D": {
+        "extents": {
+          "x": 2.5,
+          "y": 0.6,
+          "z": 3.0
+        }
+      }
     },
     {
       "uuid": "e00023c9-1188-4cb3-a971-4ca0a8d62999",
       "parent": "b3d4ac78-7a52-4396-a5a9-4cc41aa78eb9",
       "name": "Ramp",
       "Transform3D": {
-        "position": { "x": 4.5, "y": 0.45511112, "z": 8.5 },
-        "rotation": { "x": 0.0, "y": 0.0, "z": 0.13052619, "w": 0.9914449 }
+        "position": {
+          "x": 4.5,
+          "y": 0.45511112,
+          "z": 8.5
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.13052619,
+          "w": 0.9914449
+        }
       },
       "MeshInstance3D": {},
-      "PrimitiveMesh3D": { "size": { "x": 4.658743, "y": 0.3, "z": 3.0 } },
-      "Material3D": { "material": "res://materials/3d_navigation/ramp.mat3d" },
-      "Collider3D": { "extents": { "x": 2.3293715, "y": 0.15, "z": 1.5 } }
+      "PrimitiveMesh3D": {
+        "size": {
+          "x": 4.658743,
+          "y": 0.3,
+          "z": 3.0
+        }
+      },
+      "Material3D": {
+        "material": "res://materials/3d_navigation/ramp.mat3d"
+      },
+      "Collider3D": {
+        "extents": {
+          "x": 2.3293715,
+          "y": 0.15,
+          "z": 1.5
+        }
+      }
     },
     {
       "uuid": "e2ced2e7-7262-452c-9148-1fe6c408e911",
       "name": "Marker",
-      "Transform3D": { "position": { "x": 0.0, "y": -1.0, "z": 0.0 } },
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": -1.0,
+          "z": 0.0
+        }
+      },
       "MeshInstance3D": {},
       "PrimitiveMesh3D": {
         "shape": "cylinder",
@@ -365,86 +705,270 @@
     {
       "uuid": "93c4352f-5b39-4bb1-b994-376dd732faff",
       "name": "Agent red",
-      "groups": ["agents"],
-      "Transform3D": { "position": { "x": -9.5, "y": 0.9, "z": -9.5 } },
+      "groups": [
+        "agents"
+      ],
+      "Transform3D": {
+        "position": {
+          "x": -9.5,
+          "y": 0.9,
+          "z": -9.5
+        }
+      },
       "MeshInstance3D": {},
-      "PrimitiveMesh3D": { "shape": "capsule", "radius": 0.4, "height": 1.8 },
+      "PrimitiveMesh3D": {
+        "shape": "capsule",
+        "radius": 0.4,
+        "height": 1.8
+      },
       "Material3D": {
         "material": "res://materials/3d_navigation/agent_red.mat3d"
       },
       "CharacterBody3D": {},
-      "Collider3D": { "shape": "capsule", "radius": 0.4, "height": 1.8 },
+      "Collider3D": {
+        "shape": "capsule",
+        "radius": 0.4,
+        "height": 1.8
+      },
       "NavigationAgent3D": {
-        "target_position": { "x": 9.0, "y": 0.0, "z": 9.0 },
+        "target_position": {
+          "x": 9.0,
+          "y": 0.0,
+          "z": 9.0
+        },
         "radius": 0.45,
         "max_speed": 4.0,
         "avoidance_enabled": true,
         "time_horizon": 1.5
       },
-      "Script": { "source": "res://scripts/nav_agent.flux" }
+      "Script": {
+        "source": "res://scripts/nav_agent.flux"
+      }
     },
     {
       "uuid": "c6608b7a-aff0-4b6e-876a-ec78a2992bdd",
       "name": "Agent blue",
-      "groups": ["agents"],
-      "Transform3D": { "position": { "x": 9.5, "y": 0.9, "z": -9.5 } },
+      "groups": [
+        "agents"
+      ],
+      "Transform3D": {
+        "position": {
+          "x": 9.5,
+          "y": 0.9,
+          "z": -9.5
+        }
+      },
       "MeshInstance3D": {},
-      "PrimitiveMesh3D": { "shape": "capsule", "radius": 0.4, "height": 1.8 },
+      "PrimitiveMesh3D": {
+        "shape": "capsule",
+        "radius": 0.4,
+        "height": 1.8
+      },
       "Material3D": {
         "material": "res://materials/3d_navigation/agent_blue.mat3d"
       },
       "CharacterBody3D": {},
-      "Collider3D": { "shape": "capsule", "radius": 0.4, "height": 1.8 },
+      "Collider3D": {
+        "shape": "capsule",
+        "radius": 0.4,
+        "height": 1.8
+      },
       "NavigationAgent3D": {
-        "target_position": { "x": -9.5, "y": 0.0, "z": 9.5 },
+        "target_position": {
+          "x": -9.5,
+          "y": 0.0,
+          "z": 9.5
+        },
         "radius": 0.45,
         "max_speed": 4.0,
         "avoidance_enabled": true,
         "time_horizon": 1.5
       },
-      "Script": { "source": "res://scripts/nav_agent.flux" }
+      "Script": {
+        "source": "res://scripts/nav_agent.flux"
+      }
     },
     {
       "uuid": "68c760d9-38c4-464f-8564-289167466688",
       "name": "Agent green",
-      "groups": ["agents"],
-      "Transform3D": { "position": { "x": -9.5, "y": 0.9, "z": 9.5 } },
+      "groups": [
+        "agents"
+      ],
+      "Transform3D": {
+        "position": {
+          "x": -9.5,
+          "y": 0.9,
+          "z": 9.5
+        }
+      },
       "MeshInstance3D": {},
-      "PrimitiveMesh3D": { "shape": "capsule", "radius": 0.4, "height": 1.8 },
+      "PrimitiveMesh3D": {
+        "shape": "capsule",
+        "radius": 0.4,
+        "height": 1.8
+      },
       "Material3D": {
         "material": "res://materials/3d_navigation/agent_green.mat3d"
       },
       "CharacterBody3D": {},
-      "Collider3D": { "shape": "capsule", "radius": 0.4, "height": 1.8 },
+      "Collider3D": {
+        "shape": "capsule",
+        "radius": 0.4,
+        "height": 1.8
+      },
       "NavigationAgent3D": {
-        "target_position": { "x": 9.5, "y": 0.0, "z": -9.5 },
+        "target_position": {
+          "x": 9.5,
+          "y": 0.0,
+          "z": -9.5
+        },
         "radius": 0.45,
         "max_speed": 4.0,
         "avoidance_enabled": true,
         "time_horizon": 1.5
       },
-      "Script": { "source": "res://scripts/nav_agent.flux" }
+      "Script": {
+        "source": "res://scripts/nav_agent.flux"
+      }
     },
     {
       "uuid": "25270e0e-bf18-4e9a-b42e-2b9876f7aa87",
       "name": "Agent violet",
-      "groups": ["agents"],
-      "Transform3D": { "position": { "x": 9.5, "y": 0.9, "z": 3.0 } },
+      "groups": [
+        "agents"
+      ],
+      "Transform3D": {
+        "position": {
+          "x": 9.5,
+          "y": 0.9,
+          "z": 3.0
+        }
+      },
       "MeshInstance3D": {},
-      "PrimitiveMesh3D": { "shape": "capsule", "radius": 0.4, "height": 1.8 },
+      "PrimitiveMesh3D": {
+        "shape": "capsule",
+        "radius": 0.4,
+        "height": 1.8
+      },
       "Material3D": {
         "material": "res://materials/3d_navigation/agent_violet.mat3d"
       },
       "CharacterBody3D": {},
-      "Collider3D": { "shape": "capsule", "radius": 0.4, "height": 1.8 },
+      "Collider3D": {
+        "shape": "capsule",
+        "radius": 0.4,
+        "height": 1.8
+      },
       "NavigationAgent3D": {
-        "target_position": { "x": -9.5, "y": 0.0, "z": -9.5 },
+        "target_position": {
+          "x": -9.5,
+          "y": 0.0,
+          "z": -9.5
+        },
         "radius": 0.45,
         "max_speed": 4.0,
         "avoidance_enabled": true,
         "time_horizon": 1.5
       },
-      "Script": { "source": "res://scripts/nav_agent.flux" }
+      "Script": {
+        "source": "res://scripts/nav_agent.flux"
+      }
+    },
+    {
+      "uuid": "caa46513-61b0-4f27-b824-0926b0dc7aef",
+      "parent": "b3d4ac78-7a52-4396-a5a9-4cc41aa78eb9",
+      "name": "Doorway wall",
+      "Transform3D": {
+        "position": {
+          "x": 10.25,
+          "y": 1.0,
+          "z": -3.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "size": {
+          "x": 3.5,
+          "y": 2.0,
+          "z": 0.5
+        }
+      },
+      "Material3D": {
+        "material": "res://materials/3d_navigation/wall.mat3d"
+      },
+      "Collider3D": {
+        "extents": {
+          "x": 1.75,
+          "y": 1.0,
+          "z": 0.25
+        }
+      }
+    },
+    {
+      "uuid": "edf0f4ca-a256-4592-8e5d-96a02fd4ca29",
+      "name": "Cart",
+      "exports": {
+        "offset": [
+          0,
+          0,
+          6
+        ],
+        "seconds": 3,
+        "rest": 2
+      },
+      "Transform3D": {
+        "position": {
+          "x": 7.25,
+          "y": 0.5,
+          "z": -6.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "size": {
+          "x": 1.2,
+          "y": 1.0,
+          "z": 1.2
+        }
+      },
+      "Material3D": {
+        "material": "res://materials/3d_navigation/cart.mat3d"
+      },
+      "RigidBody3D": {
+        "type": "kinematic"
+      },
+      "Collider3D": {
+        "extents": {
+          "x": 0.6,
+          "y": 0.5,
+          "z": 0.6
+        }
+      },
+      "NavigationObstacle3D": {
+        "radius": 0.9,
+        "affect_paths": true
+      },
+      "Script": {
+        "source": "res://scripts/patrol.flux"
+      }
+    },
+    {
+      "uuid": "25e3c13d-00f7-4ba9-8efa-e38f562a9e5b",
+      "name": "Drop",
+      "Transform3D": {},
+      "NavigationLink3D": {
+        "bidirectional": false,
+        "start_position": {
+          "x": 9.25,
+          "y": 1.2,
+          "z": 6.3
+        },
+        "end_position": {
+          "x": 9.25,
+          "y": 0.0,
+          "z": 4.4
+        }
+      }
     }
   ],
   "assets": {
@@ -486,6 +1010,12 @@
     },
     "res://materials/3d_navigation/agent_violet.mat3d": {
       "uid": "uid://be9b2071-2280-47b0-b991-3bce9cb5d305"
+    },
+    "res://materials/3d_navigation/cart.mat3d": {
+      "uid": "uid://402e9d5c-8b00-45a5-ac01-a46215b837be"
+    },
+    "res://scripts/patrol.flux": {
+      "uid": "uid://b786ae7a-540f-4c41-bd31-422d4f703d27"
     }
   }
 }
