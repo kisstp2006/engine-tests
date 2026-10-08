@@ -1,0 +1,491 @@
+{
+  "fluxion_scene": 3,
+  "entities": [
+    {
+      "uuid": "7018ff05-e3eb-4817-9386-954486f259ea",
+      "name": "Hud",
+      "Control": {
+        "width": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "CanvasLayer": {}
+    },
+    {
+      "uuid": "4fcb5aa0-ae3c-44b2-8f7c-ed51cfbb6df1",
+      "parent": "7018ff05-e3eb-4817-9386-954486f259ea",
+      "name": "Panel",
+      "Control": {
+        "position": "anchored",
+        "offset_left": 12.0,
+        "offset_top": 12.0
+      },
+      "BoxContainer": { "separation": 4 },
+      "PanelContainer": {}
+    },
+    {
+      "uuid": "4903ab2b-b832-4392-ba81-45cf6e1054ce",
+      "parent": "4fcb5aa0-ae3c-44b2-8f7c-ed51cfbb6df1",
+      "name": "Title",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 420.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ThemeOverride": { "override_font_size": true, "font_size": 18 },
+      "Label": { "text": "3D navigation" }
+    },
+    {
+      "uuid": "73727fb6-bbb2-4d97-8a09-536dabd65f74",
+      "parent": "4fcb5aa0-ae3c-44b2-8f7c-ed51cfbb6df1",
+      "name": "About",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 420.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ThemeOverride": { "override_font_size": true, "font_size": 13 },
+      "Label": {
+        "text": "A NavigationRegion3D baked from the floor, the walls, the crates, the pillar and a ramp up to a platform hanging from it - the blue lines. Four characters with a NavigationAgent3D each walk to their targets round what is in the way, and keep out of each other's way. Click the floor to send them all there; N shows or hides the mesh and their ways."
+      }
+    },
+    {
+      "uuid": "7b07229b-df47-49f7-9643-f37e3480d05e",
+      "parent": "4fcb5aa0-ae3c-44b2-8f7c-ed51cfbb6df1",
+      "name": "Going",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 420.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ThemeOverride": { "override_font_size": true, "font_size": 13 },
+      "Label": { "text": "Going to the far corners" }
+    },
+    {
+      "uuid": "97f76344-85da-4326-8f82-5f0d9f61170a",
+      "parent": "4fcb5aa0-ae3c-44b2-8f7c-ed51cfbb6df1",
+      "name": "There",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 420.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ThemeOverride": { "override_font_size": true, "font_size": 13 },
+      "Label": { "text": "0 of 4 agents there" }
+    },
+    {
+      "uuid": "746d7def-647f-43c4-95c4-50a465aa1ae6",
+      "name": "Environment",
+      "Environment": {
+        "background": "color",
+        "background_color": { "r": 0.42, "g": 0.55, "b": 0.75, "a": 1.0 },
+        "ambient_color": { "r": 0.6, "g": 0.7, "b": 1.0, "a": 1.0 },
+        "ambient_energy": 0.35,
+        "tonemap": "aces"
+      }
+    },
+    {
+      "uuid": "23b1b44d-ba84-4ac7-afcb-f3c75e037e41",
+      "name": "Sun",
+      "Transform3D": {
+        "position": { "x": 0.0, "y": 12.0, "z": 0.0 },
+        "rotation": { "x": -0.3891, "y": -0.2775, "z": -0.1255, "w": 0.8687 }
+      },
+      "DirectionalLight3D": {
+        "color": { "r": 1.0, "g": 0.95, "b": 0.85, "a": 1.0 },
+        "energy": 1.4,
+        "shadow": true,
+        "shadow_max_distance": 50.0
+      }
+    },
+    {
+      "uuid": "8684c5c6-1c62-4fd8-bc26-7bb583ecdd5d",
+      "name": "Camera",
+      "Transform3D": {
+        "position": { "x": 0.0, "y": 21.0, "z": 17.0 },
+        "rotation": {
+          "x": -0.45758158,
+          "y": -0.0,
+          "z": -0.0,
+          "w": 0.88916767
+        }
+      },
+      "Camera3D": { "fov": 1.0471976, "current": true },
+      "Script": { "source": "res://scripts/go_here.flux" }
+    },
+    {
+      "uuid": "b3d4ac78-7a52-4396-a5a9-4cc41aa78eb9",
+      "name": "Level",
+      "Transform3D": {},
+      "NavigationRegion3D": {
+        "navigation_mesh": "res://scenes/3d_navigation_Level.navmesh",
+        "cell_size": 0.2,
+        "cell_height": 0.1,
+        "agent_height": 1.8,
+        "agent_radius": 0.45
+      }
+    },
+    {
+      "uuid": "ce346153-d2d5-4103-8b89-fa636b65ed97",
+      "parent": "b3d4ac78-7a52-4396-a5a9-4cc41aa78eb9",
+      "name": "Floor",
+      "Transform3D": { "position": { "x": 0.0, "y": -0.25, "z": 0.0 } },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": { "size": { "x": 24.0, "y": 0.5, "z": 24.0 } },
+      "Material3D": {
+        "material": "res://materials/3d_navigation/floor.mat3d"
+      },
+      "Collider3D": { "extents": { "x": 12.0, "y": 0.25, "z": 12.0 } }
+    },
+    {
+      "uuid": "86bb60e6-7024-4a05-a0c5-b04e00519f98",
+      "parent": "b3d4ac78-7a52-4396-a5a9-4cc41aa78eb9",
+      "name": "North wall",
+      "Transform3D": { "position": { "x": 0.0, "y": 1.0, "z": -12.25 } },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": { "size": { "x": 24.0, "y": 2.0, "z": 0.5 } },
+      "Material3D": { "material": "res://materials/3d_navigation/wall.mat3d" },
+      "Collider3D": { "extents": { "x": 12.0, "y": 1.0, "z": 0.25 } }
+    },
+    {
+      "uuid": "c9701d23-1f4f-4d30-b173-31c06406bff3",
+      "parent": "b3d4ac78-7a52-4396-a5a9-4cc41aa78eb9",
+      "name": "South wall",
+      "Transform3D": { "position": { "x": 0.0, "y": 1.0, "z": 12.25 } },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": { "size": { "x": 24.0, "y": 2.0, "z": 0.5 } },
+      "Material3D": { "material": "res://materials/3d_navigation/wall.mat3d" },
+      "Collider3D": { "extents": { "x": 12.0, "y": 1.0, "z": 0.25 } }
+    },
+    {
+      "uuid": "22fca46b-62c7-4dd6-b536-b6503abd9f61",
+      "parent": "b3d4ac78-7a52-4396-a5a9-4cc41aa78eb9",
+      "name": "West wall",
+      "Transform3D": { "position": { "x": -12.25, "y": 1.0, "z": 0.0 } },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": { "size": { "x": 0.5, "y": 2.0, "z": 24.0 } },
+      "Material3D": { "material": "res://materials/3d_navigation/wall.mat3d" },
+      "Collider3D": { "extents": { "x": 0.25, "y": 1.0, "z": 12.0 } }
+    },
+    {
+      "uuid": "f762cde5-1a4f-43f0-974a-2e1618739c0b",
+      "parent": "b3d4ac78-7a52-4396-a5a9-4cc41aa78eb9",
+      "name": "East wall",
+      "Transform3D": { "position": { "x": 12.25, "y": 1.0, "z": 0.0 } },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": { "size": { "x": 0.5, "y": 2.0, "z": 24.0 } },
+      "Material3D": { "material": "res://materials/3d_navigation/wall.mat3d" },
+      "Collider3D": { "extents": { "x": 0.25, "y": 1.0, "z": 12.0 } }
+    },
+    {
+      "uuid": "36a8ae3e-4880-4da2-a05e-6c9d8369b266",
+      "parent": "b3d4ac78-7a52-4396-a5a9-4cc41aa78eb9",
+      "name": "Long wall",
+      "Transform3D": { "position": { "x": 0.0, "y": 1.0, "z": -3.0 } },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": { "size": { "x": 12.0, "y": 2.0, "z": 0.5 } },
+      "Material3D": { "material": "res://materials/3d_navigation/wall.mat3d" },
+      "Collider3D": { "extents": { "x": 6.0, "y": 1.0, "z": 0.25 } }
+    },
+    {
+      "uuid": "0d19fccf-e00c-4ba3-8b81-1956f21e5306",
+      "parent": "b3d4ac78-7a52-4396-a5a9-4cc41aa78eb9",
+      "name": "Short wall",
+      "Transform3D": { "position": { "x": -6.5, "y": 1.0, "z": 3.0 } },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": { "size": { "x": 9.0, "y": 2.0, "z": 0.5 } },
+      "Material3D": { "material": "res://materials/3d_navigation/wall.mat3d" },
+      "Collider3D": { "extents": { "x": 4.5, "y": 1.0, "z": 0.25 } }
+    },
+    {
+      "uuid": "57548a0f-4ee7-4563-863c-7378b34e67d8",
+      "parent": "b3d4ac78-7a52-4396-a5a9-4cc41aa78eb9",
+      "name": "Crate 1",
+      "Transform3D": { "position": { "x": -8.0, "y": 0.5, "z": -7.0 } },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {},
+      "Material3D": {
+        "material": "res://materials/3d_navigation/crate.mat3d"
+      },
+      "Collider3D": {}
+    },
+    {
+      "uuid": "05b65ac0-9297-42e8-9dd9-014ed8c8cb6f",
+      "parent": "b3d4ac78-7a52-4396-a5a9-4cc41aa78eb9",
+      "name": "Crate 2",
+      "Transform3D": {
+        "position": { "x": -7.0, "y": 0.5, "z": -7.4 },
+        "rotation": { "x": 0.0, "y": 0.14780942, "z": 0.0, "w": 0.9890159 }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {},
+      "Material3D": {
+        "material": "res://materials/3d_navigation/crate.mat3d"
+      },
+      "Collider3D": {}
+    },
+    {
+      "uuid": "7effe976-efc6-4e12-b1cd-938f5afa3de7",
+      "parent": "b3d4ac78-7a52-4396-a5a9-4cc41aa78eb9",
+      "name": "Crate 3",
+      "Transform3D": {
+        "position": { "x": 6.0, "y": 0.5, "z": -8.0 },
+        "rotation": { "x": 0.0, "y": 0.2923717, "z": 0.0, "w": 0.9563047 }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {},
+      "Material3D": {
+        "material": "res://materials/3d_navigation/crate.mat3d"
+      },
+      "Collider3D": {}
+    },
+    {
+      "uuid": "32474d8c-75ba-4613-8133-140df52f3f07",
+      "parent": "b3d4ac78-7a52-4396-a5a9-4cc41aa78eb9",
+      "name": "Crate 4",
+      "Transform3D": {
+        "position": { "x": -2.0, "y": 0.5, "z": 7.0 },
+        "rotation": { "x": 0.0, "y": 0.4305111, "z": 0.0, "w": 0.90258527 }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {},
+      "Material3D": {
+        "material": "res://materials/3d_navigation/crate.mat3d"
+      },
+      "Collider3D": {}
+    },
+    {
+      "uuid": "1384e45f-0cf6-40ff-9807-05b812d37742",
+      "parent": "b3d4ac78-7a52-4396-a5a9-4cc41aa78eb9",
+      "name": "Crate 5",
+      "Transform3D": {
+        "position": { "x": 3.5, "y": 0.5, "z": 1.5 },
+        "rotation": { "x": 0.0, "y": 0.5591929, "z": 0.0, "w": 0.82903755 }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {},
+      "Material3D": {
+        "material": "res://materials/3d_navigation/crate.mat3d"
+      },
+      "Collider3D": {}
+    },
+    {
+      "uuid": "ef228d6e-8843-402b-a126-a37e3514fa3b",
+      "parent": "b3d4ac78-7a52-4396-a5a9-4cc41aa78eb9",
+      "name": "Crate 6",
+      "Transform3D": {
+        "position": { "x": -7.5, "y": 0.5, "z": 6.5 },
+        "rotation": { "x": 0.0, "y": 0.6755902, "z": 0.0, "w": 0.7372773 }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {},
+      "Material3D": {
+        "material": "res://materials/3d_navigation/crate.mat3d"
+      },
+      "Collider3D": {}
+    },
+    {
+      "uuid": "868c3358-7185-4553-8468-3c425952c185",
+      "parent": "b3d4ac78-7a52-4396-a5a9-4cc41aa78eb9",
+      "name": "Pillar",
+      "Transform3D": { "position": { "x": 4.0, "y": 1.0, "z": 5.0 } },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": { "shape": "cylinder", "radius": 0.6 },
+      "Material3D": {
+        "material": "res://materials/3d_navigation/pillar.mat3d"
+      },
+      "Collider3D": { "shape": "cylinder", "radius": 0.6 }
+    },
+    {
+      "uuid": "90e144fe-cbc0-472f-ac72-a646a72ae3a2",
+      "parent": "b3d4ac78-7a52-4396-a5a9-4cc41aa78eb9",
+      "name": "Platform",
+      "Transform3D": { "position": { "x": 9.25, "y": 0.6, "z": 8.5 } },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": { "size": { "x": 5.0, "y": 1.2, "z": 6.0 } },
+      "Material3D": {
+        "material": "res://materials/3d_navigation/platform.mat3d"
+      },
+      "Collider3D": { "extents": { "x": 2.5, "y": 0.6, "z": 3.0 } }
+    },
+    {
+      "uuid": "e00023c9-1188-4cb3-a971-4ca0a8d62999",
+      "parent": "b3d4ac78-7a52-4396-a5a9-4cc41aa78eb9",
+      "name": "Ramp",
+      "Transform3D": {
+        "position": { "x": 4.5, "y": 0.45511112, "z": 8.5 },
+        "rotation": { "x": 0.0, "y": 0.0, "z": 0.13052619, "w": 0.9914449 }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": { "size": { "x": 4.658743, "y": 0.3, "z": 3.0 } },
+      "Material3D": { "material": "res://materials/3d_navigation/ramp.mat3d" },
+      "Collider3D": { "extents": { "x": 2.3293715, "y": 0.15, "z": 1.5 } }
+    },
+    {
+      "uuid": "e2ced2e7-7262-452c-9148-1fe6c408e911",
+      "name": "Marker",
+      "Transform3D": { "position": { "x": 0.0, "y": -1.0, "z": 0.0 } },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "shape": "cylinder",
+        "radius": 0.3,
+        "height": 0.05
+      },
+      "Material3D": {
+        "material": "res://materials/3d_navigation/marker.mat3d"
+      }
+    },
+    {
+      "uuid": "93c4352f-5b39-4bb1-b994-376dd732faff",
+      "name": "Agent red",
+      "groups": ["agents"],
+      "Transform3D": { "position": { "x": -9.5, "y": 0.9, "z": -9.5 } },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": { "shape": "capsule", "radius": 0.4, "height": 1.8 },
+      "Material3D": {
+        "material": "res://materials/3d_navigation/agent_red.mat3d"
+      },
+      "CharacterBody3D": {},
+      "Collider3D": { "shape": "capsule", "radius": 0.4, "height": 1.8 },
+      "NavigationAgent3D": {
+        "target_position": { "x": 9.0, "y": 0.0, "z": 9.0 },
+        "radius": 0.45,
+        "max_speed": 4.0,
+        "avoidance_enabled": true,
+        "time_horizon": 1.5
+      },
+      "Script": { "source": "res://scripts/nav_agent.flux" }
+    },
+    {
+      "uuid": "c6608b7a-aff0-4b6e-876a-ec78a2992bdd",
+      "name": "Agent blue",
+      "groups": ["agents"],
+      "Transform3D": { "position": { "x": 9.5, "y": 0.9, "z": -9.5 } },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": { "shape": "capsule", "radius": 0.4, "height": 1.8 },
+      "Material3D": {
+        "material": "res://materials/3d_navigation/agent_blue.mat3d"
+      },
+      "CharacterBody3D": {},
+      "Collider3D": { "shape": "capsule", "radius": 0.4, "height": 1.8 },
+      "NavigationAgent3D": {
+        "target_position": { "x": -9.5, "y": 0.0, "z": 9.5 },
+        "radius": 0.45,
+        "max_speed": 4.0,
+        "avoidance_enabled": true,
+        "time_horizon": 1.5
+      },
+      "Script": { "source": "res://scripts/nav_agent.flux" }
+    },
+    {
+      "uuid": "68c760d9-38c4-464f-8564-289167466688",
+      "name": "Agent green",
+      "groups": ["agents"],
+      "Transform3D": { "position": { "x": -9.5, "y": 0.9, "z": 9.5 } },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": { "shape": "capsule", "radius": 0.4, "height": 1.8 },
+      "Material3D": {
+        "material": "res://materials/3d_navigation/agent_green.mat3d"
+      },
+      "CharacterBody3D": {},
+      "Collider3D": { "shape": "capsule", "radius": 0.4, "height": 1.8 },
+      "NavigationAgent3D": {
+        "target_position": { "x": 9.5, "y": 0.0, "z": -9.5 },
+        "radius": 0.45,
+        "max_speed": 4.0,
+        "avoidance_enabled": true,
+        "time_horizon": 1.5
+      },
+      "Script": { "source": "res://scripts/nav_agent.flux" }
+    },
+    {
+      "uuid": "25270e0e-bf18-4e9a-b42e-2b9876f7aa87",
+      "name": "Agent violet",
+      "groups": ["agents"],
+      "Transform3D": { "position": { "x": 9.5, "y": 0.9, "z": 3.0 } },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": { "shape": "capsule", "radius": 0.4, "height": 1.8 },
+      "Material3D": {
+        "material": "res://materials/3d_navigation/agent_violet.mat3d"
+      },
+      "CharacterBody3D": {},
+      "Collider3D": { "shape": "capsule", "radius": 0.4, "height": 1.8 },
+      "NavigationAgent3D": {
+        "target_position": { "x": -9.5, "y": 0.0, "z": -9.5 },
+        "radius": 0.45,
+        "max_speed": 4.0,
+        "avoidance_enabled": true,
+        "time_horizon": 1.5
+      },
+      "Script": { "source": "res://scripts/nav_agent.flux" }
+    }
+  ],
+  "assets": {
+    "res://scripts/go_here.flux": {
+      "uid": "uid://116d24d7-3876-4784-95a9-0c6ffba4fb72"
+    },
+    "res://materials/3d_navigation/floor.mat3d": {
+      "uid": "uid://c3e5eed0-8cdf-4906-8476-1857d99b91f1"
+    },
+    "res://materials/3d_navigation/wall.mat3d": {
+      "uid": "uid://8b24d565-22d3-499a-b9a4-4880bf01bd47"
+    },
+    "res://materials/3d_navigation/crate.mat3d": {
+      "uid": "uid://77d5e54d-f006-4c86-8713-e9bafc263c74"
+    },
+    "res://materials/3d_navigation/pillar.mat3d": {
+      "uid": "uid://5c4800fd-d398-4d39-8fb9-fdbdea21ecc9"
+    },
+    "res://materials/3d_navigation/platform.mat3d": {
+      "uid": "uid://f90bf4af-5d6e-497d-9c5f-0ab50183ff3e"
+    },
+    "res://materials/3d_navigation/ramp.mat3d": {
+      "uid": "uid://2bbea41b-e558-455b-9c7c-64aa6bd80e1f"
+    },
+    "res://materials/3d_navigation/marker.mat3d": {
+      "uid": "uid://3ae82aeb-b7ac-40f0-aac2-255a49e037b1"
+    },
+    "res://materials/3d_navigation/agent_red.mat3d": {
+      "uid": "uid://26893bf0-a1e9-4415-b965-7d26038ff49b"
+    },
+    "res://scripts/nav_agent.flux": {
+      "uid": "uid://f3b558e3-8afd-4d0f-aee1-a9c1217e4438"
+    },
+    "res://materials/3d_navigation/agent_blue.mat3d": {
+      "uid": "uid://5a527a98-011f-4df0-a07a-d90d0044a902"
+    },
+    "res://materials/3d_navigation/agent_green.mat3d": {
+      "uid": "uid://ee185fc3-2c68-462d-b377-f4f40ff0567e"
+    },
+    "res://materials/3d_navigation/agent_violet.mat3d": {
+      "uid": "uid://be9b2071-2280-47b0-b991-3bce9cb5d305"
+    }
+  }
+}
