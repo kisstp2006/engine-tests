@@ -615,6 +615,34 @@
       "Button": {
         "text": "3D rain, fog, words, worlds"
       }
+    },
+    {
+      "uuid": "6d047882-63f2-4bbb-8d58-2af8b3cc947c",
+      "parent": "eb97bece-1ced-4e93-9ad9-6142a4bd370f",
+      "name": "3d_csg",
+      "groups": [
+        "scene_buttons"
+      ],
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 340.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "fixed",
+          "value": 42.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "CenterContainer": {},
+      "Button": {
+        "text": "3D CSG: a room of solids"
+      }
     }
   ],
   "assets": {

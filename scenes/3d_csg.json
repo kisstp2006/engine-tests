@@ -1,0 +1,697 @@
+{
+  "fluxion_scene": 3,
+  "entities": [
+    {
+      "uuid": "4d2d4691-36da-453c-a986-28cdacbdd22e",
+      "name": "Hud",
+      "Control": {
+        "width": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "CanvasLayer": {}
+    },
+    {
+      "uuid": "6850a907-1942-4bf6-846f-5c5a2e25b0ab",
+      "name": "Panel",
+      "parent": "4d2d4691-36da-453c-a986-28cdacbdd22e",
+      "Control": {
+        "position": "anchored",
+        "offset_left": 12.0,
+        "offset_top": 12.0
+      },
+      "BoxContainer": {
+        "separation": 4
+      },
+      "PanelContainer": {}
+    },
+    {
+      "uuid": "12a1fc98-e874-4f50-b3e7-893164a78620",
+      "name": "Title",
+      "parent": "6850a907-1942-4bf6-846f-5c5a2e25b0ab",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 460.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ThemeOverride": {
+        "override_font_size": true,
+        "font_size": 18
+      },
+      "Label": {
+        "text": "Solids joined, cut and met: a room of CSG shapes"
+      }
+    },
+    {
+      "uuid": "243000ca-86d3-4506-982b-7ebae3b9d787",
+      "name": "About",
+      "parent": "6850a907-1942-4bf6-846f-5c5a2e25b0ab",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 460.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ThemeOverride": {
+        "override_font_size": true,
+        "font_size": 13
+      },
+      "Label": {
+        "text": "The room is one CSGShape3D group: four walls joined, an arched door, a window, a round window and a low arch cut from them - one mesh, drawn and collided with as one. The die is a box met with a ball; the stone block has a ball scooping into it, moving, so its mesh is made again each frame. The ground has a hollow cut in it. Walk in through the door with the arrows or WASD, Space to jump."
+      }
+    },
+    {
+      "uuid": "5c802a81-b0d0-4425-87a3-f25518a0d172",
+      "name": "Footing",
+      "parent": "6850a907-1942-4bf6-846f-5c5a2e25b0ab",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 460.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ThemeOverride": {
+        "override_font_size": true,
+        "font_size": 13
+      },
+      "Label": {
+        "text": ""
+      }
+    },
+    {
+      "uuid": "36525909-5a1d-4890-8520-a9e14fe9fc90",
+      "name": "Environment",
+      "Environment": {
+        "background": "color",
+        "background_color": {
+          "r": 0.45,
+          "g": 0.6,
+          "b": 0.82,
+          "a": 1.0
+        },
+        "ambient_color": {
+          "r": 0.65,
+          "g": 0.72,
+          "b": 0.9,
+          "a": 1.0
+        },
+        "ambient_energy": 0.4,
+        "tonemap": "aces",
+        "exposure": 1.0
+      }
+    },
+    {
+      "uuid": "372ab508-79f1-417e-bb76-ebb8dfe5471a",
+      "name": "Sun",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 10.0,
+          "z": 0.0
+        },
+        "rotation": {
+          "x": -0.43602992416804215,
+          "y": 0.2579646749728877,
+          "z": 0.1320192383602122,
+          "w": 0.8519994438959061
+        }
+      },
+      "DirectionalLight3D": {
+        "color": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.85,
+          "a": 1.0
+        },
+        "energy": 1.4,
+        "shadow": true,
+        "shadow_max_distance": 40.0
+      }
+    },
+    {
+      "uuid": "27166b13-c2fa-4ff7-8bc7-eddafb76e2a5",
+      "name": "Camera",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 11.0,
+          "z": 13.0
+        },
+        "rotation": {
+          "x": -0.3530484974314752,
+          "y": -0.0,
+          "z": -0.0,
+          "w": 0.9356050226785755
+        }
+      },
+      "Camera3D": {
+        "fov": 1.0471976,
+        "current": true
+      }
+    },
+    {
+      "uuid": "48c6808e-726f-419a-9112-8e7cdb7264e8",
+      "name": "Ground",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": -1.0,
+          "z": 0.0
+        }
+      },
+      "MeshInstance3D": {},
+      "CSGShape3D": {
+        "size": {
+          "x": 26.0,
+          "y": 2.0,
+          "z": 26.0
+        },
+        "material": "res://materials/3d_csg/ground.mat3d"
+      },
+      "Collider3D": {
+        "shape": "mesh"
+      }
+    },
+    {
+      "uuid": "d8e7bfbd-5c07-42ce-92eb-0b0537935702",
+      "name": "Hollow",
+      "parent": "48c6808e-726f-419a-9112-8e7cdb7264e8",
+      "Transform3D": {
+        "position": {
+          "x": 5.0,
+          "y": 1.0,
+          "z": 7.5
+        }
+      },
+      "CSGShape3D": {
+        "shape": "sphere",
+        "operation": "subtract",
+        "radius": 1.6,
+        "sides": 32,
+        "rings": 16
+      }
+    },
+    {
+      "uuid": "04d5a0fc-6ea3-4b85-ae9f-8b302eccb154",
+      "name": "Room",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        }
+      },
+      "MeshInstance3D": {},
+      "CSGShape3D": {
+        "shape": "group",
+        "material": "res://materials/3d_csg/plaster.mat3d"
+      },
+      "Collider3D": {
+        "shape": "mesh"
+      }
+    },
+    {
+      "uuid": "4f0def18-83f2-46b9-8fb4-3d07359dda57",
+      "name": "Back wall",
+      "parent": "04d5a0fc-6ea3-4b85-ae9f-8b302eccb154",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 1.5,
+          "z": -4.0
+        }
+      },
+      "CSGShape3D": {
+        "size": {
+          "x": 10.0,
+          "y": 3.0,
+          "z": 0.3
+        }
+      }
+    },
+    {
+      "uuid": "ba781e20-e69a-4563-a05b-c55dd74930a3",
+      "name": "Window",
+      "parent": "4f0def18-83f2-46b9-8fb4-3d07359dda57",
+      "Transform3D": {
+        "position": {
+          "x": -2.0,
+          "y": 0.3,
+          "z": 0.0
+        }
+      },
+      "CSGShape3D": {
+        "operation": "subtract",
+        "size": {
+          "x": 2.0,
+          "y": 1.2,
+          "z": 1.0
+        },
+        "material": "res://materials/3d_csg/wood.mat3d"
+      }
+    },
+    {
+      "uuid": "b23472d0-225e-4bfb-88a1-a4210f86be6b",
+      "name": "Round window",
+      "parent": "4f0def18-83f2-46b9-8fb4-3d07359dda57",
+      "Transform3D": {
+        "position": {
+          "x": 2.5,
+          "y": 0.4,
+          "z": 0.0
+        },
+        "rotation": {
+          "x": 0.7071067811865475,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 0.7071067811865476
+        }
+      },
+      "CSGShape3D": {
+        "shape": "cylinder",
+        "operation": "subtract",
+        "radius": 0.55,
+        "height": 1,
+        "sides": 32,
+        "material": "res://materials/3d_csg/wood.mat3d"
+      }
+    },
+    {
+      "uuid": "2fc81e79-5d2d-4607-9dd2-d7fefff24118",
+      "name": "Front wall",
+      "parent": "04d5a0fc-6ea3-4b85-ae9f-8b302eccb154",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 1.5,
+          "z": 4.0
+        }
+      },
+      "CSGShape3D": {
+        "size": {
+          "x": 10.0,
+          "y": 3.0,
+          "z": 0.3
+        }
+      }
+    },
+    {
+      "uuid": "96ca6182-38ea-4833-8c1f-33d03060b6ce",
+      "name": "Door",
+      "parent": "2fc81e79-5d2d-4607-9dd2-d7fefff24118",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": -0.5,
+          "z": 0.0
+        }
+      },
+      "CSGShape3D": {
+        "operation": "subtract",
+        "size": {
+          "x": 1.4,
+          "y": 2.0,
+          "z": 1.0
+        },
+        "material": "res://materials/3d_csg/wood.mat3d"
+      }
+    },
+    {
+      "uuid": "1bcfd608-0c15-4252-bf05-4022924284a8",
+      "name": "Door arch",
+      "parent": "2fc81e79-5d2d-4607-9dd2-d7fefff24118",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 0.5,
+          "z": 0.0
+        },
+        "rotation": {
+          "x": 0.7071067811865475,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 0.7071067811865476
+        }
+      },
+      "CSGShape3D": {
+        "shape": "cylinder",
+        "operation": "subtract",
+        "radius": 0.7,
+        "height": 1,
+        "sides": 32,
+        "material": "res://materials/3d_csg/wood.mat3d"
+      }
+    },
+    {
+      "uuid": "4439128c-7bc7-4c7a-9dc5-3112ea363753",
+      "name": "Left wall",
+      "parent": "04d5a0fc-6ea3-4b85-ae9f-8b302eccb154",
+      "Transform3D": {
+        "position": {
+          "x": -5.0,
+          "y": 1.5,
+          "z": 0.0
+        }
+      },
+      "CSGShape3D": {
+        "size": {
+          "x": 0.3,
+          "y": 3.0,
+          "z": 8.3
+        }
+      }
+    },
+    {
+      "uuid": "58124d1d-695b-4e45-b3fb-eda92a10b262",
+      "name": "Passage",
+      "parent": "4439128c-7bc7-4c7a-9dc5-3112ea363753",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": -0.65,
+          "z": 1.2
+        }
+      },
+      "CSGShape3D": {
+        "operation": "subtract",
+        "size": {
+          "x": 1.0,
+          "y": 1.7,
+          "z": 1.6
+        },
+        "material": "res://materials/3d_csg/wood.mat3d"
+      }
+    },
+    {
+      "uuid": "cbe57337-96c6-4631-8b29-2f325983348a",
+      "name": "Passage arch",
+      "parent": "4439128c-7bc7-4c7a-9dc5-3112ea363753",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 0.2,
+          "z": 1.2
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.7071067811865475,
+          "w": 0.7071067811865476
+        }
+      },
+      "CSGShape3D": {
+        "shape": "cylinder",
+        "operation": "subtract",
+        "radius": 0.8,
+        "height": 1,
+        "sides": 32,
+        "material": "res://materials/3d_csg/wood.mat3d"
+      }
+    },
+    {
+      "uuid": "c0f43157-7a6b-422c-bcfa-1ab6c3aee59d",
+      "name": "Right wall",
+      "parent": "04d5a0fc-6ea3-4b85-ae9f-8b302eccb154",
+      "Transform3D": {
+        "position": {
+          "x": 5.0,
+          "y": 1.5,
+          "z": 0.0
+        }
+      },
+      "CSGShape3D": {
+        "size": {
+          "x": 0.3,
+          "y": 3.0,
+          "z": 8.3
+        }
+      }
+    },
+    {
+      "uuid": "cde36796-a1ad-47cf-b7ab-21b72f454869",
+      "name": "Slit 1",
+      "parent": "c0f43157-7a6b-422c-bcfa-1ab6c3aee59d",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 0.4,
+          "z": -1.5
+        }
+      },
+      "CSGShape3D": {
+        "operation": "subtract",
+        "size": {
+          "x": 1.0,
+          "y": 1.4,
+          "z": 0.4
+        },
+        "material": "res://materials/3d_csg/wood.mat3d"
+      }
+    },
+    {
+      "uuid": "be1d9834-dd16-4073-a20b-299b2d88fd95",
+      "name": "Slit 2",
+      "parent": "c0f43157-7a6b-422c-bcfa-1ab6c3aee59d",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 0.4,
+          "z": 0.0
+        }
+      },
+      "CSGShape3D": {
+        "operation": "subtract",
+        "size": {
+          "x": 1.0,
+          "y": 1.4,
+          "z": 0.4
+        },
+        "material": "res://materials/3d_csg/wood.mat3d"
+      }
+    },
+    {
+      "uuid": "fc92f123-218c-462f-a69c-5ab73a1692c2",
+      "name": "Slit 3",
+      "parent": "c0f43157-7a6b-422c-bcfa-1ab6c3aee59d",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 0.4,
+          "z": 1.5
+        }
+      },
+      "CSGShape3D": {
+        "operation": "subtract",
+        "size": {
+          "x": 1.0,
+          "y": 1.4,
+          "z": 0.4
+        },
+        "material": "res://materials/3d_csg/wood.mat3d"
+      }
+    },
+    {
+      "uuid": "2c646877-b525-4dd4-90ef-468b30684144",
+      "name": "Die",
+      "Transform3D": {
+        "position": {
+          "x": -2.0,
+          "y": 0.9,
+          "z": -1.5
+        }
+      },
+      "MeshInstance3D": {},
+      "CSGShape3D": {
+        "size": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "material": "res://materials/3d_csg/dice.mat3d"
+      },
+      "Collider3D": {
+        "shape": "mesh"
+      },
+      "Script": {
+        "source": "res://scripts/spinner.flux"
+      },
+      "exports": {
+        "speed": 45.0,
+        "axis": [
+          0.2,
+          1.0,
+          0.1
+        ]
+      }
+    },
+    {
+      "uuid": "09e03bc5-09dc-432b-af71-852cad927cf8",
+      "name": "Round",
+      "parent": "2c646877-b525-4dd4-90ef-468b30684144",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        }
+      },
+      "CSGShape3D": {
+        "shape": "sphere",
+        "operation": "intersect",
+        "radius": 0.68,
+        "sides": 32,
+        "rings": 16
+      }
+    },
+    {
+      "uuid": "16b9033e-0aa4-4139-8424-255fb2619551",
+      "name": "Stone block",
+      "Transform3D": {
+        "position": {
+          "x": 2.0,
+          "y": 0.6,
+          "z": -1.5
+        }
+      },
+      "MeshInstance3D": {},
+      "CSGShape3D": {
+        "size": {
+          "x": 1.8,
+          "y": 1.2,
+          "z": 1.2
+        },
+        "material": "res://materials/3d_csg/stone.mat3d"
+      },
+      "Collider3D": {
+        "shape": "mesh"
+      }
+    },
+    {
+      "uuid": "b99e6018-012c-44e2-9e85-9702fa789c0f",
+      "name": "Cutter",
+      "parent": "16b9033e-0aa4-4139-8424-255fb2619551",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 1.1,
+          "z": 0.0
+        }
+      },
+      "CSGShape3D": {
+        "shape": "sphere",
+        "operation": "subtract",
+        "radius": 0.5,
+        "sides": 16,
+        "rings": 8,
+        "material": "res://materials/3d_csg/cut_stone.mat3d"
+      },
+      "Script": {
+        "source": "res://scripts/bob.flux"
+      },
+      "exports": {
+        "height": -0.9,
+        "seconds": 1.6
+      }
+    },
+    {
+      "uuid": "e4062c6a-2600-4420-86b4-aafce1512ab8",
+      "name": "Lamp",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 2.6,
+          "z": 0.0
+        }
+      },
+      "PointLight3D": {
+        "color": {
+          "r": 1.0,
+          "g": 0.85,
+          "b": 0.65,
+          "a": 1.0
+        },
+        "energy": 2.5,
+        "range": 8.0
+      }
+    },
+    {
+      "uuid": "a44b658a-e335-4763-8a83-be2874e497bf",
+      "name": "Door sign",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 3.4,
+          "z": 4.2
+        }
+      },
+      "Label3D": {
+        "size": 48,
+        "pixel_size": 0.008,
+        "color": {
+          "r": 1.0,
+          "g": 0.95,
+          "b": 0.8,
+          "a": 1.0
+        },
+        "outline_size": 3,
+        "outline_color": {
+          "r": 0.2,
+          "g": 0.1,
+          "b": 0.05,
+          "a": 1.0
+        },
+        "text": "Come in"
+      }
+    },
+    {
+      "uuid": "5de2dbd8-4a9c-4bac-9867-86321ce8ed85",
+      "name": "Player",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 0.9,
+          "z": 7.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "shape": "capsule",
+        "radius": 0.35,
+        "height": 1.8
+      },
+      "Material3D": {
+        "material": "res://materials/3d_csg/player.mat3d"
+      },
+      "CharacterBody3D": {},
+      "Collider3D": {
+        "shape": "capsule",
+        "radius": 0.35,
+        "height": 1.8
+      },
+      "Script": {
+        "source": "res://scripts/walker.flux"
+      }
+    }
+  ]
+}
