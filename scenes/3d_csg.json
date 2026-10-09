@@ -75,7 +75,7 @@
         "font_size": 13
       },
       "Label": {
-        "text": "The room is one CSGShape3D group: four walls joined, an arched door, a window, a round window and a low arch cut from them - one mesh, drawn and collided with as one. The die is a box met with a ball; the stone block has a ball scooping into it, moving, so its mesh is made again each frame. The ground has a hollow cut in it. Walk in through the door with the arrows or WASD, Space to jump."
+        "text": "The room is one CSGShape3D group: four walls joined, an arched door, two pointed windows - outlines drawn out, stood upright - a window, a round window and a low arch cut from them - one mesh, drawn and collided with as one. The L of a platform is an outline drawn out too. The die is a box met with a ball; the stone block has a ball scooping into it, moving, so its mesh is made again each frame. The ground has a hollow cut in it. Walk in through the door with the arrows or WASD, Space to jump."
       }
     },
     {
@@ -364,6 +364,98 @@
       }
     },
     {
+      "uuid": "e8d835cb-27b7-426d-9d32-7660d45d4712",
+      "name": "Pointed window left",
+      "parent": "2fc81e79-5d2d-4607-9dd2-d7fefff24118",
+      "Transform3D": {
+        "position": {
+          "x": -3.0,
+          "y": 0.1,
+          "z": 0.0
+        },
+        "rotation": {
+          "x": -0.7071067811865475,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 0.7071067811865476
+        }
+      },
+      "CSGShape3D": {
+        "shape": "polygon",
+        "operation": "subtract",
+        "points": [
+          {
+            "x": -0.35,
+            "y": -0.6
+          },
+          {
+            "x": 0.35,
+            "y": -0.6
+          },
+          {
+            "x": 0.35,
+            "y": 0.2
+          },
+          {
+            "x": 0.0,
+            "y": 0.65
+          },
+          {
+            "x": -0.35,
+            "y": 0.2
+          }
+        ],
+        "point_count": 5,
+        "material": "res://materials/3d_csg/wood.mat3d"
+      }
+    },
+    {
+      "uuid": "8f6db332-bfc0-450a-94aa-2859821e5db0",
+      "name": "Pointed window right",
+      "parent": "2fc81e79-5d2d-4607-9dd2-d7fefff24118",
+      "Transform3D": {
+        "position": {
+          "x": 3.0,
+          "y": 0.1,
+          "z": 0.0
+        },
+        "rotation": {
+          "x": -0.7071067811865475,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 0.7071067811865476
+        }
+      },
+      "CSGShape3D": {
+        "shape": "polygon",
+        "operation": "subtract",
+        "points": [
+          {
+            "x": -0.35,
+            "y": -0.6
+          },
+          {
+            "x": 0.35,
+            "y": -0.6
+          },
+          {
+            "x": 0.35,
+            "y": 0.2
+          },
+          {
+            "x": 0.0,
+            "y": 0.65
+          },
+          {
+            "x": -0.35,
+            "y": 0.2
+          }
+        ],
+        "point_count": 5,
+        "material": "res://materials/3d_csg/wood.mat3d"
+      }
+    },
+    {
       "uuid": "4439128c-7bc7-4c7a-9dc5-3112ea363753",
       "name": "Left wall",
       "parent": "04d5a0fc-6ea3-4b85-ae9f-8b302eccb154",
@@ -612,6 +704,53 @@
       "exports": {
         "height": -0.9,
         "seconds": 1.6
+      }
+    },
+    {
+      "uuid": "bf5729a3-f6a4-4c56-b647-84d31ac534e3",
+      "name": "Platform",
+      "Transform3D": {
+        "position": {
+          "x": -8.0,
+          "y": 0.15,
+          "z": 6.0
+        }
+      },
+      "MeshInstance3D": {},
+      "CSGShape3D": {
+        "shape": "polygon",
+        "height": 0.3,
+        "points": [
+          {
+            "x": -1.5,
+            "y": -1.5
+          },
+          {
+            "x": 1.5,
+            "y": -1.5
+          },
+          {
+            "x": 1.5,
+            "y": -0.5
+          },
+          {
+            "x": -0.5,
+            "y": -0.5
+          },
+          {
+            "x": -0.5,
+            "y": 1.5
+          },
+          {
+            "x": -1.5,
+            "y": 1.5
+          }
+        ],
+        "point_count": 6,
+        "material": "res://materials/3d_csg/stone.mat3d"
+      },
+      "Collider3D": {
+        "shape": "mesh"
       }
     },
     {
