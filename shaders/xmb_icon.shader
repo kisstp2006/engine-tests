@@ -1,9 +1,9 @@
 // xmb_icon.shader: a category's mark, drawn as a line of light with a glow
-// round it - a triangle, a circle, a cross or a square, by `kind` - brighter
+// round it - a triangle, a circle, a cross, a square or a diamond, by `kind` - brighter
 // and fuller the more `lit` it is.
 
 uniform Look : 1 {
-    // 0 a triangle, 1 a circle, 2 a cross, 3 a square.
+    // 0 a triangle, 1 a circle, 2 a cross, 3 a square, 4 a diamond.
     float kind = 0.0;
     vec4 tint = vec4(1.0, 1.0, 1.0, 1.0);
     // Nought, a category passed over, to one, the one chosen.
@@ -34,7 +34,10 @@ float mark(vec2 p, float kind) {
         float d = min(abs(p.x - p.y), abs(p.x + p.y)) * 0.7071068;
         return max(d, max(abs(p.x), abs(p.y)) - 0.25);
     }
-    return abs(max(abs(p.x), abs(p.y)) - 0.25);
+    if (kind < 3.5) {
+        return abs(max(abs(p.x), abs(p.y)) - 0.25);
+    }
+    return abs(abs(p.x) + abs(p.y) - 0.33) * 0.7071068;
 }
 
 fragment {

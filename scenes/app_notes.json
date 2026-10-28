@@ -1,0 +1,550 @@
+{
+  "fluxion_scene": 3,
+  "entities": [
+    {
+      "uuid": "50b8d7aa-0be5-5182-bbd7-9aa242d51f88",
+      "name": "Notes",
+      "Script": {
+        "source": "res://scripts/notes_app.flux"
+      }
+    },
+    {
+      "uuid": "c5e1554c-c945-578b-87ab-a612dc03de7c",
+      "name": "Hud",
+      "Control": {
+        "width": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "CanvasLayer": {}
+    },
+    {
+      "uuid": "36aa09e5-a658-590f-a0b0-eabedd502626",
+      "name": "Panel",
+      "parent": "c5e1554c-c945-578b-87ab-a612dc03de7c",
+      "Control": {
+        "position": "anchored",
+        "offset_left": 12.0,
+        "offset_top": 12.0
+      },
+      "BoxContainer": {
+        "separation": 4
+      },
+      "PanelContainer": {}
+    },
+    {
+      "uuid": "e886da56-0e0c-51a5-a501-10958c76961a",
+      "name": "Title",
+      "parent": "36aa09e5-a658-590f-a0b0-eabedd502626",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 430.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ThemeOverride": {
+        "override_font_size": true,
+        "font_size": 18
+      },
+      "Label": {
+        "text": "A notes program"
+      }
+    },
+    {
+      "uuid": "1fe8605d-4c9c-59dd-853b-c361b9f1ef95",
+      "name": "About",
+      "parent": "36aa09e5-a658-590f-a0b0-eabedd502626",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 430.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ThemeOverride": {
+        "override_font_size": true,
+        "font_size": 13
+      },
+      "Label": {
+        "text": "A program made of the engine's interface, not a game: notes kept as JSON in the player's files, the text size in a config file, the clipboard, the window's title, and how long ago each changed in the player's words. Ctrl+S saves, Ctrl+N makes a new one. The code is scripts/notes_app.flux."
+      }
+    },
+    {
+      "uuid": "7eba8a43-b440-5418-9559-fea9835989c9",
+      "name": "Page",
+      "Control": {
+        "width": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "CanvasLayer": {}
+    },
+    {
+      "uuid": "98f76642-2871-569b-bef5-4c602924c00b",
+      "name": "Margin",
+      "parent": "7eba8a43-b440-5418-9559-fea9835989c9",
+      "Control": {
+        "width": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "MarginContainer": {
+        "margin": {
+          "left": 24,
+          "right": 24,
+          "top": 150,
+          "bottom": 24
+        }
+      }
+    },
+    {
+      "uuid": "17c02e37-2ee4-502a-a390-ac6963c6894f",
+      "name": "Window",
+      "parent": "98f76642-2871-569b-bef5-4c602924c00b",
+      "Control": {
+        "width": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "PanelContainer": {},
+      "BoxContainer": {
+        "direction": "horizontal",
+        "separation": 14
+      }
+    },
+    {
+      "uuid": "73f2b54f-46ac-5b8e-b81c-bb83adcce404",
+      "name": "Side",
+      "parent": "17c02e37-2ee4-502a-a390-ac6963c6894f",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 300.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "BoxContainer": {
+        "separation": 8
+      }
+    },
+    {
+      "uuid": "caaf9d9f-f656-5e20-8729-e704f79c0e65",
+      "name": "Search",
+      "parent": "73f2b54f-46ac-5b8e-b81c-bb83adcce404",
+      "Control": {
+        "width": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "fixed",
+          "value": 36.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "LineEdit": {
+        "placeholder_text": "Search"
+      }
+    },
+    {
+      "uuid": "743e5fed-9346-5288-aaa3-5b3eb7e3c628",
+      "name": "New",
+      "parent": "73f2b54f-46ac-5b8e-b81c-bb83adcce404",
+      "Control": {
+        "width": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "fixed",
+          "value": 36.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "Button": {
+        "text": "New note"
+      }
+    },
+    {
+      "uuid": "20ed8c10-faeb-5601-892a-145be92d8673",
+      "name": "Scroll",
+      "parent": "73f2b54f-46ac-5b8e-b81c-bb83adcce404",
+      "Control": {
+        "width": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ScrollContainer": {}
+    },
+    {
+      "uuid": "ee574251-1d7e-5d1d-85b8-c30abbad873c",
+      "name": "List",
+      "parent": "20ed8c10-faeb-5601-892a-145be92d8673",
+      "Control": {
+        "width": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "BoxContainer": {
+        "separation": 4
+      }
+    },
+    {
+      "uuid": "f915900d-a1e9-5f18-a037-92c1bdfc647f",
+      "name": "Editor",
+      "parent": "17c02e37-2ee4-502a-a390-ac6963c6894f",
+      "Control": {
+        "width": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "BoxContainer": {
+        "separation": 8
+      }
+    },
+    {
+      "uuid": "a34e499b-1cc8-5da1-b3e0-505a8a76f795",
+      "name": "TitleField",
+      "parent": "f915900d-a1e9-5f18-a037-92c1bdfc647f",
+      "Control": {
+        "width": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "fixed",
+          "value": 40.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ThemeOverride": {
+        "override_font_size": true,
+        "font_size": 20
+      },
+      "LineEdit": {
+        "placeholder_text": "Title"
+      }
+    },
+    {
+      "uuid": "a287ef83-1ff7-5332-8841-daa04ddeb7e2",
+      "name": "Body",
+      "parent": "f915900d-a1e9-5f18-a037-92c1bdfc647f",
+      "Control": {
+        "width": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ThemeOverride": {
+        "override_font_size": true,
+        "font_size": 16
+      },
+      "LineEdit": {
+        "multiline": true,
+        "placeholder_text": "Write here"
+      }
+    },
+    {
+      "uuid": "459e8813-efb6-5c33-bf63-198c058b3059",
+      "name": "Buttons",
+      "parent": "f915900d-a1e9-5f18-a037-92c1bdfc647f",
+      "Control": {
+        "width": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "fixed",
+          "value": 36.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "BoxContainer": {
+        "direction": "horizontal",
+        "separation": 8
+      }
+    },
+    {
+      "uuid": "f1cfbad3-8191-5834-b138-a651a2d9b437",
+      "name": "Save",
+      "parent": "459e8813-efb6-5c33-bf63-198c058b3059",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 110.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "fixed",
+          "value": 36.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "Button": {
+        "text": "Save"
+      }
+    },
+    {
+      "uuid": "6ecc87b6-94cf-5daf-9007-7b3b527f9f29",
+      "name": "Copy",
+      "parent": "459e8813-efb6-5c33-bf63-198c058b3059",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 110.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "fixed",
+          "value": 36.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "Button": {
+        "text": "Copy"
+      }
+    },
+    {
+      "uuid": "3781eb51-b78f-5f65-804d-320d648f3480",
+      "name": "Paste",
+      "parent": "459e8813-efb6-5c33-bf63-198c058b3059",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 110.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "fixed",
+          "value": 36.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "Button": {
+        "text": "Paste"
+      }
+    },
+    {
+      "uuid": "5bdd51e9-99f4-5c90-8b08-be0ca69b8963",
+      "name": "Delete",
+      "parent": "459e8813-efb6-5c33-bf63-198c058b3059",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 110.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "fixed",
+          "value": 36.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "Button": {
+        "text": "Delete"
+      }
+    },
+    {
+      "uuid": "17dee544-77db-565c-a60c-588c1ef40928",
+      "name": "TextSizeLabel",
+      "parent": "459e8813-efb6-5c33-bf63-198c058b3059",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 120.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "fixed",
+          "value": 36.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "Label": {
+        "text": "Text size",
+        "vertical_alignment": "center"
+      }
+    },
+    {
+      "uuid": "118bff8b-0cb9-5881-a15d-93c1d797f946",
+      "name": "TextSize",
+      "parent": "459e8813-efb6-5c33-bf63-198c058b3059",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 180.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "fixed",
+          "value": 36.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "Slider": {
+        "value": 16.0,
+        "min": 10.0,
+        "max": 32.0
+      }
+    },
+    {
+      "uuid": "0cbc343b-4412-53b1-a528-228466f03478",
+      "name": "Status",
+      "parent": "f915900d-a1e9-5f18-a037-92c1bdfc647f",
+      "Control": {
+        "width": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "Label": {
+        "text": ""
+      },
+      "ThemeOverride": {
+        "override_font_size": true,
+        "font_size": 13
+      }
+    }
+  ]
+}

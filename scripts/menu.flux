@@ -2,7 +2,8 @@
 const math = @import("math");
 
 /// A category of the menu: its name, its mark - 0 a triangle, 1 a circle,
-/// 2 a cross, 3 a square - the mark's colour, and the sky's under it.
+/// 2 a cross, 3 a square, 4 a diamond - the mark's colour, and the sky's
+/// under it.
 struct Category {
     var name: string = "";
     var kind: float = 0.0;
@@ -25,6 +26,7 @@ const categories = [
     Category{ .name = "Light and shadow", .kind = 1.0, .tint = color(1.0, 0.55, 0.55), .top = color(0.05, 0.14, 0.44), .bottom = color(0.01, 0.03, 0.14) },
     Category{ .name = "Worlds and models", .kind = 2.0, .tint = color(0.55, 0.75, 1.0), .top = color(0.2, 0.08, 0.4), .bottom = color(0.04, 0.02, 0.12) },
     Category{ .name = "Systems", .kind = 3.0, .tint = color(1.0, 0.65, 0.95), .top = color(0.36, 0.13, 0.06), .bottom = color(0.09, 0.03, 0.02) },
+    Category{ .name = "Apps and framework", .kind = 4.0, .tint = color(1.0, 0.86, 0.45), .top = color(0.3, 0.23, 0.05), .bottom = color(0.07, 0.05, 0.01) },
 ];
 
 const tests = [
@@ -49,6 +51,8 @@ const tests = [
     Test{ .category = 3, .scene = "3d_physics", .title = "3D physics", .about = "Bodies falling, a character pushing them, areas, rays and a button" },
     Test{ .category = 3, .scene = "3d_navigation", .title = "3D navigation", .about = "Agents finding their way over baked navigation meshes" },
     Test{ .category = 3, .scene = "3d_stress", .title = "Stress: what a frame costs", .about = "Four hundred dense balls, six hundred boxes, shadows and lamps" },
+    Test{ .category = 4, .scene = "app_notes", .title = "A notes program", .about = "Notes kept in the player's files, a config, the clipboard, the window's title" },
+    Test{ .category = 4, .scene = "fw_flux_language", .title = "The Flux language", .about = "Every part of the language tried and checked, tasks awaited and signals heard" },
 ];
 
 /// Where the chosen category's mark is, how far apart the marks are, and
@@ -111,9 +115,11 @@ struct Menu {
     var veil: ?Entity = null;
     var title: ?Entity = null;
     var subtitle: ?Entity = null;
-    /// The words in the corner and the keys along the bottom.
+    /// The clock and the words in the corner, and the keys along the bottom.
+    var clock_words: ?Entity = null;
     var corner: ?Entity = null;
     var hint: ?Entity = null;
+    var ticked: float = 1.0;
 
     fn ready(self) {
         self.sky = app.find("Sky");
@@ -127,7 +133,7 @@ struct Menu {
             name.get(Text2D).alignment = .center;
             self.names.append(name);
         }
-        var counts = [0, 0, 0, 0];
+        var counts = categories.map(|c| 0);
         for (tests) |t| {
             self.places.append(counts[t.category]);
             counts[t.category] += 1;
@@ -156,11 +162,18 @@ struct Menu {
             .webgl => "WebGL 2",
             else => backend.name(),
         };
-        const corner = self.words(f"Fluxion engine tests  |  {api}", 16.0, 10);
+        // The date and the time, as a console shows them, and under them
+        // what this is and what it draws with.
+        const clock_words = self.words("", 22.0, 10);
+        clock_words.get(Text2D).alignment = .right;
+        clock_words.get(Transform2D).x = 600.0;
+        clock_words.get(Transform2D).y = -336.0;
+        self.clock_words = clock_words;
+        const corner = self.words(f"Fluxion engine tests  |  {api}", 14.0, 10);
         corner.get(Text2D).alignment = .right;
         const at = corner.get(Transform2D);
         at.x = 600.0;
-        at.y = -330.0;
+        at.y = -304.0;
         self.corner = corner;
         const hint = self.words("Left, Right: category    Up, Down: test    Enter: open    Esc: back here", 14.0, 10);
         hint.get(Text2D).alignment = .center;
@@ -224,6 +237,11 @@ struct Menu {
 
     fn update(self, dt: float) {
         self.clock += dt;
+        self.ticked += dt;
+        if (self.ticked >= 1.0) {
+            self.ticked = 0.0;
+            self.clock_words.?.get(Text2D).text = time.now().format("d/M  H:mm");
+        }
         if (self.clock < self.entering) {
             self.skip();
         } else if (!self.leaving and self.clock > self.entering + 0.4) {
@@ -413,7 +431,9 @@ struct Menu {
             glide(self.abouts[j], x + 48.0, y + 16.0, 1.0, if (row == from and here) 0.75 * fade else 0.0, k);
         }
         const at = self.corner.?.get(Transform2D);
-        glide(self.corner.?, at.x, at.y, 1.0, 0.8 * fade, k);
+        glide(self.corner.?, at.x, at.y, 1.0, 0.65 * fade, k);
+        const clock_at = self.clock_words.?.get(Transform2D);
+        glide(self.clock_words.?, clock_at.x, clock_at.y, 1.0, 0.9 * fade, k);
         const keys = self.hint.?.get(Transform2D);
         glide(self.hint.?, keys.x, keys.y, 1.0, 0.55 * fade, k);
         const t = self.titles[picked].get(Transform2D);

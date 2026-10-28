@@ -1,0 +1,272 @@
+{
+  "fluxion_scene": 3,
+  "entities": [
+    {
+      "uuid": "88a24fbf-745d-5d8d-a4a7-528054144825",
+      "name": "Tour",
+      "Script": {
+        "source": "res://scripts/flux_tour.flux"
+      }
+    },
+    {
+      "uuid": "e85ac80d-547f-54fc-b346-34c06a8bb5da",
+      "name": "Hud",
+      "Control": {
+        "width": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "CanvasLayer": {}
+    },
+    {
+      "uuid": "ac554bb6-7d92-58f6-9f12-359b31beaf30",
+      "name": "Panel",
+      "parent": "e85ac80d-547f-54fc-b346-34c06a8bb5da",
+      "Control": {
+        "position": "anchored",
+        "offset_left": 12.0,
+        "offset_top": 12.0
+      },
+      "BoxContainer": {
+        "separation": 4
+      },
+      "PanelContainer": {}
+    },
+    {
+      "uuid": "c8499d22-d5cd-5b2d-bbc4-a483e0cc3916",
+      "name": "Title",
+      "parent": "ac554bb6-7d92-58f6-9f12-359b31beaf30",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 430.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ThemeOverride": {
+        "override_font_size": true,
+        "font_size": 18
+      },
+      "Label": {
+        "text": "The Flux language"
+      }
+    },
+    {
+      "uuid": "b393e1a3-e08b-5139-976d-418eb10f2815",
+      "name": "About",
+      "parent": "ac554bb6-7d92-58f6-9f12-359b31beaf30",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 430.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ThemeOverride": {
+        "override_font_size": true,
+        "font_size": 13
+      },
+      "Label": {
+        "text": "Each part of the language tried as the scene starts and checked: values, lists and maps, text, structs and extends, enums and switch, optionals, errors, closures, signals, vectors, JSON, and tasks awaited. Green passed, red failed. The code is scripts/flux_tour.flux."
+      }
+    },
+    {
+      "uuid": "1c129874-2d0f-53a5-8eb8-31a0c98093f9",
+      "name": "Page",
+      "Control": {
+        "width": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "CanvasLayer": {}
+    },
+    {
+      "uuid": "ff0c0edc-6951-59d0-ae93-4325679c19d4",
+      "name": "Margin",
+      "parent": "1c129874-2d0f-53a5-8eb8-31a0c98093f9",
+      "Control": {
+        "width": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "MarginContainer": {
+        "margin": {
+          "left": 470,
+          "right": 24,
+          "top": 18,
+          "bottom": 18
+        }
+      }
+    },
+    {
+      "uuid": "0d0ed2fe-8940-5e23-b374-2f77237fb109",
+      "name": "Column",
+      "parent": "ff0c0edc-6951-59d0-ae93-4325679c19d4",
+      "Control": {
+        "width": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "BoxContainer": {
+        "separation": 10
+      }
+    },
+    {
+      "uuid": "e134d285-e7ef-5153-851d-3ee731029e99",
+      "name": "Summary",
+      "parent": "0d0ed2fe-8940-5e23-b374-2f77237fb109",
+      "Control": {
+        "width": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "fixed",
+          "value": 28.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ThemeOverride": {
+        "override_font_size": true,
+        "font_size": 16
+      },
+      "RichText": {
+        "text": "Checking..."
+      }
+    },
+    {
+      "uuid": "be3acaa1-94ca-5d44-b800-febaabcd192c",
+      "name": "Columns",
+      "parent": "0d0ed2fe-8940-5e23-b374-2f77237fb109",
+      "Control": {
+        "width": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "BoxContainer": {
+        "direction": "horizontal",
+        "separation": 24
+      }
+    },
+    {
+      "uuid": "3c56594f-9a51-5519-80bd-48a969005637",
+      "name": "Left",
+      "parent": "be3acaa1-94ca-5d44-b800-febaabcd192c",
+      "Control": {
+        "width": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ThemeOverride": {
+        "override_font_size": true,
+        "font_size": 14
+      },
+      "RichText": {
+        "text": ""
+      }
+    },
+    {
+      "uuid": "c9c56ad4-6284-56ed-8022-1da393fd9d25",
+      "name": "Right",
+      "parent": "be3acaa1-94ca-5d44-b800-febaabcd192c",
+      "Control": {
+        "width": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ThemeOverride": {
+        "override_font_size": true,
+        "font_size": 14
+      },
+      "RichText": {
+        "text": ""
+      }
+    }
+  ]
+}
