@@ -57,12 +57,32 @@ const column_x: float = -330.0;
 const column_gap: float = 200.0;
 const marks_y: float = -150.0;
 
+/// The intro, in seconds from the start: the orchestra starts in the dark,
+/// the sky comes in from black, the title fades in on the right and out
+/// again, and the menu comes in over the same sky.
+const sound_at: float = 0.2;
+const sky_in: float = 0.9;
+const title_in: float = 2.6;
+const title_out: float = 5.6;
+const intro_ends: float = 6.5;
+/// The sky the intro is under, as a console's is blue unless told.
+const intro_top: color = color(0.05, 0.14, 0.44);
+const intro_bottom: color = color(0.01, 0.03, 0.14);
+
 /// The menu of the tests, laid out the way a console's is: the categories
 /// across, each with its mark, the chosen one's tests down from it - those
 /// before the chosen test above the marks, those after it below - and a sky
 /// of light rolling behind. Left and right change category, up and down the
 /// test, and Enter, Space or a pad's A opens it; a click picks or opens one.
 /// Everything glides to where it should be rather than jumping.
+///
+/// When the game starts it opens with an intro, as a console does: an
+/// orchestra warming up in the dark, the blue sky and its ribbons coming in
+/// from black, the title fading in on the right and out again, and then the
+/// menu over the same sky - the marks sliding in from the right, one after
+/// another. Any of the keys that open a test skips it.
+/// Opening a test darkens everything to black before its scene comes; coming
+/// back, the menu comes in again without the intro.
 struct Menu {
     var category: int = 0;
     /// The chosen test of each category, by its place in it.
@@ -78,9 +98,28 @@ struct Menu {
     var sky: ?Entity = null;
     var leaving: bool = false;
     var flash: float = 0.0;
+    /// Seconds since the menu came, when it starts coming in, and when a
+    /// test was opened.
+    var clock: float = 0.0;
+    var entering: float = 0.1;
+    var left_at: float = 0.0;
+    var intro: bool = false;
+    var booted: bool = false;
+    var welcomed: bool = false;
+    var changed: bool = false;
+    /// The black over everything, and the intro's title.
+    var veil: ?Entity = null;
+    var title: ?Entity = null;
+    var subtitle: ?Entity = null;
+    /// The words in the corner and the keys along the bottom.
+    var corner: ?Entity = null;
+    var hint: ?Entity = null;
 
     fn ready(self) {
         self.sky = app.find("Sky");
+        // The game has just started: the intro first.
+        self.intro = app.elapsed() < 1.5;
+        if (self.intro) self.entering = intro_ends;
         for (categories) |c| {
             self.rows.append(0);
             self.marks.append(self.mark(c.kind, c.tint, 104.0, 10));
@@ -122,14 +161,30 @@ struct Menu {
         const at = corner.get(Transform2D);
         at.x = 600.0;
         at.y = -330.0;
-        corner.get(Appearance).modulate = color(1, 1, 1, 0.8);
+        self.corner = corner;
         const hint = self.words("Left, Right: category    Up, Down: test    Enter: open    Esc: back here", 14.0, 10);
         hint.get(Text2D).alignment = .center;
         hint.get(Transform2D).y = 330.0;
-        hint.get(Appearance).modulate = color(1, 1, 1, 0.55);
+        self.hint = hint;
+
+        const veil = self.entity.spawnChild();
+        veil.add(Transform2D);
+        const cover = veil.add(Sprite);
+        cover.width = 1600.0;
+        cover.height = 900.0;
+        cover.layer = 100;
+        const black = veil.add(Material);
+        black.shader = "res://shaders/xmb_veil.shader";
+        black.fade = 1.0;
+        self.veil = veil;
+        self.title = self.words("Fluxion", 52.0, 11);
+        self.subtitle = self.words("Engine Tests", 17.0, 11);
 
         self.paint(1.0);
-        self.place(1.0);
+        // The marks start off to the right, to slide in.
+        for (self.marks) |mark, i| {
+            mark.get(Transform2D).x = column_x + float(i - self.category) * column_gap + 420.0;
+        }
     }
 
     /// A category's mark: a square sprite the icon shader draws, `size`
@@ -168,12 +223,57 @@ struct Menu {
     }
 
     fn update(self, dt: float) {
-        if (!self.leaving) self.steer();
+        self.clock += dt;
+        if (self.clock < self.entering) {
+            self.skip();
+        } else if (!self.leaving and self.clock > self.entering + 0.4) {
+            self.steer();
+        }
+        self.sounds();
         const k = 1.0 - math.exp(-dt * 10.0);
         self.paint(1.0 - math.exp(-dt * 2.5));
         self.place(k);
+        self.cover(k);
         self.flash = max(0.0, self.flash - dt * 2.2);
         self.sky.?.get(Material).flash = self.flash;
+        if (self.leaving and !self.changed and self.clock > self.left_at + 0.95) {
+            self.changed = true;
+            app.changeScene(f"res://scenes/{tests[self.chosen()].scene}.json");
+        }
+    }
+
+    /// The intro skipped: on to where its title fades, the sky in already.
+    fn skip(self) {
+        if (!self.intro or self.clock >= title_out) return;
+        if (app.keyJustPressed(.enter) or app.keyJustPressed(.kp_enter) or app.keyJustPressed(.space) or app.keyJustPressed(.escape) or app.padButtonJustPressed(.a, null) or app.mouseButtonJustPressed(.left)) {
+            self.clock = title_out;
+        }
+    }
+
+    /// The intro's sound as it starts, and the menu's own as it comes in.
+    fn sounds(self) {
+        if (self.intro and !self.booted and self.clock > sound_at) {
+            self.booted = true;
+            app.find("Boot").?.get(AudioPlayer).play(0.0);
+        }
+        if (!self.welcomed and self.clock > self.entering) {
+            self.welcomed = true;
+            if (!self.intro) app.find("Open").?.get(AudioPlayer).play(0.0);
+            app.find("Ambient").?.get(AudioPlayer).play(0.0);
+        }
+    }
+
+    /// The black going as the sky comes in - at the intro's pace, or at
+    /// once coming back from a test - or coming back over everything as a
+    /// test opens; and the intro's title on the right of the sky.
+    fn cover(self, k: float) {
+        const from = if (self.intro) sky_in else self.entering;
+        var fade = 1.0 - math.smoothstep(from, from + 1.5, self.clock);
+        if (self.leaving) fade = math.smoothstep(self.left_at + 0.25, self.left_at + 0.85, self.clock);
+        self.veil.?.get(Material).fade = fade;
+        const shown = if (self.intro) math.smoothstep(title_in, title_in + 0.9, self.clock) * (1.0 - math.smoothstep(title_out, title_out + 0.7, self.clock)) else 0.0;
+        glide(self.title.?, 150.0, -44.0, 1.0, shown, 1.0);
+        glide(self.subtitle.?, 154.0, 20.0, 1.0, shown * 0.85, 1.0);
     }
 
     /// What the keys, the pad and the pointer ask for.
@@ -246,35 +346,40 @@ struct Menu {
     }
 
     /// Open the chosen test: a chime and a flash, everything else fading,
-    /// and its scene a moment later.
+    /// the black coming over it all, and its scene once it is dark.
     fn open(self) {
         if (self.leaving) return;
         self.leaving = true;
+        self.left_at = self.clock;
         self.flash = 1.0;
         app.find("Confirm").?.get(AudioPlayer).play(0.0);
-        const path = f"res://scenes/{tests[self.chosen()].scene}.json";
-        const tw = self.entity.tween();
-        tw.tweenInterval(0.55);
-        tw.tweenCallback(fn () {
-            app.changeScene(path);
-        });
+        const ambient = app.find("Ambient").?;
+        const quiet = ambient.tween();
+        quiet.tweenProperty(ambient, "AudioPlayer.volume_db", -60.0, 0.9);
     }
 
-    /// The sky's colours toward the chosen category's, `k` of the way.
+    /// The sky's colours toward the chosen category's, `k` of the way - or
+    /// the intro's blue until the menu comes in.
     fn paint(self, k: float) {
         const m = self.sky.?.get(Material);
         const c = categories[self.category];
-        m.top = m.top.lerp(c.top, k);
-        m.bottom = m.bottom.lerp(c.bottom, k);
+        const before = self.intro and self.clock < self.entering;
+        m.top = m.top.lerp(if (before) intro_top else c.top, k);
+        m.bottom = m.bottom.lerp(if (before) intro_bottom else c.bottom, k);
     }
 
-    /// Everything `k` of the way to where it should be now.
+    /// Everything `k` of the way to where it should be now: nothing yet
+    /// while the menu has not come in, then the marks sliding in from the
+    /// right one after another, and the tests after them.
     fn place(self, k: float) {
-        const fade = if (self.leaving) 0.0 else 1.0;
+        const since = self.clock - self.entering;
+        const fade = if (self.leaving) 0.0 else if (since > 0.45) 1.0 else 0.0;
         for (self.marks) |mark, i| {
             const chosen = i == self.category;
-            const x = column_x + float(i - self.category) * column_gap;
-            glide(mark, x, marks_y, if (chosen) 1.0 else 0.62, (if (chosen) 1.0 else 0.75) * fade, k);
+            const come = since > 0.2 + float(i) * 0.09;
+            const x = column_x + float(i - self.category) * column_gap + (if (come) 0.0 else 420.0);
+            const seen = if (self.leaving) 0.0 else if (come) 1.0 else 0.0;
+            glide(mark, x, marks_y, if (chosen) 1.0 else 0.62, (if (chosen) 1.0 else 0.75) * seen, k);
             const m = mark.get(Material);
             m.lit += ((if (chosen) 1.0 else 0.0) - m.lit) * k;
             glide(self.names[i], x, marks_y + 74.0, 1.0, (if (chosen) 1.0 else 0.0) * fade, k);
@@ -307,6 +412,10 @@ struct Menu {
             glide(self.titles[j], x + 46.0, y - 17.0, size, alpha, k);
             glide(self.abouts[j], x + 48.0, y + 16.0, 1.0, if (row == from and here) 0.75 * fade else 0.0, k);
         }
+        const at = self.corner.?.get(Transform2D);
+        glide(self.corner.?, at.x, at.y, 1.0, 0.8 * fade, k);
+        const keys = self.hint.?.get(Transform2D);
+        glide(self.hint.?, keys.x, keys.y, 1.0, 0.55 * fade, k);
         const t = self.titles[picked].get(Transform2D);
         glide(self.glow.?, t.x + 380.0, t.y + 22.0, 1.0, if (self.leaving) 0.0 else 1.0, k);
     }

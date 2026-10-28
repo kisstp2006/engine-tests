@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""make_sounds.py <sfx folder>: the menu's sounds, made from nothing - a tick
-to move, a lower one with a breath of air to change category, a two-note
-chime to choose, a swell when the menu opens and a quiet drone under it,
-looped without a seam. 44.1 kHz, 16-bit, mono."""
+"""make_sounds.py <sfx folder>: the menu's sounds, made from nothing - the
+intro's orchestra warming up, a tick to move, a lower one with a breath of air to change
+category, a two-note chime to choose, a swell when the menu opens and a quiet
+drone under it, looped without a seam. 44.1 kHz, 16-bit, mono."""
 import sys, wave
 import numpy as np
 from scipy.signal import butter, sosfilt
@@ -119,6 +119,42 @@ def opening():
     return fade_ends(normalised(room(pad, 0.35), -11))
 
 
+def boot():
+    # The intro: an orchestra warming up - strings and reeds each trying a
+    # note of their own, sliding and wavering, more of them and louder, until
+    # they find one chord together, which swells and falls away.
+    length = 8.0
+    t = seconds(length)
+    rng = np.random.default_rng(11)
+    out = np.zeros_like(t)
+    notes = (110.0, 146.83, 164.81, 220.0, 277.18, 329.63, 440.0, 554.37, 659.25, 880.0)
+    chord_at = 3.6
+    for voice in range(26):
+        reed = voice % 3 == 0
+        start = rng.uniform(0.0, 2.6)
+        wander = rng.choice(notes) * rng.uniform(0.97, 1.03)
+        home = notes[voice % len(notes)]
+        # Its pitch: where it wanders, sliding to its note of the chord.
+        slide = np.clip((t - chord_at + rng.uniform(0.0, 0.6)) / 0.5, 0, 1)
+        pitch = wander + (home - wander) * slide * slide * (3 - 2 * slide)
+        vibrato = 1 + 0.004 * np.sin(2 * np.pi * rng.uniform(4.5, 6.0) * t + voice)
+        phase = 2 * np.pi * np.cumsum(pitch * vibrato) / RATE
+        if reed:
+            tone = np.sin(phase) + 0.3 * np.sin(3 * phase) + 0.12 * np.sin(5 * phase)
+        else:
+            tone = sum(np.sin(h * phase) / h for h in range(1, 7))
+        # It comes in, plays a little, and grows into the chord.
+        come = np.clip((t - start) / rng.uniform(0.3, 0.9), 0, 1)
+        murmur = 0.35 + 0.25 * np.sin(2 * np.pi * rng.uniform(0.3, 0.8) * t + voice) ** 2
+        swell = np.clip((t - chord_at) / 1.4, 0, 1)
+        fall = np.clip((length - 0.2 - t) / 2.4, 0, 1)
+        level = come * (murmur * (1 - swell) + swell) * fall
+        out += tone * level * (0.6 if reed else 1.0) / (1 + voice % 4)
+    breath = bandpass(rng.normal(size=len(t)), 400, 2500) * 0.04 * np.clip(t / 1.5, 0, 1) * np.clip((chord_at + 1.5 - t) / 2, 0, 1)
+    body = lowpass(out, 3200) + breath
+    return fade_ends(normalised(room(body, 0.4), -5), 40)
+
+
 def ambient():
     # Twelve seconds that loop without a seam: every frequency and every
     # slow change of loudness goes round a whole number of times in them.
@@ -136,7 +172,7 @@ def ambient():
 
 if __name__ == "__main__":
     folder = sys.argv[1]
-    for name, make in (("xmb_move", move), ("xmb_category", category), ("xmb_confirm", confirm), ("xmb_open", opening), ("xmb_ambient", ambient)):
+    for name, make in (("xmb_boot", boot), ("xmb_move", move), ("xmb_category", category), ("xmb_confirm", confirm), ("xmb_open", opening), ("xmb_ambient", ambient)):
         sound = make()
         save(f"{folder}/{name}.wav", sound)
         print(name, f"{len(sound) / RATE:.2f} s")

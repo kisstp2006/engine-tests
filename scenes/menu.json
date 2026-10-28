@@ -60,8 +60,7 @@
       "name": "Open",
       "AudioPlayer": {
         "clip": "res://sfx/xmb_open.wav",
-        "volume_db": -8.0,
-        "autoplay": true
+        "volume_db": -8.0
       }
     },
     {
@@ -70,8 +69,15 @@
       "AudioPlayer": {
         "clip": "res://sfx/xmb_ambient.wav",
         "volume_db": -16.0,
-        "autoplay": true,
         "loop": true
+      }
+    },
+    {
+      "uuid": "cb3ff483-a2d4-5681-b15c-2f8d0dcc153a",
+      "name": "Boot",
+      "AudioPlayer": {
+        "clip": "res://sfx/xmb_boot.wav",
+        "volume_db": -3.0
       }
     }
   ]
