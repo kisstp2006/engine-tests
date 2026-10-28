@@ -1,9 +1,21 @@
 # Engine tests
 
 The engine's 2D and 3D parts and their APIs, each tried out in a scene of its
-own. `scenes/menu.json` is the main scene: each button opens a test, and
-Escape comes back to it from any of them (`scripts/back_to_menu.flux`, an
-autoload).
+own. `scenes/menu.json` is the main scene, and Escape comes back to it from
+any of them (`scripts/back_to_menu.flux`, an autoload).
+
+**The menu** is laid out the way a console's is: four categories across, each
+with its mark - a triangle, a circle, a cross and a square - and the chosen
+one's tests down from it, those before the chosen test above the marks and
+those after it below. Left and right change category, up and down the test,
+Enter, Space or a pad's A opens it, and a click picks or opens one; everything
+glides to its place. Behind it, `shaders/xmb_waves.shader` rolls three
+ribbons of light over a sky whose colours change with the category; the marks
+are `xmb_icon.shader` and the light behind the chosen test `xmb_glow.shader`.
+Its sounds - a tick to move, another to change category, a chime to open, a
+swell as it comes up and a quiet drone under it - are made from nothing by
+`tools/make_sounds.py`: `python3 tools/make_sounds.py sfx` writes them again.
+The whole menu is `scripts/menu.flux`.
 
 Run it with the engine's runtime, or open it in the editor:
 
