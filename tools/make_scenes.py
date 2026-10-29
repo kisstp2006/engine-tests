@@ -74,7 +74,27 @@ def dashboard():
     return s
 
 
-MADE = [flux_language, notes_app, dashboard]
+def systems_lab():
+    s = Scene("fw_systems")
+    camera2d(s)
+    s.add("Lab", Transform2D={}, Drawing2D={}, Script={"source": "res://scripts/systems_lab.flux"})
+    for name, seconds in (("Beat half", 0.5), ("Beat one", 1.0), ("Beat two", 2.0)):
+        s.add(name, Timer={"wait_time": seconds, "autostart": True})
+    for i in range(5):
+        s.add(f"Lamp {i}", Transform2D={"x": -540.0 + i * 70.0, "y": 50.0}, Sprite={"texture": "res://art/glow.png", "width": 90.0, "height": 90.0, "blend": "additive"},
+              Script={"source": "res://scripts/lamp.flux"})
+    s.add("Paused", Transform2D={"x": 0.0, "y": -10.0}, Processing={"mode": "when_paused"},
+          Text2D={"text": "PAUSED  -  P goes on", "font": "res://fonts/NotoSans-Regular.ttf", "size": 44.0, "alignment": "center",
+                  "outline_size": 3.0, "visible": False, "layer": 20},
+          Script={"source": "res://scripts/pause_menu.flux"})
+    panel(s, "The frame's machinery",
+          "Timers at three beats, a clock of the game's own running a day a minute, lamps in a group switched by "
+          "one call, a task stepping with await, a signal heard, frames awaited and a call deferred. P pauses: "
+          "all of it waits while the pause menu, which runs only when paused, breathes. 1, 2 and 3 set the speed.", width=520)
+    return s
+
+
+MADE = [flux_language, notes_app, dashboard, systems_lab]
 
 if __name__ == "__main__":
     for make in MADE:

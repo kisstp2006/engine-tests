@@ -53,6 +53,7 @@ const tests = [
     Test{ .category = 3, .scene = "3d_stress", .title = "Stress: what a frame costs", .about = "Four hundred dense balls, six hundred boxes, shadows and lamps" },
     Test{ .category = 4, .scene = "app_notes", .title = "A notes program", .about = "Notes kept in the player's files, a config, the clipboard, the window's title" },
     Test{ .category = 4, .scene = "app_dashboard", .title = "A dashboard", .about = "Live charts drawn by a script, the web asked without waiting, a picture kept" },
+    Test{ .category = 4, .scene = "fw_systems", .title = "The frame's machinery", .about = "Timers, a clock of the game's own, groups, tasks, pausing and the speed of time" },
     Test{ .category = 4, .scene = "fw_flux_language", .title = "The Flux language", .about = "Every part of the language tried and checked, tasks awaited and signals heard" },
 ];
 

@@ -1,0 +1,232 @@
+{
+  "fluxion_scene": 3,
+  "entities": [
+    {
+      "uuid": "8ad7ac96-de1c-5951-ab6e-6a804780c24b",
+      "name": "Camera",
+      "Transform2D": {},
+      "Camera2D": {
+        "fit_width": 1280.0,
+        "fit_height": 720.0
+      }
+    },
+    {
+      "uuid": "60b2cabc-00f6-50fd-8619-097a36544a68",
+      "name": "Lab",
+      "Transform2D": {},
+      "Drawing2D": {},
+      "Script": {
+        "source": "res://scripts/systems_lab.flux"
+      }
+    },
+    {
+      "uuid": "453a6661-1210-5a9c-950d-c1109f3e408f",
+      "name": "Beat half",
+      "Timer": {
+        "wait_time": 0.5,
+        "autostart": true
+      }
+    },
+    {
+      "uuid": "d0304f54-9563-57e6-a57e-519e5404c3fe",
+      "name": "Beat one",
+      "Timer": {
+        "wait_time": 1.0,
+        "autostart": true
+      }
+    },
+    {
+      "uuid": "35ac755b-d2ad-5aee-8f3c-ef42efee7484",
+      "name": "Beat two",
+      "Timer": {
+        "wait_time": 2.0,
+        "autostart": true
+      }
+    },
+    {
+      "uuid": "d35746b3-ea27-5bac-93b4-511be30b3f07",
+      "name": "Lamp 0",
+      "Transform2D": {
+        "x": -540.0,
+        "y": 50.0
+      },
+      "Sprite": {
+        "texture": "res://art/glow.png",
+        "width": 90.0,
+        "height": 90.0,
+        "blend": "additive"
+      },
+      "Script": {
+        "source": "res://scripts/lamp.flux"
+      }
+    },
+    {
+      "uuid": "df39b5e9-3cc0-50c2-91fa-0851651ef6d9",
+      "name": "Lamp 1",
+      "Transform2D": {
+        "x": -470.0,
+        "y": 50.0
+      },
+      "Sprite": {
+        "texture": "res://art/glow.png",
+        "width": 90.0,
+        "height": 90.0,
+        "blend": "additive"
+      },
+      "Script": {
+        "source": "res://scripts/lamp.flux"
+      }
+    },
+    {
+      "uuid": "77c92e2f-0bd9-5134-aa8d-714189afdbfa",
+      "name": "Lamp 2",
+      "Transform2D": {
+        "x": -400.0,
+        "y": 50.0
+      },
+      "Sprite": {
+        "texture": "res://art/glow.png",
+        "width": 90.0,
+        "height": 90.0,
+        "blend": "additive"
+      },
+      "Script": {
+        "source": "res://scripts/lamp.flux"
+      }
+    },
+    {
+      "uuid": "f63b94e8-7d5d-5c53-b0a9-f1d36d6f0799",
+      "name": "Lamp 3",
+      "Transform2D": {
+        "x": -330.0,
+        "y": 50.0
+      },
+      "Sprite": {
+        "texture": "res://art/glow.png",
+        "width": 90.0,
+        "height": 90.0,
+        "blend": "additive"
+      },
+      "Script": {
+        "source": "res://scripts/lamp.flux"
+      }
+    },
+    {
+      "uuid": "b5da37c6-9683-5805-a277-6b539c8391a7",
+      "name": "Lamp 4",
+      "Transform2D": {
+        "x": -260.0,
+        "y": 50.0
+      },
+      "Sprite": {
+        "texture": "res://art/glow.png",
+        "width": 90.0,
+        "height": 90.0,
+        "blend": "additive"
+      },
+      "Script": {
+        "source": "res://scripts/lamp.flux"
+      }
+    },
+    {
+      "uuid": "374208f7-8bc5-50f8-a5e7-7fd480fa1f0c",
+      "name": "Paused",
+      "Transform2D": {
+        "x": 0.0,
+        "y": -10.0
+      },
+      "Processing": {
+        "mode": "when_paused"
+      },
+      "Text2D": {
+        "text": "PAUSED  -  P goes on",
+        "font": "res://fonts/NotoSans-Regular.ttf",
+        "size": 44.0,
+        "alignment": "center",
+        "outline_size": 3.0,
+        "visible": false,
+        "layer": 20
+      },
+      "Script": {
+        "source": "res://scripts/pause_menu.flux"
+      }
+    },
+    {
+      "uuid": "f8d4a250-3960-5edb-9921-362edec3f00f",
+      "name": "Hud",
+      "Control": {
+        "width": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "CanvasLayer": {}
+    },
+    {
+      "uuid": "33908751-7627-5937-9a36-ddc8427fbb10",
+      "name": "Panel",
+      "parent": "f8d4a250-3960-5edb-9921-362edec3f00f",
+      "Control": {
+        "position": "anchored",
+        "offset_left": 12.0,
+        "offset_top": 12.0
+      },
+      "BoxContainer": {
+        "separation": 4
+      },
+      "PanelContainer": {}
+    },
+    {
+      "uuid": "29ec1078-2e04-5ae3-a641-7702fad59a9c",
+      "name": "Title",
+      "parent": "33908751-7627-5937-9a36-ddc8427fbb10",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 520.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ThemeOverride": {
+        "override_font_size": true,
+        "font_size": 18
+      },
+      "Label": {
+        "text": "The frame's machinery"
+      }
+    },
+    {
+      "uuid": "f4fbf6fc-2a93-53ed-8e82-e24c04baa0ac",
+      "name": "About",
+      "parent": "33908751-7627-5937-9a36-ddc8427fbb10",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 520.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ThemeOverride": {
+        "override_font_size": true,
+        "font_size": 13
+      },
+      "Label": {
+        "text": "Timers at three beats, a clock of the game's own running a day a minute, lamps in a group switched by one call, a task stepping with await, a signal heard, frames awaited and a call deferred. P pauses: all of it waits while the pause menu, which runs only when paused, breathes. 1, 2 and 3 set the speed."
+      }
+    }
+  ]
+}
