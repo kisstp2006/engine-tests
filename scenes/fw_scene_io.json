@@ -1,0 +1,105 @@
+{
+  "fluxion_scene": 3,
+  "entities": [
+    {
+      "uuid": "05f5278a-dfe4-5e52-bd0c-e67a103cda1f",
+      "name": "Camera",
+      "Transform2D": {},
+      "Camera2D": {
+        "fit_width": 1280.0,
+        "fit_height": 720.0
+      }
+    },
+    {
+      "uuid": "eadd7ec4-be3e-5084-a4ca-d4716964a526",
+      "name": "Io",
+      "Transform2D": {},
+      "Drawing2D": {},
+      "Script": {
+        "source": "res://scripts/scene_io.flux"
+      }
+    },
+    {
+      "uuid": "b4d9dbc9-f4ad-5cf8-b6c0-ff3829d417ef",
+      "name": "Garden",
+      "Transform2D": {}
+    },
+    {
+      "uuid": "7c76e18f-3581-579b-bf44-b9fed6d8766f",
+      "name": "Hud",
+      "Control": {
+        "width": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "CanvasLayer": {}
+    },
+    {
+      "uuid": "ed858716-7a48-5d65-8104-ad927a4b6cf3",
+      "name": "Panel",
+      "parent": "7c76e18f-3581-579b-bf44-b9fed6d8766f",
+      "Control": {
+        "position": "anchored",
+        "offset_left": 12.0,
+        "offset_top": 12.0
+      },
+      "BoxContainer": {
+        "separation": 4
+      },
+      "PanelContainer": {}
+    },
+    {
+      "uuid": "81a70d26-e953-536c-aabd-05485d5a084a",
+      "name": "Title",
+      "parent": "ed858716-7a48-5d65-8104-ad927a4b6cf3",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 520.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ThemeOverride": {
+        "override_font_size": true,
+        "font_size": 18
+      },
+      "Label": {
+        "text": "Scenes in and out"
+      }
+    },
+    {
+      "uuid": "3de4e449-bbb8-520e-892e-c0b78f1b6f31",
+      "name": "About",
+      "parent": "ed858716-7a48-5d65-8104-ad927a4b6cf3",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 520.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ThemeOverride": {
+        "override_font_size": true,
+        "font_size": 13
+      },
+      "Label": {
+        "text": "A click plants a flower, an instance of scenes/parts/flower.json. S saves the garden, its own branch of the world, as a JSON scene and a CBOR one and keeps numbers in a data file; L reads it back, C clears it, B reads another scene in the background with its progress, and Enter opens it."
+      }
+    }
+  ]
+}

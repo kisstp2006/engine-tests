@@ -1,0 +1,100 @@
+{
+  "fluxion_scene": 3,
+  "entities": [
+    {
+      "uuid": "2f08f2db-a651-57d4-9070-e349eb30c6d1",
+      "name": "Camera",
+      "Transform2D": {},
+      "Camera2D": {
+        "fit_width": 1280.0,
+        "fit_height": 720.0
+      }
+    },
+    {
+      "uuid": "cf245e9f-0fb4-5124-b23d-5cfe5f9d1071",
+      "name": "Board",
+      "Transform2D": {},
+      "Drawing2D": {},
+      "Script": {
+        "source": "res://scripts/net_board.flux"
+      }
+    },
+    {
+      "uuid": "9be8e879-e658-58cb-9398-210a45c510da",
+      "name": "Hud",
+      "Control": {
+        "width": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "CanvasLayer": {}
+    },
+    {
+      "uuid": "edb5e621-d221-5396-9470-2bf34ad83032",
+      "name": "Panel",
+      "parent": "9be8e879-e658-58cb-9398-210a45c510da",
+      "Control": {
+        "position": "anchored",
+        "offset_left": 12.0,
+        "offset_top": 12.0
+      },
+      "BoxContainer": {
+        "separation": 4
+      },
+      "PanelContainer": {}
+    },
+    {
+      "uuid": "7c174b73-2a39-5055-867b-07051950ab9d",
+      "name": "Title",
+      "parent": "edb5e621-d221-5396-9470-2bf34ad83032",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 560.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ThemeOverride": {
+        "override_font_size": true,
+        "font_size": 18
+      },
+      "Label": {
+        "text": "A board shared over the network"
+      }
+    },
+    {
+      "uuid": "3d52f53d-4e7e-59a9-8a5c-bb39ddaf869b",
+      "name": "About",
+      "parent": "edb5e621-d221-5396-9470-2bf34ad83032",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 560.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ThemeOverride": {
+        "override_font_size": true,
+        "font_size": 13
+      },
+      "Label": {
+        "text": "One game hosts, others join it - on this machine or found on the LAN - and every pointer, stamp and line is sent to everyone: the pointers each frame on the sequenced channel, the rest on the reliable one."
+      }
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "fluxion_tileset": 1,
+  "tile_size": [32, 32],
+  "data_layers": [
+    { "name": "speed", "type": "float" },
+    { "name": "name", "type": "int" }
+  ],
+  "sources": [{
+    "id": 0, "texture": "res://art/tiles.png",
+    "tiles": [
+      { "at": [0, 0], "data": { "speed": 1, "name": 0 } },
+      { "at": [1, 0], "data": { "speed": 1.4, "name": 1 } },
+      { "at": [2, 0], "collision": "full", "data": { "name": 2 } },
+      { "at": [3, 0], "data": { "speed": 0.4, "name": 3 } },
+      { "at": [0, 1], "collision": "full", "data": { "name": 4 } },
+      { "at": [1, 1], "data": { "speed": 0.9, "name": 5 } },
+      { "at": [2, 1], "data": { "speed": 0.7, "name": 6 } },
+      { "at": [3, 1], "data": { "speed": 1.2, "name": 7 } }
+    ]
+  }]
+}

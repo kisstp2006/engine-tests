@@ -11,6 +11,13 @@
   },
   "display": { "width": 1280, "height": 720 },
   "physics_2d": { "default_gravity": 981 },
+  "audio": {
+    "buses": [
+      { "name": "Music", "volume_db": -4.0 },
+      { "name": "Effects" },
+      { "name": "Ambience", "volume_db": -8.0 }
+    ]
+  },
   "rendering": { "clear_color": { "r": 0.08, "g": 0.09, "b": 0.12 }, "msaa_3d": "x4" },
   "input": {
     "actions": [

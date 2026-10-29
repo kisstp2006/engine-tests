@@ -1,0 +1,100 @@
+{
+  "fluxion_scene": 3,
+  "entities": [
+    {
+      "uuid": "8a6ceea0-f13d-561f-bec4-13aab3a293e4",
+      "name": "Camera",
+      "Transform2D": {},
+      "Camera2D": {
+        "fit_width": 1280.0,
+        "fit_height": 720.0
+      }
+    },
+    {
+      "uuid": "8d0a5ae7-728d-5d23-8f89-0aba161765c7",
+      "name": "Lab",
+      "Transform2D": {},
+      "Drawing2D": {},
+      "Script": {
+        "source": "res://scripts/input_lab.flux"
+      }
+    },
+    {
+      "uuid": "70f27286-03d7-51c8-ba8b-0ef0fa865f3b",
+      "name": "Hud",
+      "Control": {
+        "width": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "CanvasLayer": {}
+    },
+    {
+      "uuid": "bc0834d2-c121-5082-a305-929c2b76f275",
+      "name": "Panel",
+      "parent": "70f27286-03d7-51c8-ba8b-0ef0fa865f3b",
+      "Control": {
+        "position": "anchored",
+        "offset_left": 12.0,
+        "offset_top": 12.0
+      },
+      "BoxContainer": {
+        "separation": 4
+      },
+      "PanelContainer": {}
+    },
+    {
+      "uuid": "98e0d87e-fdf1-5aec-99aa-4f2795233f54",
+      "name": "Title",
+      "parent": "bc0834d2-c121-5082-a305-929c2b76f275",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 560.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ThemeOverride": {
+        "override_font_size": true,
+        "font_size": 18
+      },
+      "Label": {
+        "text": "Input, actions and rebinding"
+      }
+    },
+    {
+      "uuid": "b5b1d57f-fc69-5b11-a87a-89cb5a9fed7a",
+      "name": "About",
+      "parent": "bc0834d2-c121-5082-a305-929c2b76f275",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 560.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ThemeOverride": {
+        "override_font_size": true,
+        "font_size": 13
+      },
+      "Label": {
+        "text": "Every event as the game hears it, the actions as bars, a ball on left, right and jump. R rebinds jump to the next press, kept for the next run; N makes an action of the game's own; T has the mouse stand in for a finger; C changes the pointer."
+      }
+    }
+  ]
+}

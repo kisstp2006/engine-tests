@@ -1,0 +1,19 @@
+{
+  "fluxion_scene": 3,
+  "entities": [
+    {
+      "uuid": "dfa246bc-8c68-5782-a0ab-fcdb3f863f23",
+      "name": "Flower",
+      "Transform2D": {},
+      "Sprite": {
+        "texture": "res://art/star.png",
+        "width": 44.0,
+        "height": 44.0,
+        "layer": 1
+      },
+      "Script": {
+        "source": "res://scripts/flower.flux"
+      }
+    }
+  ]
+}

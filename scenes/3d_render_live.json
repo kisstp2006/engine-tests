@@ -1,0 +1,511 @@
+{
+  "fluxion_scene": 3,
+  "entities": [
+    {
+      "uuid": "d164d28d-d91c-511f-ab53-23f8fcdc5cc2",
+      "name": "Camera",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 3.5,
+          "z": 10.0
+        }
+      },
+      "Camera3D": {
+        "fov": 1.0471976,
+        "current": true
+      },
+      "Script": {
+        "source": "res://scripts/orbit_camera.flux"
+      },
+      "exports": {
+        "radius": 10.5,
+        "height": 3.2,
+        "speed": 0.1
+      }
+    },
+    {
+      "uuid": "a07048d2-d93e-58e9-a43d-4de040df46d6",
+      "name": "Sun",
+      "Transform3D": {},
+      "DirectionalLight3D": {
+        "energy": 2.2,
+        "shadow": true
+      }
+    },
+    {
+      "uuid": "499bd0c2-66c3-5bbd-89d8-dd1bd3ae1855",
+      "name": "Environment",
+      "Environment": {
+        "background": "color",
+        "tonemap": "aces",
+        "exposure": 1.0,
+        "glow": true,
+        "glow_threshold": 1.2,
+        "ssao": true,
+        "ssr": true,
+        "ambient_energy": 0.3
+      },
+      "Sky3D": {
+        "cloud_coverage": 0.35
+      }
+    },
+    {
+      "uuid": "1a798bac-9d00-54e7-8805-5e11f3b75b40",
+      "name": "Floor",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": -0.25,
+          "z": 0.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "size": {
+          "x": 22.0,
+          "y": 0.5,
+          "z": 22.0
+        }
+      },
+      "Material3D": {
+        "material": "res://materials/3d_render_live/floor.mat3d"
+      }
+    },
+    {
+      "uuid": "ce436455-cd7f-5a90-8b9e-e53dfad6ab47",
+      "name": "Chrome ball",
+      "Transform3D": {
+        "position": {
+          "x": -3.0,
+          "y": 0.8,
+          "z": 0.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "shape": "sphere",
+        "radius": 0.8
+      },
+      "Material3D": {
+        "material": "res://materials/3d_render_live/chrome.mat3d"
+      }
+    },
+    {
+      "uuid": "75bdc360-d7db-5922-94dc-4fe9506fea2e",
+      "name": "Gold ball",
+      "Transform3D": {
+        "position": {
+          "x": -1.0,
+          "y": 0.8,
+          "z": 0.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "shape": "sphere",
+        "radius": 0.8
+      },
+      "Material3D": {
+        "material": "res://materials/3d_render_live/gold.mat3d"
+      }
+    },
+    {
+      "uuid": "5940c3ba-4d52-5c54-943c-1bdb3578dbb3",
+      "name": "Red ball",
+      "Transform3D": {
+        "position": {
+          "x": 1.0,
+          "y": 0.8,
+          "z": 0.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "shape": "sphere",
+        "radius": 0.8
+      },
+      "Material3D": {
+        "material": "res://materials/3d_render_live/red.mat3d"
+      }
+    },
+    {
+      "uuid": "46f55329-345d-535b-b8f1-f2c975ee43cb",
+      "name": "Chalk ball",
+      "Transform3D": {
+        "position": {
+          "x": 3.0,
+          "y": 0.8,
+          "z": 0.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "shape": "sphere",
+        "radius": 0.8
+      },
+      "Material3D": {
+        "material": "res://materials/3d_render_live/chalk.mat3d"
+      }
+    },
+    {
+      "uuid": "141ad863-5dff-562e-9bf3-aec3df3cc7f7",
+      "name": "Block 1",
+      "Transform3D": {
+        "position": {
+          "x": -4.5,
+          "y": 1.25,
+          "z": -3.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "size": {
+          "x": 1.1,
+          "y": 2.5,
+          "z": 1.1
+        }
+      },
+      "Material3D": {
+        "material": "res://materials/3d_render_live/stone.mat3d"
+      }
+    },
+    {
+      "uuid": "f09791e7-6133-5818-8854-c959214153f6",
+      "name": "Block 2",
+      "Transform3D": {
+        "position": {
+          "x": -3.3,
+          "y": 0.7,
+          "z": -3.4
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "size": {
+          "x": 1.1,
+          "y": 1.4,
+          "z": 1.1
+        }
+      },
+      "Material3D": {
+        "material": "res://materials/3d_render_live/stone.mat3d"
+      }
+    },
+    {
+      "uuid": "c65e0cfe-8f1e-59e3-8290-c1c66b71e1f6",
+      "name": "Block 3",
+      "Transform3D": {
+        "position": {
+          "x": -4.2,
+          "y": 0.5,
+          "z": -4.4
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "size": {
+          "x": 1.1,
+          "y": 1.0,
+          "z": 1.1
+        }
+      },
+      "Material3D": {
+        "material": "res://materials/3d_render_live/stone.mat3d"
+      }
+    },
+    {
+      "uuid": "d83a4b24-bb0f-510f-888e-af80e556995f",
+      "name": "Block 4",
+      "Transform3D": {
+        "position": {
+          "x": 3.5,
+          "y": 1.5,
+          "z": -3.5
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "size": {
+          "x": 1.1,
+          "y": 3.0,
+          "z": 1.1
+        }
+      },
+      "Material3D": {
+        "material": "res://materials/3d_render_live/stone.mat3d"
+      }
+    },
+    {
+      "uuid": "e19da963-83ea-5555-b941-f02b690e1c23",
+      "name": "Glowing bar",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 0.25,
+          "z": -3.5
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "size": {
+          "x": 4.0,
+          "y": 0.25,
+          "z": 0.25
+        }
+      },
+      "Material3D": {
+        "material": "res://materials/3d_render_live/glow.mat3d"
+      }
+    },
+    {
+      "uuid": "fcfbee2e-d62b-595f-91c8-7fea65d00756",
+      "name": "Probe",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 1.5,
+          "z": 0.0
+        }
+      },
+      "ReflectionProbe3D": {
+        "extents": {
+          "x": 11.0,
+          "y": 4.0,
+          "z": 11.0
+        },
+        "update": "realtime"
+      }
+    },
+    {
+      "uuid": "276907e6-61a1-5e41-b628-0a727c051817",
+      "name": "Mark",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 0.1,
+          "z": 3.0
+        },
+        "rotation": {
+          "x": -0.70710678,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 0.70710678
+        }
+      },
+      "Decal": {
+        "texture": "res://art/star.png",
+        "size": {
+          "x": 2.6,
+          "y": 2.6,
+          "z": 1.0
+        },
+        "color": {
+          "r": 1.0,
+          "g": 0.85,
+          "b": 0.3,
+          "a": 1.0
+        }
+      }
+    },
+    {
+      "uuid": "5c5dff56-2329-5497-b253-9e5e0857eeec",
+      "name": "Lamp",
+      "Transform3D": {
+        "position": {
+          "x": 4.0,
+          "y": 1.6,
+          "z": 2.5
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "shape": "sphere",
+        "radius": 0.18
+      },
+      "Material3D": {
+        "material": "res://materials/3d_render_live/lamp.mat3d"
+      },
+      "PointLight3D": {
+        "color": {
+          "r": 1.0,
+          "g": 0.75,
+          "b": 0.45,
+          "a": 1.0
+        },
+        "energy": 6.0,
+        "range": 7.0,
+        "shadow": true
+      }
+    },
+    {
+      "uuid": "9cfbc0c9-1dcb-5fcb-8fd2-2ae1e3dacfbe",
+      "name": "Mist",
+      "Transform3D": {
+        "position": {
+          "x": 4.0,
+          "y": 1.2,
+          "z": 2.5
+        }
+      },
+      "FogVolume": {
+        "size": {
+          "x": 3.5,
+          "y": 2.2,
+          "z": 3.0
+        },
+        "shape": "ellipsoid",
+        "density": 0.07,
+        "edge_fade": 0.6,
+        "noise_strength": 0.7,
+        "wind": {
+          "x": 0.3,
+          "y": 0.05,
+          "z": 0.1
+        }
+      }
+    },
+    {
+      "uuid": "eaa96825-b188-5cfd-9893-3f5c36c46f31",
+      "name": "Sparks",
+      "Transform3D": {
+        "position": {
+          "x": 4.0,
+          "y": 1.6,
+          "z": 2.5
+        }
+      },
+      "Particles3D": {
+        "amount": 160,
+        "lifetime": 1.6,
+        "emission_shape": "sphere",
+        "emission_radius": 0.15,
+        "direction": {
+          "x": 0.0,
+          "y": 1.0,
+          "z": 0.0
+        },
+        "spread": 0.6,
+        "speed_min": 0.6,
+        "speed_max": 1.6,
+        "gravity": {
+          "x": 0.0,
+          "y": 0.4,
+          "z": 0.0
+        },
+        "size": 0.03,
+        "color": {
+          "r": 1.0,
+          "g": 0.7,
+          "b": 0.3,
+          "a": 1.0
+        }
+      }
+    },
+    {
+      "uuid": "3814ee52-8034-568b-ab53-c029f169836b",
+      "name": "Lab",
+      "Script": {
+        "source": "res://scripts/render_lab.flux"
+      }
+    },
+    {
+      "uuid": "80b145a4-5beb-5e06-a4ab-ce10bcf19048",
+      "name": "Hud",
+      "Control": {
+        "width": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "CanvasLayer": {}
+    },
+    {
+      "uuid": "d56080b6-3739-5bc1-a3c1-aab9273bcd2c",
+      "name": "Panel",
+      "parent": "80b145a4-5beb-5e06-a4ab-ce10bcf19048",
+      "Control": {
+        "position": "anchored",
+        "offset_left": 12.0,
+        "offset_top": 12.0
+      },
+      "BoxContainer": {
+        "separation": 4
+      },
+      "PanelContainer": {}
+    },
+    {
+      "uuid": "828360c2-4aa3-5ca7-89c6-17786c35f268",
+      "name": "Title",
+      "parent": "d56080b6-3739-5bc1-a3c1-aab9273bcd2c",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 380.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ThemeOverride": {
+        "override_font_size": true,
+        "font_size": 18
+      },
+      "Label": {
+        "text": "The renderer, live"
+      }
+    },
+    {
+      "uuid": "f6733ef0-51b0-541d-a8b0-67577abb5cd2",
+      "name": "About",
+      "parent": "d56080b6-3739-5bc1-a3c1-aab9273bcd2c",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 380.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ThemeOverride": {
+        "override_font_size": true,
+        "font_size": 13
+      },
+      "Label": {
+        "text": "The renderer changed as it runs: what is drawn, antialiasing, the 3D world's scale, shadows, the Environment's effects, the tone curve and the time of day under a Sky3D, with a reflection probe, a decal, a lamp in fog and sparks to see them on."
+      }
+    },
+    {
+      "uuid": "9bc9b8dd-5838-5c29-a6da-8dac2f44fdbf",
+      "name": "Settings",
+      "parent": "d56080b6-3739-5bc1-a3c1-aab9273bcd2c",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 380.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ThemeOverride": {
+        "override_font_size": true,
+        "font_size": 13
+      },
+      "Label": {
+        "text": ""
+      }
+    }
+  ]
+}

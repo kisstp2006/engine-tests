@@ -169,6 +169,9 @@ struct FluxTour {
         self.check(g, "a method changes its own fields", a.hp == 7);
         self.check(g, "extends: a boss's own damage, its parent's describe", b.hp == 5 and b.describe() == "dragon (5)");
         self.check(g, "fields left out take their defaults", b.phase == 1 and Actor{}.name == "actor");
+        // The type left out where it is known from where the value goes.
+        const c: Actor = .{ .name = "orc", .hp = 4 };
+        self.check(g, ".{ ... } takes its type from where it goes", c.name == "orc" and c.hp == 4);
     }
 
     fn enums(self) {
@@ -177,6 +180,9 @@ struct FluxTour {
         self.check(g, "a method of an enum, switching on itself", w.wet() and !Weather.sun.wet());
         self.check(g, "explicit values carry on: storm is 10", int(Weather.storm) == 10);
         self.check(g, "a member's name", w.name() == "rain");
+        // A name that is not one as written - digits, a keyword - quoted.
+        const @"while" = 3;
+        self.check(g, "a quoted name: @\"while\" and .@\"1\"", @"while" == 3 and Key.@"1".name() == "1");
     }
 
     fn optionals(self) {

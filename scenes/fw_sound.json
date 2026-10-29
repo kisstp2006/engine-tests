@@ -1,0 +1,147 @@
+{
+  "fluxion_scene": 3,
+  "entities": [
+    {
+      "uuid": "affbd748-9fd2-5981-ace9-913cf3eba2a9",
+      "name": "Camera",
+      "Transform2D": {},
+      "Camera2D": {
+        "fit_width": 1280.0,
+        "fit_height": 720.0
+      }
+    },
+    {
+      "uuid": "14dc6df9-6d15-5671-a1c2-a3e6016e553e",
+      "name": "Lab",
+      "Transform2D": {},
+      "Drawing2D": {},
+      "Script": {
+        "source": "res://scripts/sound_lab.flux"
+      }
+    },
+    {
+      "uuid": "c46092fb-aaee-5117-8b2d-1834f287808a",
+      "name": "Listener",
+      "Transform2D": {
+        "y": 120.0
+      },
+      "AudioListener2D": {}
+    },
+    {
+      "uuid": "2412852a-70f5-5166-a885-22bc906f8643",
+      "name": "Music",
+      "AudioPlayer": {
+        "clip": "res://sfx/lab_music.wav",
+        "autoplay": true,
+        "loop": true,
+        "bus": "Music"
+      }
+    },
+    {
+      "uuid": "79c1d0f9-61ca-5eb3-9696-ce29a014635d",
+      "name": "Wind",
+      "AudioPlayer": {
+        "clip": "res://sfx/lab_wind.wav",
+        "autoplay": true,
+        "loop": true,
+        "bus": "Ambience",
+        "volume_db": -6.0
+      }
+    },
+    {
+      "uuid": "aeb494c2-07b8-57f8-95b2-1fa8817cd538",
+      "name": "Bee",
+      "Transform2D": {
+        "x": 520.0,
+        "y": 120.0
+      },
+      "AudioPlayer": {
+        "clip": "res://sfx/lab_hum.wav",
+        "autoplay": true,
+        "loop": true,
+        "bus": "Effects",
+        "volume_db": -4.0
+      },
+      "AudioSpatial2D": {
+        "max_distance": 900.0
+      }
+    },
+    {
+      "uuid": "a13d1b4f-9aed-5110-be6f-7db8b3fd6f94",
+      "name": "Hud",
+      "Control": {
+        "width": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "CanvasLayer": {}
+    },
+    {
+      "uuid": "7654d3ba-4ddb-566e-bfbf-d89c54c3ccdc",
+      "name": "Panel",
+      "parent": "a13d1b4f-9aed-5110-be6f-7db8b3fd6f94",
+      "Control": {
+        "position": "anchored",
+        "offset_left": 12.0,
+        "offset_top": 12.0
+      },
+      "BoxContainer": {
+        "separation": 4
+      },
+      "PanelContainer": {}
+    },
+    {
+      "uuid": "7d808efd-ec30-5c09-a43b-aaf0409226bd",
+      "name": "Title",
+      "parent": "7654d3ba-4ddb-566e-bfbf-d89c54c3ccdc",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 520.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ThemeOverride": {
+        "override_font_size": true,
+        "font_size": 18
+      },
+      "Label": {
+        "text": "Sound, mixed"
+      }
+    },
+    {
+      "uuid": "101da2d1-df0d-5744-96a0-4ab883e77195",
+      "name": "About",
+      "parent": "7654d3ba-4ddb-566e-bfbf-d89c54c3ccdc",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 520.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ThemeOverride": {
+        "override_font_size": true,
+        "font_size": 13
+      },
+      "Label": {
+        "text": "Buses with faders and mutes, music to pause, seek and pitch, wind under it, a bee heard where it flies, and a string plucked by a player made for each note."
+      }
+    }
+  ]
+}

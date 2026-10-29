@@ -1,0 +1,1207 @@
+{
+  "fluxion_scene": 3,
+  "entities": [
+    {
+      "uuid": "7eb93681-e6f5-589b-8d7b-25a9e60ee2d1",
+      "name": "Camera",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": 4.0,
+          "z": 11.0
+        }
+      },
+      "Camera3D": {
+        "fov": 1.0471976,
+        "current": true
+      },
+      "Script": {
+        "source": "res://scripts/orbit_camera.flux"
+      },
+      "exports": {
+        "radius": 11.0,
+        "height": 4.0,
+        "speed": 0.06
+      }
+    },
+    {
+      "uuid": "60946806-d52c-547b-b64a-7ca9aefb5c05",
+      "name": "Sun",
+      "Transform3D": {
+        "rotation": {
+          "x": -0.4368643,
+          "y": 0.2379317,
+          "z": 0.1210044,
+          "w": 0.8590088
+        }
+      },
+      "DirectionalLight3D": {
+        "energy": 1.6,
+        "shadow": true
+      }
+    },
+    {
+      "uuid": "a2cdbc88-219c-5350-b9aa-25df1d0f4dbb",
+      "name": "Environment",
+      "Environment": {
+        "background": "color",
+        "tonemap": "aces",
+        "ssao": true,
+        "ambient_energy": 0.35
+      },
+      "Sky3D": {}
+    },
+    {
+      "uuid": "c3ef8ab3-d877-514d-8928-643377c2bfda",
+      "name": "Floor",
+      "Transform3D": {
+        "position": {
+          "x": 0.0,
+          "y": -0.25,
+          "z": 0.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "size": {
+          "x": 24.0,
+          "y": 0.5,
+          "z": 24.0
+        }
+      },
+      "Material3D": {
+        "material": "res://materials/3d_joints/floor.mat3d"
+      },
+      "RigidBody3D": {
+        "type": "static"
+      },
+      "Collider3D": {
+        "extents": {
+          "x": 12.0,
+          "y": 0.25,
+          "z": 12.0
+        }
+      }
+    },
+    {
+      "uuid": "f0fff4c9-50c7-501c-beca-f6ebbab7e400",
+      "name": "Beam",
+      "Transform3D": {
+        "position": {
+          "x": -4.5,
+          "y": 5.1,
+          "z": 0.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "size": {
+          "x": 1.2,
+          "y": 0.2,
+          "z": 0.2
+        }
+      },
+      "Material3D": {
+        "material": "res://materials/3d_joints/post.mat3d"
+      }
+    },
+    {
+      "uuid": "2a0cc488-d832-59d8-90e8-caddad3bace1",
+      "name": "Link 1",
+      "Transform3D": {
+        "position": {
+          "x": -4.38,
+          "y": 4.82,
+          "z": 0.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "shape": "capsule",
+        "radius": 0.06,
+        "height": 0.36
+      },
+      "Material3D": {
+        "material": "res://materials/3d_joints/chain.mat3d"
+      },
+      "RigidBody3D": {},
+      "Collider3D": {
+        "shape": "capsule",
+        "radius": 0.06,
+        "height": 0.36
+      },
+      "Joint3D": {
+        "position": {
+          "x": 0.0,
+          "y": 0.18,
+          "z": 0.0
+        },
+        "limit_swing": false,
+        "connected_position": {
+          "x": -4.5,
+          "y": 5.0,
+          "z": 0.0
+        }
+      }
+    },
+    {
+      "uuid": "ef9b57bc-bbbe-56fa-bf55-581a74a6d5b5",
+      "name": "Link 2",
+      "Transform3D": {
+        "position": {
+          "x": -4.26,
+          "y": 4.46,
+          "z": 0.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "shape": "capsule",
+        "radius": 0.06,
+        "height": 0.36
+      },
+      "Material3D": {
+        "material": "res://materials/3d_joints/chain.mat3d"
+      },
+      "RigidBody3D": {},
+      "Collider3D": {
+        "shape": "capsule",
+        "radius": 0.06,
+        "height": 0.36
+      },
+      "Joint3D": {
+        "position": {
+          "x": 0.0,
+          "y": 0.18,
+          "z": 0.0
+        },
+        "limit_swing": false,
+        "connected": "2a0cc488-d832-59d8-90e8-caddad3bace1",
+        "connected_position": {
+          "x": 0.0,
+          "y": -0.18,
+          "z": 0.0
+        }
+      }
+    },
+    {
+      "uuid": "83043ef7-dc6e-5118-a546-42a4b5a073f5",
+      "name": "Link 3",
+      "Transform3D": {
+        "position": {
+          "x": -4.14,
+          "y": 4.1,
+          "z": 0.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "shape": "capsule",
+        "radius": 0.06,
+        "height": 0.36
+      },
+      "Material3D": {
+        "material": "res://materials/3d_joints/chain.mat3d"
+      },
+      "RigidBody3D": {},
+      "Collider3D": {
+        "shape": "capsule",
+        "radius": 0.06,
+        "height": 0.36
+      },
+      "Joint3D": {
+        "position": {
+          "x": 0.0,
+          "y": 0.18,
+          "z": 0.0
+        },
+        "limit_swing": false,
+        "connected": "ef9b57bc-bbbe-56fa-bf55-581a74a6d5b5",
+        "connected_position": {
+          "x": 0.0,
+          "y": -0.18,
+          "z": 0.0
+        }
+      }
+    },
+    {
+      "uuid": "f1f5a6f4-d7c0-5781-98aa-cf219d2a3fd1",
+      "name": "Link 4",
+      "Transform3D": {
+        "position": {
+          "x": -4.02,
+          "y": 3.74,
+          "z": 0.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "shape": "capsule",
+        "radius": 0.06,
+        "height": 0.36
+      },
+      "Material3D": {
+        "material": "res://materials/3d_joints/chain.mat3d"
+      },
+      "RigidBody3D": {},
+      "Collider3D": {
+        "shape": "capsule",
+        "radius": 0.06,
+        "height": 0.36
+      },
+      "Joint3D": {
+        "position": {
+          "x": 0.0,
+          "y": 0.18,
+          "z": 0.0
+        },
+        "limit_swing": false,
+        "connected": "83043ef7-dc6e-5118-a546-42a4b5a073f5",
+        "connected_position": {
+          "x": 0.0,
+          "y": -0.18,
+          "z": 0.0
+        }
+      }
+    },
+    {
+      "uuid": "f913528a-50d2-577a-ae56-16f5b4406163",
+      "name": "Link 5",
+      "Transform3D": {
+        "position": {
+          "x": -3.9,
+          "y": 3.38,
+          "z": 0.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "shape": "capsule",
+        "radius": 0.06,
+        "height": 0.36
+      },
+      "Material3D": {
+        "material": "res://materials/3d_joints/chain.mat3d"
+      },
+      "RigidBody3D": {},
+      "Collider3D": {
+        "shape": "capsule",
+        "radius": 0.06,
+        "height": 0.36
+      },
+      "Joint3D": {
+        "position": {
+          "x": 0.0,
+          "y": 0.18,
+          "z": 0.0
+        },
+        "limit_swing": false,
+        "connected": "f1f5a6f4-d7c0-5781-98aa-cf219d2a3fd1",
+        "connected_position": {
+          "x": 0.0,
+          "y": -0.18,
+          "z": 0.0
+        }
+      }
+    },
+    {
+      "uuid": "18b25ed4-349c-5122-b2e8-7c29e38a026c",
+      "name": "Link 6",
+      "Transform3D": {
+        "position": {
+          "x": -3.7800000000000002,
+          "y": 3.02,
+          "z": 0.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "shape": "capsule",
+        "radius": 0.06,
+        "height": 0.36
+      },
+      "Material3D": {
+        "material": "res://materials/3d_joints/chain.mat3d"
+      },
+      "RigidBody3D": {},
+      "Collider3D": {
+        "shape": "capsule",
+        "radius": 0.06,
+        "height": 0.36
+      },
+      "Joint3D": {
+        "position": {
+          "x": 0.0,
+          "y": 0.18,
+          "z": 0.0
+        },
+        "limit_swing": false,
+        "connected": "f913528a-50d2-577a-ae56-16f5b4406163",
+        "connected_position": {
+          "x": 0.0,
+          "y": -0.18,
+          "z": 0.0
+        }
+      }
+    },
+    {
+      "uuid": "2711009d-30f5-50a3-a09e-d0c6bbd27d1f",
+      "name": "Link 7",
+      "Transform3D": {
+        "position": {
+          "x": -3.66,
+          "y": 2.66,
+          "z": 0.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "shape": "capsule",
+        "radius": 0.06,
+        "height": 0.36
+      },
+      "Material3D": {
+        "material": "res://materials/3d_joints/chain.mat3d"
+      },
+      "RigidBody3D": {},
+      "Collider3D": {
+        "shape": "capsule",
+        "radius": 0.06,
+        "height": 0.36
+      },
+      "Joint3D": {
+        "position": {
+          "x": 0.0,
+          "y": 0.18,
+          "z": 0.0
+        },
+        "limit_swing": false,
+        "connected": "18b25ed4-349c-5122-b2e8-7c29e38a026c",
+        "connected_position": {
+          "x": 0.0,
+          "y": -0.18,
+          "z": 0.0
+        }
+      }
+    },
+    {
+      "uuid": "a924fe78-7f9e-5479-a82d-d4d8fc0ab613",
+      "name": "Link 8",
+      "Transform3D": {
+        "position": {
+          "x": -3.54,
+          "y": 2.3000000000000003,
+          "z": 0.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "shape": "capsule",
+        "radius": 0.06,
+        "height": 0.36
+      },
+      "Material3D": {
+        "material": "res://materials/3d_joints/chain.mat3d"
+      },
+      "RigidBody3D": {},
+      "Collider3D": {
+        "shape": "capsule",
+        "radius": 0.06,
+        "height": 0.36
+      },
+      "Joint3D": {
+        "position": {
+          "x": 0.0,
+          "y": 0.18,
+          "z": 0.0
+        },
+        "limit_swing": false,
+        "connected": "2711009d-30f5-50a3-a09e-d0c6bbd27d1f",
+        "connected_position": {
+          "x": 0.0,
+          "y": -0.18,
+          "z": 0.0
+        }
+      }
+    },
+    {
+      "uuid": "4914e5eb-147e-5cb4-ab1c-8f641f9255e1",
+      "name": "Lamp",
+      "Transform3D": {
+        "position": {
+          "x": -3.42,
+          "y": 1.9200000000000002,
+          "z": 0.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "shape": "sphere",
+        "radius": 0.22
+      },
+      "Material3D": {
+        "material": "res://materials/3d_joints/lamp.mat3d"
+      },
+      "RigidBody3D": {},
+      "Collider3D": {
+        "shape": "sphere",
+        "radius": 0.22
+      },
+      "Joint3D": {
+        "connected": "a924fe78-7f9e-5479-a82d-d4d8fc0ab613",
+        "position": {
+          "x": 0.0,
+          "y": 0.22,
+          "z": 0.0
+        },
+        "connected_position": {
+          "x": 0.0,
+          "y": -0.18,
+          "z": 0.0
+        }
+      },
+      "PointLight3D": {
+        "color": {
+          "r": 1.0,
+          "g": 0.8,
+          "b": 0.5,
+          "a": 1.0
+        },
+        "energy": 4.0,
+        "range": 6.0,
+        "shadow": true
+      }
+    },
+    {
+      "uuid": "9523d07e-8571-5135-b483-ecbdc5961b9e",
+      "name": "Post left",
+      "Transform3D": {
+        "position": {
+          "x": -1.95,
+          "y": 1.0,
+          "z": -3.5
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "size": {
+          "x": 0.3,
+          "y": 2.0,
+          "z": 1.2
+        }
+      },
+      "Material3D": {
+        "material": "res://materials/3d_joints/post.mat3d"
+      },
+      "RigidBody3D": {
+        "type": "static"
+      },
+      "Collider3D": {
+        "extents": {
+          "x": 0.15,
+          "y": 1.0,
+          "z": 0.6
+        }
+      }
+    },
+    {
+      "uuid": "e3d8a4ba-8707-5af7-a048-f8276e8e8df1",
+      "name": "Post right",
+      "Transform3D": {
+        "position": {
+          "x": 1.95,
+          "y": 1.0,
+          "z": -3.5
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "size": {
+          "x": 0.3,
+          "y": 2.0,
+          "z": 1.2
+        }
+      },
+      "Material3D": {
+        "material": "res://materials/3d_joints/post.mat3d"
+      },
+      "RigidBody3D": {
+        "type": "static"
+      },
+      "Collider3D": {
+        "extents": {
+          "x": 0.15,
+          "y": 1.0,
+          "z": 0.6
+        }
+      }
+    },
+    {
+      "uuid": "e1fed13a-933f-51bb-81d6-f63509878247",
+      "name": "Plank 1",
+      "Transform3D": {
+        "position": {
+          "x": -1.62,
+          "y": 1.9,
+          "z": -3.5
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "size": {
+          "x": 0.32999999999999996,
+          "y": 0.06,
+          "z": 1.0
+        }
+      },
+      "Material3D": {
+        "material": "res://materials/3d_joints/wood.mat3d"
+      },
+      "RigidBody3D": {},
+      "Collider3D": {
+        "extents": {
+          "x": 0.16499999999999998,
+          "y": 0.03,
+          "z": 0.5
+        }
+      },
+      "Joint3D": {
+        "kind": "hinge",
+        "position": {
+          "x": -0.18,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "connected_position": {
+          "x": -1.8,
+          "y": 1.9,
+          "z": -3.5
+        }
+      }
+    },
+    {
+      "uuid": "b9ce2a94-8500-56d8-840e-d9db4b638cdc",
+      "name": "Plank 2",
+      "Transform3D": {
+        "position": {
+          "x": -1.26,
+          "y": 1.9,
+          "z": -3.5
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "size": {
+          "x": 0.32999999999999996,
+          "y": 0.06,
+          "z": 1.0
+        }
+      },
+      "Material3D": {
+        "material": "res://materials/3d_joints/wood.mat3d"
+      },
+      "RigidBody3D": {},
+      "Collider3D": {
+        "extents": {
+          "x": 0.16499999999999998,
+          "y": 0.03,
+          "z": 0.5
+        }
+      },
+      "Joint3D": {
+        "kind": "hinge",
+        "position": {
+          "x": -0.18,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "connected": "e1fed13a-933f-51bb-81d6-f63509878247",
+        "connected_position": {
+          "x": 0.18,
+          "y": 0.0,
+          "z": 0.0
+        }
+      }
+    },
+    {
+      "uuid": "92c0bf1b-7b28-5b36-ab94-819d25592273",
+      "name": "Plank 3",
+      "Transform3D": {
+        "position": {
+          "x": -0.9000000000000001,
+          "y": 1.9,
+          "z": -3.5
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "size": {
+          "x": 0.32999999999999996,
+          "y": 0.06,
+          "z": 1.0
+        }
+      },
+      "Material3D": {
+        "material": "res://materials/3d_joints/wood.mat3d"
+      },
+      "RigidBody3D": {},
+      "Collider3D": {
+        "extents": {
+          "x": 0.16499999999999998,
+          "y": 0.03,
+          "z": 0.5
+        }
+      },
+      "Joint3D": {
+        "kind": "hinge",
+        "position": {
+          "x": -0.18,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "connected": "b9ce2a94-8500-56d8-840e-d9db4b638cdc",
+        "connected_position": {
+          "x": 0.18,
+          "y": 0.0,
+          "z": 0.0
+        }
+      }
+    },
+    {
+      "uuid": "c02b1b1a-9852-5eb7-958b-d2d0ff569648",
+      "name": "Plank 4",
+      "Transform3D": {
+        "position": {
+          "x": -0.54,
+          "y": 1.9,
+          "z": -3.5
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "size": {
+          "x": 0.32999999999999996,
+          "y": 0.06,
+          "z": 1.0
+        }
+      },
+      "Material3D": {
+        "material": "res://materials/3d_joints/wood.mat3d"
+      },
+      "RigidBody3D": {},
+      "Collider3D": {
+        "extents": {
+          "x": 0.16499999999999998,
+          "y": 0.03,
+          "z": 0.5
+        }
+      },
+      "Joint3D": {
+        "kind": "hinge",
+        "position": {
+          "x": -0.18,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "connected": "92c0bf1b-7b28-5b36-ab94-819d25592273",
+        "connected_position": {
+          "x": 0.18,
+          "y": 0.0,
+          "z": 0.0
+        }
+      }
+    },
+    {
+      "uuid": "9e541a89-0e6b-512e-9f88-cc91d92fc2e5",
+      "name": "Plank 5",
+      "Transform3D": {
+        "position": {
+          "x": -0.18000000000000016,
+          "y": 1.9,
+          "z": -3.5
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "size": {
+          "x": 0.32999999999999996,
+          "y": 0.06,
+          "z": 1.0
+        }
+      },
+      "Material3D": {
+        "material": "res://materials/3d_joints/wood.mat3d"
+      },
+      "RigidBody3D": {},
+      "Collider3D": {
+        "extents": {
+          "x": 0.16499999999999998,
+          "y": 0.03,
+          "z": 0.5
+        }
+      },
+      "Joint3D": {
+        "kind": "hinge",
+        "position": {
+          "x": -0.18,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "connected": "c02b1b1a-9852-5eb7-958b-d2d0ff569648",
+        "connected_position": {
+          "x": 0.18,
+          "y": 0.0,
+          "z": 0.0
+        }
+      }
+    },
+    {
+      "uuid": "850c1b27-aa4e-5beb-b65a-04d84d0259cf",
+      "name": "Plank 6",
+      "Transform3D": {
+        "position": {
+          "x": 0.17999999999999994,
+          "y": 1.9,
+          "z": -3.5
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "size": {
+          "x": 0.32999999999999996,
+          "y": 0.06,
+          "z": 1.0
+        }
+      },
+      "Material3D": {
+        "material": "res://materials/3d_joints/wood.mat3d"
+      },
+      "RigidBody3D": {},
+      "Collider3D": {
+        "extents": {
+          "x": 0.16499999999999998,
+          "y": 0.03,
+          "z": 0.5
+        }
+      },
+      "Joint3D": {
+        "kind": "hinge",
+        "position": {
+          "x": -0.18,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "connected": "9e541a89-0e6b-512e-9f88-cc91d92fc2e5",
+        "connected_position": {
+          "x": 0.18,
+          "y": 0.0,
+          "z": 0.0
+        }
+      }
+    },
+    {
+      "uuid": "266c68bd-469d-5b8c-927b-b2b6c5a84fef",
+      "name": "Plank 7",
+      "Transform3D": {
+        "position": {
+          "x": 0.5399999999999998,
+          "y": 1.9,
+          "z": -3.5
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "size": {
+          "x": 0.32999999999999996,
+          "y": 0.06,
+          "z": 1.0
+        }
+      },
+      "Material3D": {
+        "material": "res://materials/3d_joints/wood.mat3d"
+      },
+      "RigidBody3D": {},
+      "Collider3D": {
+        "extents": {
+          "x": 0.16499999999999998,
+          "y": 0.03,
+          "z": 0.5
+        }
+      },
+      "Joint3D": {
+        "kind": "hinge",
+        "position": {
+          "x": -0.18,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "connected": "850c1b27-aa4e-5beb-b65a-04d84d0259cf",
+        "connected_position": {
+          "x": 0.18,
+          "y": 0.0,
+          "z": 0.0
+        }
+      }
+    },
+    {
+      "uuid": "99bf752d-2899-5053-acd3-36bb24bd490c",
+      "name": "Plank 8",
+      "Transform3D": {
+        "position": {
+          "x": 0.8999999999999997,
+          "y": 1.9,
+          "z": -3.5
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "size": {
+          "x": 0.32999999999999996,
+          "y": 0.06,
+          "z": 1.0
+        }
+      },
+      "Material3D": {
+        "material": "res://materials/3d_joints/wood.mat3d"
+      },
+      "RigidBody3D": {},
+      "Collider3D": {
+        "extents": {
+          "x": 0.16499999999999998,
+          "y": 0.03,
+          "z": 0.5
+        }
+      },
+      "Joint3D": {
+        "kind": "hinge",
+        "position": {
+          "x": -0.18,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "connected": "266c68bd-469d-5b8c-927b-b2b6c5a84fef",
+        "connected_position": {
+          "x": 0.18,
+          "y": 0.0,
+          "z": 0.0
+        }
+      }
+    },
+    {
+      "uuid": "aa14635d-3f8d-5aff-b4af-2287e271c457",
+      "name": "Plank 9",
+      "Transform3D": {
+        "position": {
+          "x": 1.26,
+          "y": 1.9,
+          "z": -3.5
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "size": {
+          "x": 0.32999999999999996,
+          "y": 0.06,
+          "z": 1.0
+        }
+      },
+      "Material3D": {
+        "material": "res://materials/3d_joints/wood.mat3d"
+      },
+      "RigidBody3D": {},
+      "Collider3D": {
+        "extents": {
+          "x": 0.16499999999999998,
+          "y": 0.03,
+          "z": 0.5
+        }
+      },
+      "Joint3D": {
+        "kind": "hinge",
+        "position": {
+          "x": -0.18,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "connected": "99bf752d-2899-5053-acd3-36bb24bd490c",
+        "connected_position": {
+          "x": 0.18,
+          "y": 0.0,
+          "z": 0.0
+        }
+      }
+    },
+    {
+      "uuid": "5fa41c4e-f377-53ce-8530-294f98979b17",
+      "name": "Plank 10",
+      "Transform3D": {
+        "position": {
+          "x": 1.6199999999999999,
+          "y": 1.9,
+          "z": -3.5
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "size": {
+          "x": 0.32999999999999996,
+          "y": 0.06,
+          "z": 1.0
+        }
+      },
+      "Material3D": {
+        "material": "res://materials/3d_joints/wood.mat3d"
+      },
+      "RigidBody3D": {},
+      "Collider3D": {
+        "extents": {
+          "x": 0.16499999999999998,
+          "y": 0.03,
+          "z": 0.5
+        }
+      },
+      "Joint3D": {
+        "kind": "hinge",
+        "position": {
+          "x": -0.18,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "connected": "aa14635d-3f8d-5aff-b4af-2287e271c457",
+        "connected_position": {
+          "x": 0.18,
+          "y": 0.0,
+          "z": 0.0
+        }
+      }
+    },
+    {
+      "uuid": "4a688955-da0a-533e-815f-0d0f852d952e",
+      "name": "Far end",
+      "parent": "5fa41c4e-f377-53ce-8530-294f98979b17",
+      "Transform3D": {
+        "position": {
+          "x": 0.18,
+          "y": 0.0,
+          "z": 0.0
+        }
+      },
+      "Collider3D": {
+        "shape": "sphere",
+        "radius": 0.02
+      },
+      "Joint3D": {
+        "kind": "hinge",
+        "connected_position": {
+          "x": 1.8,
+          "y": 1.9,
+          "z": -3.5
+        }
+      }
+    },
+    {
+      "uuid": "31f8a59f-f24c-52a9-84fa-847cce212b64",
+      "name": "Door frame",
+      "Transform3D": {
+        "position": {
+          "x": 4.0,
+          "y": 1.1,
+          "z": 1.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "size": {
+          "x": 0.12,
+          "y": 2.2,
+          "z": 0.12
+        }
+      },
+      "Material3D": {
+        "material": "res://materials/3d_joints/post.mat3d"
+      }
+    },
+    {
+      "uuid": "b05524d0-aff2-52e9-94cc-44c59ac91085",
+      "name": "Door",
+      "Transform3D": {
+        "position": {
+          "x": 4.6,
+          "y": 1.1,
+          "z": 1.0
+        }
+      },
+      "MeshInstance3D": {},
+      "PrimitiveMesh3D": {
+        "size": {
+          "x": 1.0,
+          "y": 2.0,
+          "z": 0.08
+        }
+      },
+      "Material3D": {
+        "material": "res://materials/3d_joints/door.mat3d"
+      },
+      "RigidBody3D": {
+        "gravity_scale": 0.0,
+        "angular_damp": 0.6
+      },
+      "Collider3D": {
+        "extents": {
+          "x": 0.5,
+          "y": 1.0,
+          "z": 0.04
+        }
+      },
+      "Joint3D": {
+        "kind": "hinge",
+        "position": {
+          "x": -0.55,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "rotation": {
+          "x": -0.70710678,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 0.70710678
+        },
+        "connected_position": {
+          "x": 4.05,
+          "y": 1.1,
+          "z": 1.0
+        },
+        "connected_rotation": {
+          "x": -0.70710678,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 0.70710678
+        },
+        "limit_twist": true,
+        "twist_lower": -1.7,
+        "twist_upper": 1.7
+      }
+    },
+    {
+      "uuid": "c814573f-6630-5456-aab0-463b683ab7e0",
+      "name": "Skinned",
+      "instance": "res://models/skinned.glb",
+      "Transform3D": {
+        "position": {
+          "x": 1.5,
+          "y": 0.0,
+          "z": 2.5
+        }
+      },
+      "AnimationPlayer": {
+        "autoplay": "Wave",
+        "default_blend": 0.4
+      }
+    },
+    {
+      "uuid": "60345e59-321f-5e75-bf0c-28b5a86d8181",
+      "name": "Lab",
+      "Script": {
+        "source": "res://scripts/joints_lab.flux"
+      }
+    },
+    {
+      "uuid": "085c47ae-235c-5585-bf70-4e5e035aeb50",
+      "name": "Hud",
+      "Control": {
+        "width": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "CanvasLayer": {}
+    },
+    {
+      "uuid": "84a4388a-8e68-5c2c-bf09-49d22101ba90",
+      "name": "Panel",
+      "parent": "085c47ae-235c-5585-bf70-4e5e035aeb50",
+      "Control": {
+        "position": "anchored",
+        "offset_left": 12.0,
+        "offset_top": 12.0
+      },
+      "BoxContainer": {
+        "separation": 4
+      },
+      "PanelContainer": {}
+    },
+    {
+      "uuid": "9a10e7b1-bb09-58d2-b83c-17f7adddc963",
+      "name": "Title",
+      "parent": "84a4388a-8e68-5c2c-bf09-49d22101ba90",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 420.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ThemeOverride": {
+        "override_font_size": true,
+        "font_size": 18
+      },
+      "Label": {
+        "text": "Joints and a ragdoll"
+      }
+    },
+    {
+      "uuid": "8b285e96-ce5c-5e0f-99d3-cc954e8e7542",
+      "name": "About",
+      "parent": "84a4388a-8e68-5c2c-bf09-49d22101ba90",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 420.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ThemeOverride": {
+        "override_font_size": true,
+        "font_size": 13
+      },
+      "Label": {
+        "text": "A chain of ball joints with a lamp, a bridge of planks on hinges, a door on a hinge with limits, and the skinned column given a body for each bone: R lets it fall as a ragdoll."
+      }
+    },
+    {
+      "uuid": "dd75ff4a-d8ba-5fd7-9cdd-bf93107dd3e3",
+      "name": "Status",
+      "parent": "84a4388a-8e68-5c2c-bf09-49d22101ba90",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 420.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ThemeOverride": {
+        "override_font_size": true,
+        "font_size": 13
+      },
+      "Label": {
+        "text": ""
+      }
+    }
+  ]
+}
