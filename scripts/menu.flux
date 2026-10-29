@@ -429,6 +429,10 @@ struct Menu {
             } else {
                 y = marks_y + 130.0 + 84.0 + float(row - from - 1) * 52.0;
             }
+            // Faded out towards the edges, as a console's long list is,
+            // clear of the keys along the bottom.
+            alpha *= 1.0 - math.smoothstep(230.0, 300.0, y);
+            alpha *= math.smoothstep(-330.0, -270.0, y);
             if (self.leaving and j == picked) {
                 alpha = 1.0;
                 size = 1.15;
