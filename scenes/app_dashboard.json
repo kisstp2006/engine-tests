@@ -1,0 +1,100 @@
+{
+  "fluxion_scene": 3,
+  "entities": [
+    {
+      "uuid": "185380db-2c33-5ead-9dcd-60d0c7bee090",
+      "name": "Camera",
+      "Transform2D": {},
+      "Camera2D": {
+        "fit_width": 1280.0,
+        "fit_height": 720.0
+      }
+    },
+    {
+      "uuid": "c02d6bfd-166f-5596-a78b-4aabbf7203c7",
+      "name": "Board",
+      "Transform2D": {},
+      "Drawing2D": {},
+      "Script": {
+        "source": "res://scripts/dashboard.flux"
+      }
+    },
+    {
+      "uuid": "4a516a1b-19da-5972-b949-5b6f64710576",
+      "name": "Hud",
+      "Control": {
+        "width": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        },
+        "height": {
+          "mode": "grow",
+          "value": 0.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "CanvasLayer": {}
+    },
+    {
+      "uuid": "fc5301a3-dca3-59cb-9714-64c6bfaab4ad",
+      "name": "Panel",
+      "parent": "4a516a1b-19da-5972-b949-5b6f64710576",
+      "Control": {
+        "position": "anchored",
+        "offset_left": 12.0,
+        "offset_top": 12.0
+      },
+      "BoxContainer": {
+        "separation": 4
+      },
+      "PanelContainer": {}
+    },
+    {
+      "uuid": "9f4f7a80-0308-5a85-9482-8e581aa1438b",
+      "name": "Title",
+      "parent": "fc5301a3-dca3-59cb-9714-64c6bfaab4ad",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 410.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ThemeOverride": {
+        "override_font_size": true,
+        "font_size": 18
+      },
+      "Label": {
+        "text": "A dashboard"
+      }
+    },
+    {
+      "uuid": "21ae9973-bfd2-52fe-9d0f-2b1feaa06f5e",
+      "name": "About",
+      "parent": "fc5301a3-dca3-59cb-9714-64c6bfaab4ad",
+      "Control": {
+        "width": {
+          "mode": "fixed",
+          "value": 410.0,
+          "min": 0.0,
+          "max": 3.4028235e+38,
+          "weight": 1.0
+        }
+      },
+      "ThemeOverride": {
+        "override_font_size": true,
+        "font_size": 13
+      },
+      "Label": {
+        "text": "Live numbers drawn by a script with a Drawing2D: frame times, frames a second, a gauge, the date and the time in the player's words, a repository's numbers asked of the web without the frame waiting, and a picture of the frame saved and shown again. R asks the web again, P keeps a picture."
+      }
+    }
+  ]
+}

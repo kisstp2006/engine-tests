@@ -7,9 +7,9 @@ const math = @import("math");
 struct Category {
     var name: string = "";
     var kind: float = 0.0;
-    var tint: color = color(1, 1, 1);
-    var top: color = color(0.05, 0.14, 0.42);
-    var bottom: color = color(0.01, 0.03, 0.13);
+    var tint: color = color(1.0, 1.0, 1.0);
+    var top: color = color(0.42, 0.05, 0.05);
+    var bottom: color = color(0.13, 0.01, 0.01);
 }
 
 /// One test: the category it is under, the scene it opens, what it is
@@ -52,6 +52,7 @@ const tests = [
     Test{ .category = 3, .scene = "3d_navigation", .title = "3D navigation", .about = "Agents finding their way over baked navigation meshes" },
     Test{ .category = 3, .scene = "3d_stress", .title = "Stress: what a frame costs", .about = "Four hundred dense balls, six hundred boxes, shadows and lamps" },
     Test{ .category = 4, .scene = "app_notes", .title = "A notes program", .about = "Notes kept in the player's files, a config, the clipboard, the window's title" },
+    Test{ .category = 4, .scene = "app_dashboard", .title = "A dashboard", .about = "Live charts drawn by a script, the web asked without waiting, a picture kept" },
     Test{ .category = 4, .scene = "fw_flux_language", .title = "The Flux language", .about = "Every part of the language tried and checked, tasks awaited and signals heard" },
 ];
 
@@ -70,8 +71,8 @@ const title_in: float = 2.6;
 const title_out: float = 5.6;
 const intro_ends: float = 6.5;
 /// The sky the intro is under, as a console's is blue unless told.
-const intro_top: color = color(0.05, 0.14, 0.44);
-const intro_bottom: color = color(0.01, 0.03, 0.14);
+const intro_top: color = color(0.114, 0.44, 0.05);
+const intro_bottom: color = color(0.01, 0.14, 0.077);
 
 /// The menu of the tests, laid out the way a console's is: the categories
 /// across, each with its mark, the chosen one's tests down from it - those
@@ -191,7 +192,7 @@ struct Menu {
         black.fade = 1.0;
         self.veil = veil;
         self.title = self.words("Fluxion", 52.0, 11);
-        self.subtitle = self.words("Engine Tests", 17.0, 11);
+        self.subtitle = self.words("Federated Monitoring Layer", 17.0, 11);
 
         self.paint(1.0);
         // The marks start off to the right, to slide in.

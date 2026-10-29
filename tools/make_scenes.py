@@ -63,7 +63,18 @@ def notes_app():
     return s
 
 
-MADE = [flux_language, notes_app]
+def dashboard():
+    s = Scene("app_dashboard")
+    camera2d(s)
+    s.add("Board", Transform2D={}, Drawing2D={}, Script={"source": "res://scripts/dashboard.flux"})
+    panel(s, "A dashboard",
+          "Live numbers drawn by a script with a Drawing2D: frame times, frames a second, a gauge, the date and "
+          "the time in the player's words, a repository's numbers asked of the web without the frame waiting, "
+          "and a picture of the frame saved and shown again. R asks the web again, P keeps a picture.", width=410)
+    return s
+
+
+MADE = [flux_language, notes_app, dashboard]
 
 if __name__ == "__main__":
     for make in MADE:
